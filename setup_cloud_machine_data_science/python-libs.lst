@@ -14,13 +14,16 @@ statsmodels
 sklearn
 lightgbm
 xgboost
+catboost
 theano
 tensorflow
 keras
+tpot
 pybrain
 nltk
 cntk
 gensim
+eli5
 cython
 dask
 numba
