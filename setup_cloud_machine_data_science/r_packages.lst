@@ -18,10 +18,12 @@ bigrquery
 billboarder
 BioCircos
 bivariate
+blastula
 boot
 broom
 bs4Dash
 bsplus
+c3
 C50
 Cairo
 canvasXpress
@@ -41,6 +43,7 @@ coefplot
 collapsibleTree
 colorspace
 colourpicker
+compareBars
 configr
 CORElearn
 corrgram
@@ -106,12 +109,18 @@ gapminder
 gbm
 gcForest
 gdata
+geodist
 geofacet
 geogrid
 geojson
 geojsonio
+geojsonR
+geojsonsf
 geomnet
+geoops
 geoR
+georob
+geostatsp
 ggalluvial
 GGally
 ggallin
@@ -157,6 +166,7 @@ ggthemes
 ggTimeSeries
 ggvis
 ggvoronoi
+ggwordcloud
 ghibli
 giphyr
 GISTools
@@ -179,9 +189,11 @@ gstat
 gsubfn
 gtable
 gtools
+GWmodel
 h2o
 heatmaply
 hexbin
+hexSticker
 highcharter
 Hmisc
 hms
@@ -205,6 +217,7 @@ iterators
 janitor
 jcolors
 jsonlite
+jsonify
 kableExtra
 keras
 kernlab
@@ -232,6 +245,7 @@ magick
 magrittr
 manipulate
 manipulateWidget
+mapdeck
 mapedit
 mapmisc
 mapproj
@@ -263,6 +277,7 @@ modelr
 MonetDBLite
 mongolite
 mosaic
+muHVT
 multcomp
 munsell
 mvtnorm
@@ -402,6 +417,7 @@ sigmaNet
 sjmisc
 sjPlot
 skimr
+slickR
 slackr
 smbinning
 smooth
@@ -437,6 +453,7 @@ survsup
 survxai
 svd
 sweep
+table1
 tableHTML
 tabplot
 tau
@@ -461,6 +478,7 @@ treemap
 treemapify
 trelliscopejs
 tsmp
+tsutils
 tufte
 tuneRanger
 tweenr
@@ -472,6 +490,7 @@ vcdExtra
 viridis
 visNetwork
 visTree
+voronoiTreemap
 vtreat
 waffle
 webreadr
@@ -486,3 +505,4 @@ xtable
 xts
 yarrr
 zoo
+ztable
