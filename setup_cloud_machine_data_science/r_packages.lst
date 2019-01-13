@@ -20,6 +20,7 @@ BioCircos
 bivariate
 blastula
 boot
+breakdown
 broom
 bs4Dash
 bsplus
@@ -59,6 +60,7 @@ D3partitionR
 d3Tree
 DALEX
 data.table
+DataExplorer
 deldir
 dendextend
 DescTools
@@ -71,6 +73,7 @@ doFuture
 doMC
 doParallel
 dplyr
+drake
 DT
 dtree
 dygraphs
@@ -233,6 +236,7 @@ leaflet.extras
 leaflet.minicharts
 lemon
 lexicon
+lime
 listviewer
 lme4
 lmtest
@@ -394,6 +398,7 @@ scatterD3
 scico
 sem
 sf
+shapleyR
 shinyalert
 shinyBS
 shinycssloaders
