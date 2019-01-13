@@ -20,7 +20,7 @@ BioCircos
 bivariate
 blastula
 boot
-breakdown
+breakDown
 broom
 bs4Dash
 bsplus
@@ -44,7 +44,6 @@ coefplot
 collapsibleTree
 colorspace
 colourpicker
-compareBars
 configr
 CORElearn
 corrgram
@@ -398,7 +397,6 @@ scatterD3
 scico
 sem
 sf
-shapleyR
 shinyalert
 shinyBS
 shinycssloaders
