@@ -3,6 +3,7 @@ ropensci/geojsonio
 tdhock/animint
 homerhanumat/bpexploder
 jcheng5/bubbles
+daranzolin/compareBars
 ThomasSiegmund/D3TableFilter
 hadley/emo
 rstudio/fontawesome
@@ -28,6 +29,7 @@ thomasp85/patchwork
 EmilHvitfeldt/quickpalette
 bwlewis/rthreejs
 hoesler/rwantshue
+redichh/shapleyR
 jalapic/simpletable
 RinteRface/shinybulma
 ramnathv/slidify
