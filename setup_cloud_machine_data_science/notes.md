@@ -950,7 +950,7 @@ install_github('ropensci/RSelenium')
   <a name="testing-the-r-stack"/>
 
 ### Testing the R stack
-There is a repository on the [WeR GiHub](https://github.com/WeR-stats) website called [shiny-apps](https://github.com/WeR-stats/shiny-apps). At the time of writing these notes, there's at least one app (subfolder) called *uk_petitions* that lets you download [all the petitions](https://petition.parliament.uk/petitions) created under the current UK government, and then draw a [choropleth map](https://gisgeography.com/choropleth-maps-data-classification/) of the provenance of the subscribers using the [leaflet](http://rstudio.github.io/leaflet/) package. 
+There is a repository on the [WeR GiHub](https://github.com/WeR-stats) website called [shinyapps](https://github.com/WeR-stats/shinyapps). At the time of writing these notes, there's at least one app (subfolder) called *uk_petitions* that lets you download [all the petitions](https://petition.parliament.uk/petitions) created under the current UK government, and then draw a [choropleth map](https://gisgeography.com/choropleth-maps-data-classification/) of the provenance of the subscribers using the [leaflet](http://rstudio.github.io/leaflet/) package. 
 
 If you still haven't installed any package, besides *shiny* and *rmarkdown*, let's install the ones needed for the app to run correctly. We first need to install some system dependencies though.
 ```
@@ -978,7 +978,7 @@ Let's create a directory for the app in the Shiny server repository:
 `mkdir /srv/shiny-server/uk_petitions`
 
 To copy the app code into the above folder, we first create a project in RStudio Server saving the repository in the user home folder. Once the repo has been pulled on the server, run the following simple command to actually copy the code:
-`cp ~/shiny-apps/uk_petitions/* /srv/shiny-server/uk_petitions/`
+`cp ~/shinyapps/uk_petitions/* /srv/shiny-server/uk_petitions/`
 
 You should now open a browser and head to [http://ip_address/uk_petitions]() to see the app up and running!
 
