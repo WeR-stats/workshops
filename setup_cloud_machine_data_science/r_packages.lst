@@ -26,6 +26,7 @@ bs4Dash
 bsplus
 c3
 C50
+ca
 Cairo
 canvasXpress
 car
@@ -35,17 +36,22 @@ cartogram
 cartography
 CAST
 caTools
+changepoint
 chron
 circlize
 circumplex
 class
 classInt
+cluster
+clustertend
+clValid
 coefplot
 collapsibleTree
 colorspace
 colourpicker
 configr
 CORElearn
+corrr
 corrgram
 corrplot
 coveffectsplot
@@ -60,6 +66,7 @@ d3Tree
 DALEX
 data.table
 DataExplorer
+dbscan
 deldir
 dendextend
 DescTools
@@ -88,11 +95,14 @@ esquisse
 evir
 ExPosition
 extrafont
+factoextra
 fastcluster
+FactoMineR
 feather
 FFTrees
 FitARMA
 fitdistrplus
+flexclust
 flexdashboard
 flexmix
 flextable
@@ -103,6 +113,7 @@ foreach
 forecast
 formattable
 Formula
+fpc
 fst
 funModeling
 future
@@ -139,6 +150,7 @@ ggExtra
 ggfittext
 ggfocus
 ggforce
+ggformula
 ggfortify
 gghighlight
 ggimage
@@ -233,6 +245,7 @@ latticeExtra
 leaflet
 leaflet.extras
 leaflet.minicharts
+leaps
 lemon
 lexicon
 lime
@@ -261,6 +274,7 @@ Matrix
 MatrixModels
 matrixStats
 mboost
+mclust
 mda
 memoise
 merlin
@@ -284,6 +298,7 @@ muHVT
 multcomp
 munsell
 mvtnorm
+NbClust
 ndtv
 network
 networkD3
@@ -310,6 +325,7 @@ party
 partykit
 pbkrtest
 PerformanceAnalytics
+pheatmap
 pivottabler
 pixiedust
 pkgdown
@@ -317,6 +333,7 @@ pkgmaker
 plotly
 plotrix
 plotROC
+pls
 plumber
 plyr
 png
@@ -330,6 +347,7 @@ promises
 prophet
 psych
 purrr
+pvclust
 qcc
 qqplotr
 qualpalr
@@ -394,6 +412,7 @@ sandwich
 sboost
 scales
 scatterD3
+scatterplot3d
 scico
 sem
 sf
@@ -466,6 +485,7 @@ texreg
 text2vec
 textmineR
 tibble
+tidygraph
 tidyquant
 tidyr
 tidytext
