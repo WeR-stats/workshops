@@ -64,6 +64,7 @@ countrycode
 customLayout
 d3heatmap
 D3partitionR
+d3r
 d3Tree
 DALEX
 data.table
