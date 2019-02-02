@@ -1,5 +1,6 @@
 adabag
 ade4
+adespatial
 alluvial
 Amelia
 animation
@@ -31,6 +32,7 @@ Cairo
 canvasXpress
 car
 CARBayes
+CARBayesST
 caret
 cartogram
 cartography
@@ -99,6 +101,7 @@ factoextra
 fastcluster
 FactoMineR
 feather
+ff
 FFTrees
 FitARMA
 fitdistrplus
@@ -116,7 +119,11 @@ Formula
 fpc
 fst
 funModeling
+furrr
 future
+future.apply
+future.batchtools
+future.callr
 gam
 gapminder
 gbm
@@ -143,6 +150,7 @@ ggbuildr
 ggChernoff
 ggconf
 ggcorrplot
+ggdark
 ggdendro
 ggedit
 ggeffects
@@ -238,13 +246,17 @@ kernlab
 kknn
 klaR
 knitr
+knnp
+kohonen
 KRIG
 lars
 lattice
 latticeExtra
+lawn
 leaflet
 leaflet.extras
 leaflet.minicharts
+leaflet.opacity
 leaps
 lemon
 lexicon
@@ -260,6 +272,7 @@ MachineShop
 magick
 magrittr
 mailR
+makeParallel
 manipulate
 manipulateWidget
 mapdeck
@@ -316,12 +329,15 @@ officer
 oompaBase
 OpenMx
 openxlsx
+osrm
 packrat
 pagedown
 pairsD3
 palettetown
 palr
 pals
+parallelDist
+ParallelLogger
 party
 partykit
 pbkrtest
@@ -331,6 +347,7 @@ pivottabler
 pixiedust
 pkgdown
 pkgmaker
+plotKML
 plotly
 plotrix
 plotROC
@@ -338,6 +355,7 @@ pls
 plumber
 plyr
 png
+pointdensityP
 Polychrome
 pool
 PortfolioAnalytics
@@ -376,6 +394,7 @@ RcppEigen
 RCurl
 readODS
 readxl
+recmap
 Redmonder
 redux
 registry
@@ -392,7 +411,9 @@ riverplot
 RJSONIO
 rlang
 rmapshaper
+rmapzen
 rmarkdown
+rmdformats
 rms
 RMySQL
 RNeo4j
@@ -418,6 +439,7 @@ scico
 sem
 sf
 shinyalert
+shinyanimate
 shinyBS
 shinycssloaders
 shinycustomloader
@@ -462,6 +484,7 @@ spdep
 spdplyr
 splinetree
 splitstackshape
+spmoran
 sqldf
 stargazer
 stringi
@@ -509,8 +532,10 @@ tweenr
 twitteR
 usethis
 validate
+vapour
 vcd
 vcdExtra
+vegawidget
 viridis
 visNetwork
 visTree
@@ -523,6 +548,7 @@ widgetframe
 withr
 woeBinning
 wordcloud2
+wrapr
 xgboost
 xml2
 xtable
