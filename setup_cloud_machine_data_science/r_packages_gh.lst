@@ -1,5 +1,3 @@
-tidyverse/glue
-ropensci/geojsonio
 tdhock/animint
 homerhanumat/bpexploder
 jcheng5/bubbles
@@ -9,7 +7,6 @@ hadley/emo
 rstudio/fontawesome
 RinteRface/fullPage
 AckerDWM/gg3D
-briatte/ggnet
 guiastrennec/ggplus
 gadenbuie/ggpomological
 ricardo-bion/ggradar
