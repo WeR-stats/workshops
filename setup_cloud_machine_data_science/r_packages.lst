@@ -20,6 +20,8 @@ billboarder
 BioCircos
 bivariate
 blastula
+bookdown
+bookdownplus
 boot
 breakDown
 broom
@@ -115,6 +117,7 @@ fontcm
 forcats
 foreach
 forecast
+foreign
 formattable
 Formula
 fpc
@@ -168,6 +171,7 @@ ggiraphExtra
 ggmap
 ggmosaic
 ggnetwork
+ggpage
 ggparallel
 ggparliament
 ggplot2
@@ -387,18 +391,20 @@ rbin
 rbokeh
 rcane
 rcartocolor
-Rcrawler
 RColorBrewer
 Rcpp
 RcppArmadillo
 RcppEigen
+Rcrawler
 RCurl
 readODS
+readr
 readxl
 recmap
 Redmonder
 redux
 registry
+remedy
 reshape2
 reticulate
 rfUtilities
@@ -486,6 +492,7 @@ spdplyr
 splinetree
 splitstackshape
 spmoran
+spnet
 sqldf
 stargazer
 stringi
@@ -551,6 +558,7 @@ woeBinning
 wordcloud2
 wrapr
 xgboost
+xlsx
 xml2
 xtable
 xts
