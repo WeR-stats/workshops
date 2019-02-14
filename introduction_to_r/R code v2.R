@@ -2,10 +2,11 @@
 # coding means making mistakes, hoping less and less with time 
 # do not rush to ask for help, try first to reread the code you wrote, then read for the warning, after all that if you still have no clue ask for help
 
+# install git: 
 # install R: https://cran.r-project.org/
 # install RStudio: https://www.rstudio.com/products/rstudio/download/#download
 # RStudio overview and main options: 
-# clone the github workshop repo in an RStudio project
+# clone the github workshop repo in an RStudio project (see the docs from past meet up http://bit.ly/2TUyjsL)
 
 # using the console to show R as a simple calculator
 
@@ -15,20 +16,16 @@
 
 # save the file, commit, push to github, goto the website to confirm the changes
 
-# creates a "vector" (set of elements of the same nature) using the 'c' function (combine, concatenate)
+# explain variable
+
+# creates a "vector" (set of elements of the same nature) using the 'c' function (<c>ombine, <c>oncatenate)
 x <- c(12, 13, 34, 4, 6, 87)
 x
 print(x)
-length(x)
-x[3]
-x[1:2]
-
-# predefined constant vectors
-LETTERS[1:5]
-letters[1:5]
-rbind(LETTERS[1:5], letters[1:5])
-month.abb[10:12]
-month.name[10:12]
+length(x) # number of elements in x
+x[3]      # third element
+x[1:2]    # first and second elements !!! ==> R starts counting from 1, insted of 0 as most programming languages 
+x[c(2, 3, length(x))]    # second, third and last elements
 
 # vectorization: applying the same operator/function to all elements of a structure at the same time (R doesn't often need loops for repetitions)
 x + 2
@@ -38,15 +35,28 @@ y <- c(2, 3, 4, 7, 18, 44)
 x + y
 
 # recycling: if applying an operator to two vectors of different dimension, the shorter vector gets its elements repeated as needed
-z <- y[1:length(x) -1]
+z <- y[1:length(x) -1] # 
 z
 x + z
 
-# explain what packages are: additional functionalities
-# install and load a few packages: run the file 'install_pkgs.R'
-source('install_pkgs.R')
+# predefined constant vectors
+LETTERS # uppercase 26 letters of the English alphabet
+letters # lowercase 26 letters of the English alphabet
+all.equal(tolower(LETTERS), letters) # check that lowercase <LETTERS> is equal to <letters>
+all.equal(LETTERS, toupper(letters)) # check that uppercase <letters> is equal to <LETTERS>
+rbind(LETTERS, letters)    # create a character matrix 2 rows and 26 columns
+class(rbind(letters, LETTERS))
+str(rbind(letters, LETTERS))
+month.name # months in letters
+month.abb  # months abbreviated
+all.equal(substr(month.name, 1, 3), month.abb) # check that 
+cbind(month.name, month.abb)    # create a character matrix 12 and by 2 columns
+cbind(letters, LETTERS)
+class(cbind(month.name, month.abb))
+str(cbind(month.name, month.abb))
 
-# explain what a function is, and its arguments, by positions and by name, complete or short form, optional and its default value
+# explain what a function is; its arguments, listed by positions and/or by name, in complete or short form; optional arguments, and default value
+
 # show how RStudio help in writing down a function call
 sqrt(x = 81)
 sqrt(81)
@@ -56,26 +66,63 @@ mean(1:10)
 set.seed(1)
 v <- sample(1:1000, 100)
 mean(v)
-mean(v, 0.10)
-mean(c(v, NA))
-mean(c(v, NA), na.rm = TRUE)
-mean(c(v, NA), TRUE)
-mean(c(v, NA), 0.1, TRUE)
+mean(v, 0.10) 
+vo <- sort(v)
+mean(vo[11:90]) # trimmed mean leaves out 10% of lowest and highest obs, in this case 10 obs as total is 100 
+mean(c(v, NA)) # this works but the result won't satisfy...
+mean(c(v, NA), na.rm = TRUE) # this works OK 
+mean(c(v, NA), TRUE) # this does NOT work, you know why?
+mean(c(v, NA), 0.1, TRUE) # this again works, do you understand the difference with the above command?
 
-# explain main: operators, data types, data structures, pipe operator
+# how to find a value in a vector under specified conditions
+x <- c(1:20, 121:32)
+max(x)          # return the value
+which.max(x)    # return the position
+x[which.max(x)] # return the value
+x <- c(1:20, NA, 121:32)
+max(x)               # return NA
+max(x, na.rm = TRUE) # return the value
+x[which.max(x)]      # return the value
+x[which(is.na(x))] <- -1 # search for the value and substitute
+x[which.min(x)]
+
+# explain main: operators, data types, special values, data structures, pipe operator
 NA
 
 # create dataframe
-df <- data.frame(1:10, letters[1:10])
+df1 <- data.frame(letters, LETTERS)
+all.equal(df1, cbind(letters, LETTERS))
+class(df1)
+str(df1)  # result is much simpler than the above about a matrix
+df2 <- data.frame(cbind(letters, LETTERS))
+all.equal(df1, df2)
+df <- data.frame(1:26, df1)
+names(df)
+names(df)[1] <- 'numbers'
+names(df)
+df <- data.frame(numbers = 1:26, df1)
+nrow(df)   # number of rows
+ncol(df)   # number of columns
+dim(df)    # both the above
+length(df) # in the case of a dataframe, this equals the number of columns
+str(df)
 
-# load (?) dataset from core R: iris, mtcars
+# some (famous) dataset are already incuded in core R: [see the list: ]
 head(iris)
 head(iris, 12)
 tail(mtcars)
 tail(head(mtcars, 12), 1) # query only the 12th row
 mtcars %>% head(12) %>% tail(1) # same with pipes
 
-# load dataset from packages: 
+# it's time to talk about what packages are: additional functionalities
+
+# install and load a few packages: run the file 'install_pkgs.R'
+source('install_pkgs.R')
+
+# read documentation about a package
+library(help = 'data.table')
+
+# load datasets from packages: 
 # - diamond from ggplot2
 data(diamonds, package = c('ggplot2'))
 # - gapminder from gapminder
@@ -87,11 +134,54 @@ data(storms, package = c('dplyr'))
 
 # load text data: read.table, read.csv, read.csv2, read.delim, dead.delim2, readr:read_csv, data.table:fread
 hdi <- read.table('introduction_to_r/HDI.csv', header = TRUE, sep = ',')
-hdi <- read.csv('introduction_to_r/HDI.csv')
+hdi <- read.csv('introduction_to_r/HDI.csv') # equal as above, read.csv is just a shortcut! 
 
-# load text data from internet [see https://gender-pay-gap.service.gov.uk/] !!! ==> watch at the differences between core R and readr
+# load CSV data from internet [see https://gender-pay-gap.service.gov.uk/] !!! ==> watch at the differences between core R and readr
 paygap <- read.csv('https://gender-pay-gap.service.gov.uk/Viewing/download-data?year=2017')
-paygap <- read_csv('https://gender-pay-gap.service.gov.uk/Viewing/download-data?year=2017')
+ames <- read_csv('https://www.openintro.org/stat/data/ames.csv')
+
+# load TSV data from internet [see 1st version of file for docs http://lib.stat.cmu.edu/datasets/boston] 
+boston <- read.delim('http://lib.stat.cmu.edu/datasets/boston_corrected.txt', skip = 8)
+
+# load multiple files and combine in one dataset [see files 138-142 (Dec-18) at https://cycling.data.tfl.gov.uk/]
+x <- data.frame(
+        id = 138:142,
+        url = c('28Nov2018-04Dec2018', '05Dec2018-11Dec2018', '12Dec2018-18Dec2018', '19Dec2018-25Dec2018', '26Dec2018-01Jan2019')
+)
+cycle_data <- do.call(
+    'rbind', 
+    lapply(1:nrow(x), function(n) read.csv( paste0('https://cycling.data.tfl.gov.uk/usage-stats/', x[n, 1], 'JourneyDataExtract', x[n, 2], '.csv') ) )
+)
+names(cycle_data) <- gsub('[*.]', '_', tolower(names(cycle_data)))
+cycle_data$start_date <- as.POSIXct(strptime(cycle_data$start_date, '%d/%m/%Y %H:%M'))
+cycle_data$end_date <- as.POSIXct(strptime(cycle_data$end_date, '%d/%m/%Y %H:%M'))
+cycle_data$startstation_name <- NULL
+cycle_data$endstation_name <- NULL
+table(months(cycle_data$start_date))
+cycle_data <- cycle_data[months(cycle_data$start_date) == 'December',]
+
+# ... plus load station data for coordinates
+cycle_stations <- jsonlite::fromJSON(txt = 'https://api.tfl.gov.uk/bikepoint')
+cycle_stations <- data.frame(cbind(
+    station_id = sub('BikePoints_', '', cycle_stations$id), 
+    terminal_id = sapply(1:nrow(cycle_stations), function(n) cycle_stations$additionalProperties[[n]][, 5][1]),
+    x_lon = cycle_stations$lon,
+    y_lat = cycle_stations$lat,
+    address = cycle_stations$commonName
+), stringsAsFactors = FALSE)
+cycle_stations$station_id <- as.integer(cycle_stations$station_id)
+cycle_stations$x_lon <- as.numeric(cycle_stations$x_lon)
+cycle_stations$y_lat <- as.numeric(cycle_stations$y_lat)
+cycle_stations <- separate(cycle_stations, 'address', c('place', 'area'), ',')
+cycle_stations$place <- trimws(cycle_stations$place)
+cycle_stations$area <- trimws(cycle_stations$area)
+
+# merge total month count to list of stations
+y <- as.data.frame(table(cycle_data$startstation_id, dnn = 'station_id'), stringsAsFactors = FALSE)
+cycle_stations <- merge(cycle_stations, y, by = 'station_id')
+
+inner_join(cycle_stations, y, by = 'station_id') -> cycle_stations
+y$station_id <- as.numeric(y$station_id)
 
 # check dataframe
 ncol(diamonds)
@@ -191,7 +281,11 @@ diamonds %>% group_by(cut, color) %>% summarize(avg_price = mean(price), avg_dep
 
 
 # plot one categorical variable
-barplot(table(diamonds$cut))
+y <- table(diamonds$cut)
+barplot(y)
+y <- diamonds %>% group_by(cut) %>% summarize(N = n())
+barplot(y$N)
+
 barplot(table(diamonds$cut, diamonds$price_group))
 
 ggplot(diamonds)  # what does it do? need to explain aestetics and add
@@ -353,3 +447,154 @@ hdi[, group := cut(value, c(dcuts$cuts, 1), labels = dcuts$labels, ordered = TRU
 fwrite(hdi, 'introduction_to_r//HDI_v2.csv')
 
 # rewrite above tidying code with dplyr
+
+
+
+
+## dygraphs [see docs @ http://rstudio.github.io/dygraphs/] -----------------------------------------------------------------------
+yr <- retail %>% 
+        mutate(invoice_day = as.Date(InvoiceDate), revenues = Quantity * UnitPrice) %>% 
+        group_by(invoice_day) %>% 
+        summarise(freq = n(), revenues = sum(revenues)/10) %>% 
+        as.data.frame()
+ggplot(yr, aes(x = invoice_day, y = freq)) + 
+    geom_line() + 
+    scale_y_continuous(label = comma) + 
+    labs(title = 'Number of Orders', x = 'Day', y = 'Number of Orders') +
+    theme_calc()
+
+ggplot(yr, aes(x = invoice_day)) + 
+    geom_line(aes(y = freq, colour = 'Number of Orders')) + 
+    geom_line(aes(y = revenues, colour = 'Total Revenues')) + 
+    scale_y_continuous(label = comma, sec.axis = sec_axis(~.*6, name = 'Total Revenues')) + 
+    scale_colour_manual(values = c('green', 'brown')) + 
+    labs(title = 'Number of Orders and Total Revenues', x = 'Day', y = 'Number of Orders', color = 'Quantity') +
+    theme_calc() +
+    theme(legend.position = c(0.16, 0.89))
+
+yr <- xts(yr[, -1], order.by = yr[, 1])
+dygraph(yr[, 1]) 
+dygraph(yr, main = 'Number of Orders and Total Revenues') %>% 
+    dyLegend(width = 500, show = 'always', hideOnMouseOut = FALSE) %>% 
+    dyAxis('y', label = 'Number of Orders', drawGrid = TRUE) %>%
+    dyHighlight( highlightCircleSize = 4, highlightSeriesBackgroundAlpha = 0.4, hideOnMouseOut = TRUE, highlightSeriesOpts = list(strokeWidth = 2) ) %>% 
+    dyRangeSelector( dateWindow = c(max(as.Date(retail$InvoiceDate)) - 61, max(as.Date(retail$InvoiceDate))), height = 30, strokeColor = 'black' ) %>%
+    dyRoller(rollPeriod = 7) %>%
+    dyAxis('y2', label = 'Total Revenues', drawGrid = TRUE) %>%
+    dySeries('revenues', axis = 'y2') %>%
+    dyOptions( axisLineWidth = 1.25, stackedGraph = FALSE, fillGraph = FALSE, colors = c('green', 'brown') )
+
+
+## leaflet [see docs @ http://rstudio.github.io/leaflet/] -----------------------------------------------------------------------
+leaflet() %>% addCircles(data = cycle_stations, lng = ~x_lon, lat = ~y_lat)
+leaflet() %>% addTiles() %>% addCircles(data = cycle_stations, lng = ~x_lon, lat = ~y_lat)
+mp <- leaflet() %>% addCircles(data = cycle_stations, lng = ~x_lon, lat = ~y_lat)
+mp %>% addProviderTiles(providers$OpenStreetMap.Mapnik) 
+
+mp <- mp %>%  # [see https://leaflet-extras.github.io/leaflet-providers/preview/]
+    addProviderTiles(providers$OpenStreetMap.Mapnik, group = 'OSM Mapnik') %>%
+    addProviderTiles(providers$OpenStreetMap.BlackAndWhite, group = 'OSM B&W') %>%
+    addProviderTiles(providers$Stamen.Toner, group = 'Stamen Toner') %>%
+    addProviderTiles(providers$Stamen.TonerLite, group = 'Stamen Toner Lite') %>% 
+    addProviderTiles(providers$Hydda.Full, group = 'Hydda Full') %>%
+    addProviderTiles(providers$Hydda.Base, group = 'Hydda Base')
+mp # ?
+mp <- mp %>% 
+	addLayersControl(
+		baseGroups = c('OSM Mapnik', 'OSM B&W', 'Stamen Toner', 'Stamen Toner Lite', 'Hydda Full', 'Hydda Base'),
+		options = layersControlOptions(collapsed = TRUE)
+	)
+
+get_count_days <- function(ids, keep_id = FALSE, where = 'start'){
+    y <- cycle_data[cycle_data[, paste0(where, 'station_id')] %in% ids, c(paste0(where, 'station_id'), paste0(where, '_date'))]
+    y[, paste0(where, '_date')] <- factor(weekdays(y[, paste0(where, '_date')]), levels = c('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'), ordered = TRUE)
+    if(keep_id){
+        as.data.frame(table(y, dnn = c('station_id', 'day'))) 
+    } else {
+        y$startstation_id <- NULL
+        as.data.frame(table(y, dnn = 'day')) 
+    }
+}
+ggplot(get_count_days(1), aes(x = day, y = Freq)) + geom_col()
+ggplot(get_count_days(104:110), aes(x = reorder(day, Freq), y = Freq)) + geom_col() + coord_flip()
+ggplot(get_count_days(104:110, TRUE), aes(x = reorder(day, Freq), y = Freq, color = station_id)) + geom_col(position = 'dodge') + coord_flip()
+ggplot(get_count_days(104:110, TRUE), aes(x = reorder(day, Freq), y = Freq, fill = station_id)) + geom_col(position = 'dodge') + coord_flip()
+ggplot(get_count_days(104:110, TRUE), aes(x = reorder(day, Freq), y = Freq, fill = station_id)) + geom_col(color = 'black', position = 'dodge') + coord_flip()
+build_popup <- function(id){
+    get_count_days(id) %>% 
+        kable %>%
+        kable_styling(
+            bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'), 
+            font_size = 10, 
+            full_width = FALSE
+        )   
+}
+
+mp <- leaflet() %>%  
+        addProviderTiles(providers$OpenStreetMap.Mapnik, group = 'OSM Mapnik') %>%
+        addProviderTiles(providers$OpenStreetMap.BlackAndWhite, group = 'OSM B&W') %>%
+        addProviderTiles(providers$Stamen.Toner, group = 'Stamen Toner') %>%
+        addProviderTiles(providers$Stamen.TonerLite, group = 'Stamen Toner Lite') %>% 
+        addProviderTiles(providers$Hydda.Full, group = 'Hydda Full') %>%
+        addProviderTiles(providers$Hydda.Base, group = 'Hydda Base') %>% 
+        addCircleMarkers(
+            data = cycle_stations, 
+            lng = ~x_lon, lat = ~y_lat,
+            group = 'Stations',
+            color = ~ifelse(area %in% c('Aldgate', 'Angel'), 'red', 'blue'),
+            radius = ~rescale(Freq, to = c(1, 20)),
+            stroke = FALSE,
+            fillOpacity = 0.5,
+    		label = lapply(
+            		    1:nrow(cycle_stations),
+            		    function(x)
+                            HTML(paste0(
+                                '<hr>',
+                                '<b>Place</b>: ', cycle_stations$place[x], '<br>', 
+                                '<b>Area</b>: ', cycle_stations$area[x], '<br>', 
+                                '<b>N. Rides</b>: ', format(cycle_stations$Freq[x], big.mark = ','), '<br>', 
+                                '<hr>'
+                            ))
+    		),
+        	labelOptions = labelOptions(
+        		textsize = '12px',
+        		direction = 'right',
+        		sticky = FALSE,
+        		offset = c(80, -50),
+        		style = list('font-weight' = 'normal', 'padding' = '2px 6px')
+        	),
+    		popup = lapply(
+                        1:nrow(cycle_stations),
+                        function(x)
+                            HTML(paste0(
+                                '<strong><font size="+1">
+                                    Number of rides by <em>Day of the week</em>
+                                </font></strong><br>',
+                                build_popup(cycle_stations$station_id[x])
+                            ))
+                    ),
+    		popupOptions = popupOptions(minWidth = 440)
+        ) %>% 
+    	addLayersControl(
+    		baseGroups = c('OSM Mapnik', 'OSM B&W', 'Stamen Toner', 'Stamen Toner Lite', 'Hydda Full', 'Hydda Base'),
+    		overlayGroups = c('Stations'),
+    		options = layersControlOptions(collapsed = TRUE)
+    	) %>% 
+    	addControl(
+    		tags$div(HTML(paste0(
+    		    '<p style="font-size:14px;padding:10px 5px 10px 10px;margin:0px;background-color:#F7E816;">', 
+    		    'London Santander Cycle Scheme. Usage Dec-18', 
+    		    '</p>' 
+            ))), 
+    		position = 'bottomleft'
+    	)
+    
+mp
+
+saveWidget(mp, 
+    'leaflet-test.html', 
+    selfcontained = TRUE, 
+    background = 'deepskyblue',
+	title = 'London Santander Cycle Scheme. Usage Dec-18'
+)
+
