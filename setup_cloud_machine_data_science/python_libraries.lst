@@ -22,12 +22,14 @@ tensorflow
 tflearn
 adanet
 keras
+mxnet
 tpot
 Optimus
 pybrain
 cntk
 nltk
 gensim
+spacy
 scrapy
 beautifulsoup4
 pattern3
