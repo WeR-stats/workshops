@@ -1,0 +1,391 @@
+name,updated_at,tot_shops,url,lad_id
+Aylesbury Vale,2019-03-17,1359,http://ratings.food.gov.uk/OpenDataFiles/FHRS021en-GB.xml,021
+Chiltern,2019-03-21,731,http://ratings.food.gov.uk/OpenDataFiles/FHRS022en-GB.xml,022
+South Buckinghamshire,2019-03-21,579,http://ratings.food.gov.uk/OpenDataFiles/FHRS024en-GB.xml,024
+Wycombe,2019-03-23,1165,http://ratings.food.gov.uk/OpenDataFiles/FHRS025en-GB.xml,025
+Cambridge City,2019-03-12,1334,http://ratings.food.gov.uk/OpenDataFiles/FHRS027en-GB.xml,027
+East Cambridgeshire,2019-03-23,672,http://ratings.food.gov.uk/OpenDataFiles/FHRS028en-GB.xml,028
+Fenland,2019-03-20,706,http://ratings.food.gov.uk/OpenDataFiles/FHRS029en-GB.xml,029
+Huntingdonshire,2019-03-22,1273,http://ratings.food.gov.uk/OpenDataFiles/FHRS030en-GB.xml,030
+South Cambridgeshire,2019-03-06,1039,http://ratings.food.gov.uk/OpenDataFiles/FHRS032en-GB.xml,032
+Allerdale,2019-03-22,1107,http://ratings.food.gov.uk/OpenDataFiles/FHRS055en-GB.xml,055
+Barrow-in-Furness,2019-03-21,542,http://ratings.food.gov.uk/OpenDataFiles/FHRS056en-GB.xml,056
+Carlisle City,2019-03-21,857,http://ratings.food.gov.uk/OpenDataFiles/FHRS057en-GB.xml,057
+Copeland,2019-03-20,657,http://ratings.food.gov.uk/OpenDataFiles/FHRS058en-GB.xml,058
+Eden,2019-03-20,873,http://ratings.food.gov.uk/OpenDataFiles/FHRS059en-GB.xml,059
+South Lakeland,2019-03-23,1668,http://ratings.food.gov.uk/OpenDataFiles/FHRS060en-GB.xml,060
+Amber Valley,2019-03-22,1001,http://ratings.food.gov.uk/OpenDataFiles/FHRS062en-GB.xml,062
+Bolsover,2019-03-19,690,http://ratings.food.gov.uk/OpenDataFiles/FHRS063en-GB.xml,063
+Chesterfield,2019-03-21,921,http://ratings.food.gov.uk/OpenDataFiles/FHRS064en-GB.xml,064
+Erewash,2019-03-22,900,http://ratings.food.gov.uk/OpenDataFiles/FHRS066en-GB.xml,066
+High Peak,2019-03-21,716,http://ratings.food.gov.uk/OpenDataFiles/FHRS067en-GB.xml,067
+North East Derbyshire,2019-03-19,782,http://ratings.food.gov.uk/OpenDataFiles/FHRS068en-GB.xml,068
+South Derbyshire,2019-03-23,727,http://ratings.food.gov.uk/OpenDataFiles/FHRS069en-GB.xml,069
+Derbyshire Dales,2019-03-18,936,http://ratings.food.gov.uk/OpenDataFiles/FHRS070en-GB.xml,070
+East Devon,2019-03-22,1430,http://ratings.food.gov.uk/OpenDataFiles/FHRS072en-GB.xml,072
+Exeter City,2019-03-21,1002,http://ratings.food.gov.uk/OpenDataFiles/FHRS073en-GB.xml,073
+Mid Devon,2019-03-22,515,http://ratings.food.gov.uk/OpenDataFiles/FHRS074en-GB.xml,074
+North Devon,2019-03-22,1435,http://ratings.food.gov.uk/OpenDataFiles/FHRS075en-GB.xml,075
+South Hams,2019-03-23,1076,http://ratings.food.gov.uk/OpenDataFiles/FHRS077en-GB.xml,077
+Teignbridge,2019-03-22,1261,http://ratings.food.gov.uk/OpenDataFiles/FHRS078en-GB.xml,078
+Torridge,2019-03-22,802,http://ratings.food.gov.uk/OpenDataFiles/FHRS080en-GB.xml,080
+West Devon,2019-03-21,564,http://ratings.food.gov.uk/OpenDataFiles/FHRS081en-GB.xml,081
+Christchurch,2019-03-22,424,http://ratings.food.gov.uk/OpenDataFiles/FHRS084en-GB.xml,084
+East Dorset,2019-03-22,660,http://ratings.food.gov.uk/OpenDataFiles/FHRS085en-GB.xml,085
+North Dorset,2019-03-21,764,http://ratings.food.gov.uk/OpenDataFiles/FHRS086en-GB.xml,086
+Purbeck,2019-03-23,570,http://ratings.food.gov.uk/OpenDataFiles/FHRS088en-GB.xml,088
+West Dorset,2019-03-23,1533,http://ratings.food.gov.uk/OpenDataFiles/FHRS089en-GB.xml,089
+Weymouth and Portland,2019-03-20,881,http://ratings.food.gov.uk/OpenDataFiles/FHRS090en-GB.xml,090
+Eastbourne,2019-03-14,1032,http://ratings.food.gov.uk/OpenDataFiles/FHRS102en-GB.xml,102
+Hastings,2019-03-22,832,http://ratings.food.gov.uk/OpenDataFiles/FHRS103en-GB.xml,103
+Lewes,2019-03-15,1055,http://ratings.food.gov.uk/OpenDataFiles/FHRS105en-GB.xml,105
+Rother,2019-03-23,938,http://ratings.food.gov.uk/OpenDataFiles/FHRS106en-GB.xml,106
+Wealden,2019-03-23,1341,http://ratings.food.gov.uk/OpenDataFiles/FHRS107en-GB.xml,107
+Basildon,2019-03-20,1162,http://ratings.food.gov.uk/OpenDataFiles/FHRS109en-GB.xml,109
+Braintree,2019-03-23,1125,http://ratings.food.gov.uk/OpenDataFiles/FHRS110en-GB.xml,110
+Brentwood,2019-03-23,602,http://ratings.food.gov.uk/OpenDataFiles/FHRS111en-GB.xml,111
+Castle Point,2019-03-23,466,http://ratings.food.gov.uk/OpenDataFiles/FHRS112en-GB.xml,112
+Chelmsford,2019-03-23,1292,http://ratings.food.gov.uk/OpenDataFiles/FHRS113en-GB.xml,113
+Colchester,2019-03-23,1487,http://ratings.food.gov.uk/OpenDataFiles/FHRS114en-GB.xml,114
+Epping Forest,2019-02-07,1054,http://ratings.food.gov.uk/OpenDataFiles/FHRS115en-GB.xml,115
+Harlow,2019-03-20,589,http://ratings.food.gov.uk/OpenDataFiles/FHRS116en-GB.xml,116
+Maldon,2019-03-22,568,http://ratings.food.gov.uk/OpenDataFiles/FHRS117en-GB.xml,117
+Rochford,2019-03-20,590,http://ratings.food.gov.uk/OpenDataFiles/FHRS118en-GB.xml,118
+Tendring,2019-03-19,1052,http://ratings.food.gov.uk/OpenDataFiles/FHRS120en-GB.xml,120
+Uttlesford,2019-03-22,776,http://ratings.food.gov.uk/OpenDataFiles/FHRS122en-GB.xml,122
+Cheltenham,2019-03-23,911,http://ratings.food.gov.uk/OpenDataFiles/FHRS124en-GB.xml,124
+Cotswold,2019-03-23,904,http://ratings.food.gov.uk/OpenDataFiles/FHRS125en-GB.xml,125
+Forest of Dean,2019-03-20,669,http://ratings.food.gov.uk/OpenDataFiles/FHRS126en-GB.xml,126
+Gloucester City,2019-03-22,892,http://ratings.food.gov.uk/OpenDataFiles/FHRS127en-GB.xml,127
+Stroud,2019-03-23,921,http://ratings.food.gov.uk/OpenDataFiles/FHRS128en-GB.xml,128
+Tewkesbury,2019-03-22,642,http://ratings.food.gov.uk/OpenDataFiles/FHRS129en-GB.xml,129
+Basingstoke and Deane,2019-03-21,1026,http://ratings.food.gov.uk/OpenDataFiles/FHRS131en-GB.xml,131
+East Hampshire,2019-03-24,896,http://ratings.food.gov.uk/OpenDataFiles/FHRS132en-GB.xml,132
+Eastleigh,2019-03-20,871,http://ratings.food.gov.uk/OpenDataFiles/FHRS133en-GB.xml,133
+Fareham,2019-03-23,637,http://ratings.food.gov.uk/OpenDataFiles/FHRS134en-GB.xml,134
+Gosport,2019-03-21,530,http://ratings.food.gov.uk/OpenDataFiles/FHRS135en-GB.xml,135
+Hart,2019-03-22,605,http://ratings.food.gov.uk/OpenDataFiles/FHRS136en-GB.xml,136
+Havant,2019-03-19,867,http://ratings.food.gov.uk/OpenDataFiles/FHRS137en-GB.xml,137
+New Forest,2019-03-21,1424,http://ratings.food.gov.uk/OpenDataFiles/FHRS138en-GB.xml,138
+Rushmoor,2019-03-21,650,http://ratings.food.gov.uk/OpenDataFiles/FHRS140en-GB.xml,140
+Test Valley,2019-03-23,898,http://ratings.food.gov.uk/OpenDataFiles/FHRS142en-GB.xml,142
+Winchester City,2019-03-23,862,http://ratings.food.gov.uk/OpenDataFiles/FHRS143en-GB.xml,143
+Bromsgrove,2019-03-21,664,http://ratings.food.gov.uk/OpenDataFiles/FHRS145en-GB.xml,145
+Malvern Hills,2019-03-22,723,http://ratings.food.gov.uk/OpenDataFiles/FHRS148en-GB.xml,148
+Redditch,2019-03-22,492,http://ratings.food.gov.uk/OpenDataFiles/FHRS149en-GB.xml,149
+Worcester City,2019-03-21,756,http://ratings.food.gov.uk/OpenDataFiles/FHRS151en-GB.xml,151
+Wychavon,2019-03-21,948,http://ratings.food.gov.uk/OpenDataFiles/FHRS152en-GB.xml,152
+Wyre Forest,2019-03-21,681,http://ratings.food.gov.uk/OpenDataFiles/FHRS153en-GB.xml,153
+Broxbourne,2019-02-14,665,http://ratings.food.gov.uk/OpenDataFiles/FHRS155en-GB.xml,155
+Dacorum,2019-03-13,1110,http://ratings.food.gov.uk/OpenDataFiles/FHRS156en-GB.xml,156
+East Hertfordshire,2019-03-23,1287,http://ratings.food.gov.uk/OpenDataFiles/FHRS157en-GB.xml,157
+Hertsmere,2019-03-20,755,http://ratings.food.gov.uk/OpenDataFiles/FHRS158en-GB.xml,158
+North Hertfordshire,2019-03-21,1055,http://ratings.food.gov.uk/OpenDataFiles/FHRS159en-GB.xml,159
+St Albans City,2019-03-20,923,http://ratings.food.gov.uk/OpenDataFiles/FHRS160en-GB.xml,160
+Stevenage,2019-03-05,517,http://ratings.food.gov.uk/OpenDataFiles/FHRS161en-GB.xml,161
+Three Rivers,2019-03-20,457,http://ratings.food.gov.uk/OpenDataFiles/FHRS162en-GB.xml,162
+Watford,2019-03-22,719,http://ratings.food.gov.uk/OpenDataFiles/FHRS163en-GB.xml,163
+Welwyn Hatfield,2019-02-15,750,http://ratings.food.gov.uk/OpenDataFiles/FHRS164en-GB.xml,164
+Ashford,2019-03-21,1069,http://ratings.food.gov.uk/OpenDataFiles/FHRS179en-GB.xml,179
+Canterbury City,2019-03-23,1582,http://ratings.food.gov.uk/OpenDataFiles/FHRS180en-GB.xml,180
+Dartford,2019-03-23,841,http://ratings.food.gov.uk/OpenDataFiles/FHRS181en-GB.xml,181
+Dover,2019-03-22,1132,http://ratings.food.gov.uk/OpenDataFiles/FHRS182en-GB.xml,182
+Gravesham,2019-03-15,679,http://ratings.food.gov.uk/OpenDataFiles/FHRS184en-GB.xml,184
+Maidstone,2019-03-22,1143,http://ratings.food.gov.uk/OpenDataFiles/FHRS185en-GB.xml,185
+Sevenoaks,2019-03-22,839,http://ratings.food.gov.uk/OpenDataFiles/FHRS187en-GB.xml,187
+Folkestone and Hythe,2019-03-22,1073,http://ratings.food.gov.uk/OpenDataFiles/FHRS188en-GB.xml,188
+Swale,2019-03-22,1054,http://ratings.food.gov.uk/OpenDataFiles/FHRS189en-GB.xml,189
+Thanet,2019-03-12,1348,http://ratings.food.gov.uk/OpenDataFiles/FHRS190en-GB.xml,190
+Tonbridge and Malling,2019-03-23,960,http://ratings.food.gov.uk/OpenDataFiles/FHRS191en-GB.xml,191
+Tunbridge Wells,2019-03-21,972,http://ratings.food.gov.uk/OpenDataFiles/FHRS192en-GB.xml,192
+Burnley,2019-03-15,876,http://ratings.food.gov.uk/OpenDataFiles/FHRS196en-GB.xml,196
+Chorley,2019-03-22,892,http://ratings.food.gov.uk/OpenDataFiles/FHRS197en-GB.xml,197
+Fylde,2019-03-22,746,http://ratings.food.gov.uk/OpenDataFiles/FHRS198en-GB.xml,198
+Hyndburn,2019-03-23,717,http://ratings.food.gov.uk/OpenDataFiles/FHRS199en-GB.xml,199
+Lancaster City,2019-03-23,1186,http://ratings.food.gov.uk/OpenDataFiles/FHRS200en-GB.xml,200
+Pendle,2019-03-22,797,http://ratings.food.gov.uk/OpenDataFiles/FHRS201en-GB.xml,201
+Preston,2019-03-24,1285,http://ratings.food.gov.uk/OpenDataFiles/FHRS202en-GB.xml,202
+Ribble Valley,2019-03-21,636,http://ratings.food.gov.uk/OpenDataFiles/FHRS203en-GB.xml,203
+Rossendale,2019-03-14,587,http://ratings.food.gov.uk/OpenDataFiles/FHRS204en-GB.xml,204
+South Ribble,2019-03-14,578,http://ratings.food.gov.uk/OpenDataFiles/FHRS205en-GB.xml,205
+West Lancashire,2019-03-20,812,http://ratings.food.gov.uk/OpenDataFiles/FHRS206en-GB.xml,206
+Wyre,2019-03-22,985,http://ratings.food.gov.uk/OpenDataFiles/FHRS207en-GB.xml,207
+Blaby,2019-03-21,644,http://ratings.food.gov.uk/OpenDataFiles/FHRS209en-GB.xml,209
+Charnwood,2019-03-23,1306,http://ratings.food.gov.uk/OpenDataFiles/FHRS210en-GB.xml,210
+Harborough,2019-03-21,772,http://ratings.food.gov.uk/OpenDataFiles/FHRS211en-GB.xml,211
+Hinckley and Bosworth,2019-03-23,852,http://ratings.food.gov.uk/OpenDataFiles/FHRS212en-GB.xml,212
+Melton,2019-03-23,450,http://ratings.food.gov.uk/OpenDataFiles/FHRS214en-GB.xml,214
+North West Leicestershire,2019-03-22,793,http://ratings.food.gov.uk/OpenDataFiles/FHRS215en-GB.xml,215
+Oadby and Wigston,2019-03-23,352,http://ratings.food.gov.uk/OpenDataFiles/FHRS216en-GB.xml,216
+Boston,2019-03-22,560,http://ratings.food.gov.uk/OpenDataFiles/FHRS219en-GB.xml,219
+East Lindsey,2019-03-23,1827,http://ratings.food.gov.uk/OpenDataFiles/FHRS220en-GB.xml,220
+Lincoln City,2019-03-23,957,http://ratings.food.gov.uk/OpenDataFiles/FHRS221en-GB.xml,221
+North Kesteven,2019-03-22,874,http://ratings.food.gov.uk/OpenDataFiles/FHRS222en-GB.xml,222
+South Holland,2019-03-22,745,http://ratings.food.gov.uk/OpenDataFiles/FHRS223en-GB.xml,223
+South Kesteven,2019-03-19,1159,http://ratings.food.gov.uk/OpenDataFiles/FHRS224en-GB.xml,224
+West Lindsey,2019-03-21,848,http://ratings.food.gov.uk/OpenDataFiles/FHRS225en-GB.xml,225
+Breckland,2019-03-23,1230,http://ratings.food.gov.uk/OpenDataFiles/FHRS227en-GB.xml,227
+Broadland,2019-03-21,905,http://ratings.food.gov.uk/OpenDataFiles/FHRS228en-GB.xml,228
+Great Yarmouth,2019-03-22,1041,http://ratings.food.gov.uk/OpenDataFiles/FHRS229en-GB.xml,229
+King's Lynn and West Norfolk,2019-03-23,1476,http://ratings.food.gov.uk/OpenDataFiles/FHRS230en-GB.xml,230
+North Norfolk,2019-03-22,1712,http://ratings.food.gov.uk/OpenDataFiles/FHRS231en-GB.xml,231
+Norwich City,2019-03-23,1424,http://ratings.food.gov.uk/OpenDataFiles/FHRS232en-GB.xml,232
+South Norfolk,2019-03-19,1005,http://ratings.food.gov.uk/OpenDataFiles/FHRS233en-GB.xml,233
+Corby,2019-03-21,389,http://ratings.food.gov.uk/OpenDataFiles/FHRS235en-GB.xml,235
+Daventry,2019-03-22,747,http://ratings.food.gov.uk/OpenDataFiles/FHRS236en-GB.xml,236
+East Northamptonshire,2019-03-19,742,http://ratings.food.gov.uk/OpenDataFiles/FHRS237en-GB.xml,237
+Kettering,2019-03-23,774,http://ratings.food.gov.uk/OpenDataFiles/FHRS238en-GB.xml,238
+Northampton,2019-03-19,1689,http://ratings.food.gov.uk/OpenDataFiles/FHRS239en-GB.xml,239
+South Northamptonshire,2019-03-22,780,http://ratings.food.gov.uk/OpenDataFiles/FHRS240en-GB.xml,240
+Wellingborough,2019-03-22,635,http://ratings.food.gov.uk/OpenDataFiles/FHRS241en-GB.xml,241
+Craven,2019-03-23,787,http://ratings.food.gov.uk/OpenDataFiles/FHRS250en-GB.xml,250
+Hambleton,2019-03-22,904,http://ratings.food.gov.uk/OpenDataFiles/FHRS251en-GB.xml,251
+Harrogate,2019-03-22,1408,http://ratings.food.gov.uk/OpenDataFiles/FHRS252en-GB.xml,252
+Richmondshire,2019-03-21,608,http://ratings.food.gov.uk/OpenDataFiles/FHRS253en-GB.xml,253
+Ryedale,2019-03-20,572,http://ratings.food.gov.uk/OpenDataFiles/FHRS254en-GB.xml,254
+Scarborough,2019-03-23,1628,http://ratings.food.gov.uk/OpenDataFiles/FHRS255en-GB.xml,255
+Selby,2019-03-22,637,http://ratings.food.gov.uk/OpenDataFiles/FHRS256en-GB.xml,256
+Ashfield,2019-03-13,828,http://ratings.food.gov.uk/OpenDataFiles/FHRS259en-GB.xml,259
+Bassetlaw,2019-03-22,940,http://ratings.food.gov.uk/OpenDataFiles/FHRS260en-GB.xml,260
+Broxtowe,2019-03-22,785,http://ratings.food.gov.uk/OpenDataFiles/FHRS261en-GB.xml,261
+Gedling,2019-03-24,676,http://ratings.food.gov.uk/OpenDataFiles/FHRS262en-GB.xml,262
+Mansfield,2019-03-21,777,http://ratings.food.gov.uk/OpenDataFiles/FHRS263en-GB.xml,263
+Newark and Sherwood,2019-03-23,1016,http://ratings.food.gov.uk/OpenDataFiles/FHRS264en-GB.xml,264
+Rushcliffe,2019-03-21,751,http://ratings.food.gov.uk/OpenDataFiles/FHRS266en-GB.xml,266
+Cherwell,2019-03-24,1093,http://ratings.food.gov.uk/OpenDataFiles/FHRS268en-GB.xml,268
+Oxford City,2019-03-23,1351,http://ratings.food.gov.uk/OpenDataFiles/FHRS269en-GB.xml,269
+South Oxfordshire,2019-03-21,1169,http://ratings.food.gov.uk/OpenDataFiles/FHRS270en-GB.xml,270
+Vale of White Horse,2019-03-22,944,http://ratings.food.gov.uk/OpenDataFiles/FHRS271en-GB.xml,271
+West Oxfordshire,2019-03-21,896,http://ratings.food.gov.uk/OpenDataFiles/FHRS272en-GB.xml,272
+Mendip,2019-03-20,1239,http://ratings.food.gov.uk/OpenDataFiles/FHRS281en-GB.xml,281
+Sedgemoor,2019-03-20,1276,http://ratings.food.gov.uk/OpenDataFiles/FHRS282en-GB.xml,282
+South Somerset,2019-03-20,1743,http://ratings.food.gov.uk/OpenDataFiles/FHRS283en-GB.xml,283
+Taunton Deane,2019-03-20,910,http://ratings.food.gov.uk/OpenDataFiles/FHRS284en-GB.xml,284
+West Somerset,2019-02-28,534,http://ratings.food.gov.uk/OpenDataFiles/FHRS285en-GB.xml,285
+Cannock Chase,2019-03-22,775,http://ratings.food.gov.uk/OpenDataFiles/FHRS287en-GB.xml,287
+East Staffordshire,2019-03-22,969,http://ratings.food.gov.uk/OpenDataFiles/FHRS288en-GB.xml,288
+Lichfield,2019-03-22,805,http://ratings.food.gov.uk/OpenDataFiles/FHRS289en-GB.xml,289
+Newcastle-Under-Lyme,2019-03-15,959,http://ratings.food.gov.uk/OpenDataFiles/FHRS290en-GB.xml,290
+South Staffordshire,2019-03-22,645,http://ratings.food.gov.uk/OpenDataFiles/FHRS291en-GB.xml,291
+Stafford,2019-03-23,1156,http://ratings.food.gov.uk/OpenDataFiles/FHRS292en-GB.xml,292
+Staffordshire Moorlands,2019-03-22,709,http://ratings.food.gov.uk/OpenDataFiles/FHRS293en-GB.xml,293
+Tamworth,2019-03-22,491,http://ratings.food.gov.uk/OpenDataFiles/FHRS295en-GB.xml,295
+Babergh,2019-03-19,856,http://ratings.food.gov.uk/OpenDataFiles/FHRS297en-GB.xml,297
+Forest Heath,2019-03-23,544,http://ratings.food.gov.uk/OpenDataFiles/FHRS298en-GB.xml,298
+Ipswich,2019-03-24,997,http://ratings.food.gov.uk/OpenDataFiles/FHRS299en-GB.xml,299
+Mid Suffolk,2019-03-22,852,http://ratings.food.gov.uk/OpenDataFiles/FHRS300en-GB.xml,300
+St Edmundsbury,2019-03-23,935,http://ratings.food.gov.uk/OpenDataFiles/FHRS301en-GB.xml,301
+East Suffolk,2019-03-24,2322,http://ratings.food.gov.uk/OpenDataFiles/FHRS302en-GB.xml,302
+Elmbridge,2019-03-14,1023,http://ratings.food.gov.uk/OpenDataFiles/FHRS305en-GB.xml,305
+Epsom and Ewell,2019-03-18,457,http://ratings.food.gov.uk/OpenDataFiles/FHRS306en-GB.xml,306
+Guildford,2019-03-24,928,http://ratings.food.gov.uk/OpenDataFiles/FHRS307en-GB.xml,307
+Mole Valley,2019-03-23,696,http://ratings.food.gov.uk/OpenDataFiles/FHRS308en-GB.xml,308
+Reigate and Banstead,2019-03-18,848,http://ratings.food.gov.uk/OpenDataFiles/FHRS309en-GB.xml,309
+Runnymede,2019-03-22,621,http://ratings.food.gov.uk/OpenDataFiles/FHRS310en-GB.xml,310
+Spelthorne,2019-03-23,722,http://ratings.food.gov.uk/OpenDataFiles/FHRS311en-GB.xml,311
+Surrey Heath,2019-03-21,573,http://ratings.food.gov.uk/OpenDataFiles/FHRS312en-GB.xml,312
+Tandridge,2018-12-13,683,http://ratings.food.gov.uk/OpenDataFiles/FHRS313en-GB.xml,313
+Waverley,2019-03-23,1042,http://ratings.food.gov.uk/OpenDataFiles/FHRS314en-GB.xml,314
+Woking,2019-03-21,746,http://ratings.food.gov.uk/OpenDataFiles/FHRS315en-GB.xml,315
+North Warwickshire,2019-03-22,577,http://ratings.food.gov.uk/OpenDataFiles/FHRS317en-GB.xml,317
+Nuneaton and Bedworth,2019-03-24,815,http://ratings.food.gov.uk/OpenDataFiles/FHRS318en-GB.xml,318
+Rugby,2019-03-22,819,http://ratings.food.gov.uk/OpenDataFiles/FHRS319en-GB.xml,319
+Stratford-on-Avon,2019-03-21,1304,http://ratings.food.gov.uk/OpenDataFiles/FHRS320en-GB.xml,320
+Warwick,2019-03-22,1333,http://ratings.food.gov.uk/OpenDataFiles/FHRS321en-GB.xml,321
+Adur,2019-03-19,429,http://ratings.food.gov.uk/OpenDataFiles/FHRS323en-GB.xml,323
+Arun,2019-03-23,1070,http://ratings.food.gov.uk/OpenDataFiles/FHRS324en-GB.xml,324
+Chichester,2019-03-22,1356,http://ratings.food.gov.uk/OpenDataFiles/FHRS325en-GB.xml,325
+Crawley,2019-03-23,841,http://ratings.food.gov.uk/OpenDataFiles/FHRS326en-GB.xml,326
+Horsham,2019-03-23,1074,http://ratings.food.gov.uk/OpenDataFiles/FHRS327en-GB.xml,327
+Mid Sussex,2019-03-23,1219,http://ratings.food.gov.uk/OpenDataFiles/FHRS328en-GB.xml,328
+Worthing,2019-03-23,914,http://ratings.food.gov.uk/OpenDataFiles/FHRS329en-GB.xml,329
+Isles of Scilly,2019-03-18,98,http://ratings.food.gov.uk/OpenDataFiles/FHRS336en-GB.xml,336
+Barnsley,2019-03-24,1777,http://ratings.food.gov.uk/OpenDataFiles/FHRS401en-GB.xml,401
+Birmingham,2019-03-23,6847,http://ratings.food.gov.uk/OpenDataFiles/FHRS402en-GB.xml,402
+Bolton,2019-03-24,2157,http://ratings.food.gov.uk/OpenDataFiles/FHRS403en-GB.xml,403
+Bradford,2019-03-23,3978,http://ratings.food.gov.uk/OpenDataFiles/FHRS404en-GB.xml,404
+Bury,2019-03-19,1172,http://ratings.food.gov.uk/OpenDataFiles/FHRS405en-GB.xml,405
+Calderdale,2019-03-20,2072,http://ratings.food.gov.uk/OpenDataFiles/FHRS406en-GB.xml,406
+Coventry,2019-03-21,2331,http://ratings.food.gov.uk/OpenDataFiles/FHRS407en-GB.xml,407
+Doncaster,2019-03-23,2750,http://ratings.food.gov.uk/OpenDataFiles/FHRS408en-GB.xml,408
+Dudley,2019-03-23,2220,http://ratings.food.gov.uk/OpenDataFiles/FHRS409en-GB.xml,409
+Gateshead,2019-03-23,1534,http://ratings.food.gov.uk/OpenDataFiles/FHRS410en-GB.xml,410
+Kirklees,2019-03-24,3645,http://ratings.food.gov.uk/OpenDataFiles/FHRS411en-GB.xml,411
+Knowsley,2019-03-23,663,http://ratings.food.gov.uk/OpenDataFiles/FHRS412en-GB.xml,412
+Leeds,2019-03-23,4894,http://ratings.food.gov.uk/OpenDataFiles/FHRS413en-GB.xml,413
+Liverpool,2019-03-23,3431,http://ratings.food.gov.uk/OpenDataFiles/FHRS414en-GB.xml,414
+Manchester,2019-03-21,4216,http://ratings.food.gov.uk/OpenDataFiles/FHRS415en-GB.xml,415
+Newcastle Upon Tyne,2019-03-23,2427,http://ratings.food.gov.uk/OpenDataFiles/FHRS416en-GB.xml,416
+North Tyneside,2019-03-21,1305,http://ratings.food.gov.uk/OpenDataFiles/FHRS417en-GB.xml,417
+Oldham,2019-03-23,1685,http://ratings.food.gov.uk/OpenDataFiles/FHRS418en-GB.xml,418
+Rochdale,2019-03-22,1602,http://ratings.food.gov.uk/OpenDataFiles/FHRS419en-GB.xml,419
+Rotherham,2019-03-22,1946,http://ratings.food.gov.uk/OpenDataFiles/FHRS420en-GB.xml,420
+St Helens,2019-03-23,1126,http://ratings.food.gov.uk/OpenDataFiles/FHRS421en-GB.xml,421
+Salford,2019-03-23,1876,http://ratings.food.gov.uk/OpenDataFiles/FHRS422en-GB.xml,422
+Sandwell,2019-03-23,2227,http://ratings.food.gov.uk/OpenDataFiles/FHRS423en-GB.xml,423
+Sefton,2019-03-23,2062,http://ratings.food.gov.uk/OpenDataFiles/FHRS424en-GB.xml,424
+Sheffield,2019-03-23,3585,http://ratings.food.gov.uk/OpenDataFiles/FHRS425en-GB.xml,425
+Solihull,2019-03-16,1440,http://ratings.food.gov.uk/OpenDataFiles/FHRS426en-GB.xml,426
+South Tyneside,2019-03-21,1064,http://ratings.food.gov.uk/OpenDataFiles/FHRS427en-GB.xml,427
+Stockport,2019-03-24,2151,http://ratings.food.gov.uk/OpenDataFiles/FHRS428en-GB.xml,428
+Sunderland,2019-03-22,2045,http://ratings.food.gov.uk/OpenDataFiles/FHRS429en-GB.xml,429
+Tameside,2019-03-22,1458,http://ratings.food.gov.uk/OpenDataFiles/FHRS430en-GB.xml,430
+Trafford,2019-03-23,2056,http://ratings.food.gov.uk/OpenDataFiles/FHRS431en-GB.xml,431
+Wakefield,2019-03-23,2577,http://ratings.food.gov.uk/OpenDataFiles/FHRS432en-GB.xml,432
+Walsall,2019-03-24,1705,http://ratings.food.gov.uk/OpenDataFiles/FHRS433en-GB.xml,433
+Wigan,2019-03-23,1960,http://ratings.food.gov.uk/OpenDataFiles/FHRS434en-GB.xml,434
+Wirral,2019-03-24,2183,http://ratings.food.gov.uk/OpenDataFiles/FHRS435en-GB.xml,435
+Wolverhampton,2019-03-22,1748,http://ratings.food.gov.uk/OpenDataFiles/FHRS436en-GB.xml,436
+Barking and Dagenham,2019-03-22,1010,http://ratings.food.gov.uk/OpenDataFiles/FHRS501en-GB.xml,501
+Barnet,2019-03-23,2055,http://ratings.food.gov.uk/OpenDataFiles/FHRS502en-GB.xml,502
+Bexley,2019-03-23,1467,http://ratings.food.gov.uk/OpenDataFiles/FHRS503en-GB.xml,503
+Brent,2019-03-20,2017,http://ratings.food.gov.uk/OpenDataFiles/FHRS504en-GB.xml,504
+Bromley,2019-03-23,2214,http://ratings.food.gov.uk/OpenDataFiles/FHRS505en-GB.xml,505
+Camden,2019-03-24,2864,http://ratings.food.gov.uk/OpenDataFiles/FHRS506en-GB.xml,506
+Croydon,2019-03-18,2551,http://ratings.food.gov.uk/OpenDataFiles/FHRS507en-GB.xml,507
+City of London Corporation,2019-03-22,1803,http://ratings.food.gov.uk/OpenDataFiles/FHRS508en-GB.xml,508
+Ealing,2019-03-24,2559,http://ratings.food.gov.uk/OpenDataFiles/FHRS509en-GB.xml,509
+Enfield,2019-03-23,2076,http://ratings.food.gov.uk/OpenDataFiles/FHRS510en-GB.xml,510
+Greenwich,2019-03-22,1735,http://ratings.food.gov.uk/OpenDataFiles/FHRS511en-GB.xml,511
+Hackney,2019-03-23,2400,http://ratings.food.gov.uk/OpenDataFiles/FHRS512en-GB.xml,512
+Hammersmith and Fulham,2019-03-21,1801,http://ratings.food.gov.uk/OpenDataFiles/FHRS513en-GB.xml,513
+Haringey,2019-03-21,1773,http://ratings.food.gov.uk/OpenDataFiles/FHRS514en-GB.xml,514
+Harrow,2019-03-23,1337,http://ratings.food.gov.uk/OpenDataFiles/FHRS515en-GB.xml,515
+Havering,2019-03-22,1644,http://ratings.food.gov.uk/OpenDataFiles/FHRS516en-GB.xml,516
+Hillingdon,2019-03-22,1916,http://ratings.food.gov.uk/OpenDataFiles/FHRS517en-GB.xml,517
+Hounslow,2019-03-21,1622,http://ratings.food.gov.uk/OpenDataFiles/FHRS518en-GB.xml,518
+Islington,2019-03-22,2139,http://ratings.food.gov.uk/OpenDataFiles/FHRS519en-GB.xml,519
+Kensington and Chelsea,2019-03-21,1712,http://ratings.food.gov.uk/OpenDataFiles/FHRS520en-GB.xml,520
+Kingston-Upon-Thames,2019-03-24,1050,http://ratings.food.gov.uk/OpenDataFiles/FHRS521en-GB.xml,521
+Lambeth,2019-03-23,3070,http://ratings.food.gov.uk/OpenDataFiles/FHRS522en-GB.xml,522
+Lewisham,2019-03-20,2035,http://ratings.food.gov.uk/OpenDataFiles/FHRS523en-GB.xml,523
+Merton,2019-03-23,1323,http://ratings.food.gov.uk/OpenDataFiles/FHRS524en-GB.xml,524
+Newham,2019-03-22,1865,http://ratings.food.gov.uk/OpenDataFiles/FHRS525en-GB.xml,525
+Redbridge,2019-03-23,1683,http://ratings.food.gov.uk/OpenDataFiles/FHRS526en-GB.xml,526
+Richmond-Upon-Thames,2019-03-21,1434,http://ratings.food.gov.uk/OpenDataFiles/FHRS527en-GB.xml,527
+Southwark,2019-03-23,2754,http://ratings.food.gov.uk/OpenDataFiles/FHRS528en-GB.xml,528
+Sutton,2019-03-21,945,http://ratings.food.gov.uk/OpenDataFiles/FHRS529en-GB.xml,529
+Tower Hamlets,2019-03-24,2583,http://ratings.food.gov.uk/OpenDataFiles/FHRS530en-GB.xml,530
+Waltham Forest,2019-03-24,1735,http://ratings.food.gov.uk/OpenDataFiles/FHRS531en-GB.xml,531
+Wandsworth,2019-03-22,2177,http://ratings.food.gov.uk/OpenDataFiles/FHRS532en-GB.xml,532
+Westminster,2019-03-23,4423,http://ratings.food.gov.uk/OpenDataFiles/FHRS533en-GB.xml,533
+Conwy,2019-03-24,1645,http://ratings.food.gov.uk/OpenDataFiles/FHRS550en-GB.xml,550
+Anglesey,2019-03-21,715,http://ratings.food.gov.uk/OpenDataFiles/FHRS551en-GB.xml,551
+Blaenau Gwent,2019-03-24,612,http://ratings.food.gov.uk/OpenDataFiles/FHRS552en-GB.xml,552
+Bridgend,2019-03-22,1297,http://ratings.food.gov.uk/OpenDataFiles/FHRS553en-GB.xml,553
+Gwynedd,2019-03-22,2038,http://ratings.food.gov.uk/OpenDataFiles/FHRS554en-GB.xml,554
+Caerphilly,2019-03-23,1430,http://ratings.food.gov.uk/OpenDataFiles/FHRS555en-GB.xml,555
+Cardiff,2019-03-24,3281,http://ratings.food.gov.uk/OpenDataFiles/FHRS556en-GB.xml,556
+Ceredigion,2019-03-16,1142,http://ratings.food.gov.uk/OpenDataFiles/FHRS557en-GB.xml,557
+Carmarthenshire,2019-03-23,1695,http://ratings.food.gov.uk/OpenDataFiles/FHRS558en-GB.xml,558
+Denbighshire,2019-03-24,987,http://ratings.food.gov.uk/OpenDataFiles/FHRS559en-GB.xml,559
+Flintshire,2019-03-23,1136,http://ratings.food.gov.uk/OpenDataFiles/FHRS560en-GB.xml,560
+Merthyr Tydfil,2019-03-23,504,http://ratings.food.gov.uk/OpenDataFiles/FHRS561en-GB.xml,561
+Monmouthshire,2019-03-23,919,http://ratings.food.gov.uk/OpenDataFiles/FHRS562en-GB.xml,562
+Neath Port Talbot,2019-03-22,1031,http://ratings.food.gov.uk/OpenDataFiles/FHRS563en-GB.xml,563
+Newport,2019-03-21,1372,http://ratings.food.gov.uk/OpenDataFiles/FHRS564en-GB.xml,564
+Pembrokeshire,2019-03-23,1841,http://ratings.food.gov.uk/OpenDataFiles/FHRS565en-GB.xml,565
+Powys,2019-03-22,2275,http://ratings.food.gov.uk/OpenDataFiles/FHRS566en-GB.xml,566
+Rhondda Cynon Taf,2019-03-24,1935,http://ratings.food.gov.uk/OpenDataFiles/FHRS567en-GB.xml,567
+Swansea,2019-03-23,1831,http://ratings.food.gov.uk/OpenDataFiles/FHRS568en-GB.xml,568
+Torfaen,2019-03-23,768,http://ratings.food.gov.uk/OpenDataFiles/FHRS569en-GB.xml,569
+Vale of Glamorgan,2019-03-22,1234,http://ratings.food.gov.uk/OpenDataFiles/FHRS570en-GB.xml,570
+Wrexham,2019-03-23,1034,http://ratings.food.gov.uk/OpenDataFiles/FHRS571en-GB.xml,571
+Bedford,2019-03-24,1397,http://ratings.food.gov.uk/OpenDataFiles/FHRS701en-GB.xml,701
+Central Bedfordshire,2019-03-14,1350,http://ratings.food.gov.uk/OpenDataFiles/FHRS702en-GB.xml,702
+Cheshire East,2019-03-23,2489,http://ratings.food.gov.uk/OpenDataFiles/FHRS703en-GB.xml,703
+Cheshire West and Chester,2019-03-21,3011,http://ratings.food.gov.uk/OpenDataFiles/FHRS704en-GB.xml,704
+Cornwall,2019-03-22,4652,http://ratings.food.gov.uk/OpenDataFiles/FHRS705en-GB.xml,705
+Durham,2019-03-23,4327,http://ratings.food.gov.uk/OpenDataFiles/FHRS706en-GB.xml,706
+Northumberland,2019-03-22,3429,http://ratings.food.gov.uk/OpenDataFiles/FHRS707en-GB.xml,707
+Shropshire,2019-03-24,2413,http://ratings.food.gov.uk/OpenDataFiles/FHRS708en-GB.xml,708
+Wiltshire,2019-03-23,3701,http://ratings.food.gov.uk/OpenDataFiles/FHRS709en-GB.xml,709
+Aberdeen City,2019-03-12,1802,http://ratings.food.gov.uk/OpenDataFiles/FHRS760en-GB.xml,760
+Aberdeenshire,2019-03-19,2101,http://ratings.food.gov.uk/OpenDataFiles/FHRS761en-GB.xml,761
+Angus,2019-02-08,913,http://ratings.food.gov.uk/OpenDataFiles/FHRS762en-GB.xml,762
+Argyll and Bute,2019-03-15,907,http://ratings.food.gov.uk/OpenDataFiles/FHRS763en-GB.xml,763
+East Ayrshire,2019-03-08,1070,http://ratings.food.gov.uk/OpenDataFiles/FHRS764en-GB.xml,764
+North Ayrshire,2019-03-22,1343,http://ratings.food.gov.uk/OpenDataFiles/FHRS765en-GB.xml,765
+South Ayrshire,2019-02-14,1311,http://ratings.food.gov.uk/OpenDataFiles/FHRS766en-GB.xml,766
+Scottish Borders,2019-03-22,1539,http://ratings.food.gov.uk/OpenDataFiles/FHRS767en-GB.xml,767
+Clackmannanshire,2019-03-11,487,http://ratings.food.gov.uk/OpenDataFiles/FHRS768en-GB.xml,768
+West Dunbartonshire,2019-03-21,745,http://ratings.food.gov.uk/OpenDataFiles/FHRS769en-GB.xml,769
+Dumfries and Galloway,2019-02-14,1515,http://ratings.food.gov.uk/OpenDataFiles/FHRS770en-GB.xml,770
+East Dunbartonshire,2019-03-20,577,http://ratings.food.gov.uk/OpenDataFiles/FHRS771en-GB.xml,771
+Dundee City,2019-03-22,1444,http://ratings.food.gov.uk/OpenDataFiles/FHRS772en-GB.xml,772
+Edinburgh (City of),2019-03-22,4259,http://ratings.food.gov.uk/OpenDataFiles/FHRS773en-GB.xml,773
+Falkirk,2019-03-18,1236,http://ratings.food.gov.uk/OpenDataFiles/FHRS774en-GB.xml,774
+Fife,2019-03-19,4090,http://ratings.food.gov.uk/OpenDataFiles/FHRS775en-GB.xml,775
+Glasgow City,2019-03-22,5298,http://ratings.food.gov.uk/OpenDataFiles/FHRS776en-GB.xml,776
+Highland,2019-03-22,3899,http://ratings.food.gov.uk/OpenDataFiles/FHRS777en-GB.xml,777
+Inverclyde,2019-03-22,582,http://ratings.food.gov.uk/OpenDataFiles/FHRS778en-GB.xml,778
+North Lanarkshire,2019-03-22,2617,http://ratings.food.gov.uk/OpenDataFiles/FHRS779en-GB.xml,779
+South Lanarkshire,2019-03-22,2213,http://ratings.food.gov.uk/OpenDataFiles/FHRS780en-GB.xml,780
+East Lothian,2019-03-23,864,http://ratings.food.gov.uk/OpenDataFiles/FHRS781en-GB.xml,781
+West Lothian,2019-03-21,961,http://ratings.food.gov.uk/OpenDataFiles/FHRS782en-GB.xml,782
+Midlothian,2019-03-22,620,http://ratings.food.gov.uk/OpenDataFiles/FHRS783en-GB.xml,783
+Moray,2019-03-22,1084,http://ratings.food.gov.uk/OpenDataFiles/FHRS784en-GB.xml,784
+Orkney Islands,2019-03-15,311,http://ratings.food.gov.uk/OpenDataFiles/FHRS785en-GB.xml,785
+Perth and Kinross,2019-03-19,1038,http://ratings.food.gov.uk/OpenDataFiles/FHRS786en-GB.xml,786
+East Renfrewshire,2019-03-15,652,http://ratings.food.gov.uk/OpenDataFiles/FHRS787en-GB.xml,787
+Renfrewshire,2019-03-22,1372,http://ratings.food.gov.uk/OpenDataFiles/FHRS788en-GB.xml,788
+Shetland Islands,2019-03-22,346,http://ratings.food.gov.uk/OpenDataFiles/FHRS789en-GB.xml,789
+Stirling,2019-03-21,1291,http://ratings.food.gov.uk/OpenDataFiles/FHRS790en-GB.xml,790
+Comhairle nan Eilean Siar (Western Isles),2019-03-18,443,http://ratings.food.gov.uk/OpenDataFiles/FHRS791en-GB.xml,791
+Antrim and Newtownabbey,2019-03-21,1107,http://ratings.food.gov.uk/OpenDataFiles/FHRS801en-GB.xml,801
+Ards and North Down,2019-03-22,1288,http://ratings.food.gov.uk/OpenDataFiles/FHRS802en-GB.xml,802
+"Armagh City, Banbridge and Craigavon",2019-03-22,1653,http://ratings.food.gov.uk/OpenDataFiles/FHRS803en-GB.xml,803
+Mid and East Antrim,2019-03-23,1138,http://ratings.food.gov.uk/OpenDataFiles/FHRS804en-GB.xml,804
+Causeway Coast and Glens,2019-03-22,1473,http://ratings.food.gov.uk/OpenDataFiles/FHRS805en-GB.xml,805
+Belfast City,2019-03-23,3036,http://ratings.food.gov.uk/OpenDataFiles/FHRS807en-GB.xml,807
+Lisburn and Castlereagh City,2019-03-22,849,http://ratings.food.gov.uk/OpenDataFiles/FHRS809en-GB.xml,809
+Mid Ulster,2019-03-23,1286,http://ratings.food.gov.uk/OpenDataFiles/FHRS811en-GB.xml,811
+Derry City and Strabane,2019-03-21,1298,http://ratings.food.gov.uk/OpenDataFiles/FHRS813en-GB.xml,813
+"Newry, Mourne and Down",2019-03-22,1578,http://ratings.food.gov.uk/OpenDataFiles/FHRS814en-GB.xml,814
+Fermanagh and Omagh,2019-03-21,1349,http://ratings.food.gov.uk/OpenDataFiles/FHRS816en-GB.xml,816
+Bristol,2019-03-24,4040,http://ratings.food.gov.uk/OpenDataFiles/FHRS855en-GB.xml,855
+South Gloucestershire,2019-03-12,1811,http://ratings.food.gov.uk/OpenDataFiles/FHRS856en-GB.xml,856
+Bath and North East Somerset,2019-03-22,1705,http://ratings.food.gov.uk/OpenDataFiles/FHRS857en-GB.xml,857
+North Somerset,2019-03-23,971,http://ratings.food.gov.uk/OpenDataFiles/FHRS858en-GB.xml,858
+Hartlepool,2019-03-21,736,http://ratings.food.gov.uk/OpenDataFiles/FHRS859en-GB.xml,859
+Redcar and Cleveland,2019-03-21,1025,http://ratings.food.gov.uk/OpenDataFiles/FHRS860en-GB.xml,860
+Middlesbrough,2019-03-19,1135,http://ratings.food.gov.uk/OpenDataFiles/FHRS861en-GB.xml,861
+Stockton On Tees,2019-03-19,1481,http://ratings.food.gov.uk/OpenDataFiles/FHRS862en-GB.xml,862
+East Riding of Yorkshire,2019-03-23,2948,http://ratings.food.gov.uk/OpenDataFiles/FHRS863en-GB.xml,863
+North Lincolnshire,2019-03-22,1370,http://ratings.food.gov.uk/OpenDataFiles/FHRS864en-GB.xml,864
+North East Lincolnshire,2019-03-21,1353,http://ratings.food.gov.uk/OpenDataFiles/FHRS865en-GB.xml,865
+Hull City,2019-03-23,2094,http://ratings.food.gov.uk/OpenDataFiles/FHRS866en-GB.xml,866
+Isle of Wight,2019-03-23,1968,http://ratings.food.gov.uk/OpenDataFiles/FHRS867en-GB.xml,867
+York,2019-03-22,1895,http://ratings.food.gov.uk/OpenDataFiles/FHRS868en-GB.xml,868
+Luton,2019-03-18,1094,http://ratings.food.gov.uk/OpenDataFiles/FHRS869en-GB.xml,869
+Milton Keynes,2019-03-23,1997,http://ratings.food.gov.uk/OpenDataFiles/FHRS870en-GB.xml,870
+Derby City,2019-03-22,1767,http://ratings.food.gov.uk/OpenDataFiles/FHRS871en-GB.xml,871
+Bournemouth,2019-03-19,1832,http://ratings.food.gov.uk/OpenDataFiles/FHRS872en-GB.xml,872
+Poole,2019-03-23,815,http://ratings.food.gov.uk/OpenDataFiles/FHRS873en-GB.xml,873
+Darlington,2019-03-22,908,http://ratings.food.gov.uk/OpenDataFiles/FHRS874en-GB.xml,874
+Brighton and Hove,2019-03-23,3081,http://ratings.food.gov.uk/OpenDataFiles/FHRS875en-GB.xml,875
+Portsmouth,2019-03-22,1785,http://ratings.food.gov.uk/OpenDataFiles/FHRS876en-GB.xml,876
+Southampton,2019-03-22,1334,http://ratings.food.gov.uk/OpenDataFiles/FHRS877en-GB.xml,877
+Leicester City,2019-03-22,2770,http://ratings.food.gov.uk/OpenDataFiles/FHRS878en-GB.xml,878
+Rutland,2019-03-13,412,http://ratings.food.gov.uk/OpenDataFiles/FHRS879en-GB.xml,879
+Stoke-On-Trent,2019-03-23,1916,http://ratings.food.gov.uk/OpenDataFiles/FHRS880en-GB.xml,880
+Swindon,2019-03-22,1500,http://ratings.food.gov.uk/OpenDataFiles/FHRS881en-GB.xml,881
+Bracknell Forest,2019-03-23,689,http://ratings.food.gov.uk/OpenDataFiles/FHRS882en-GB.xml,882
+West Berkshire,2019-03-23,1145,http://ratings.food.gov.uk/OpenDataFiles/FHRS883en-GB.xml,883
+Reading,2019-03-21,1216,http://ratings.food.gov.uk/OpenDataFiles/FHRS884en-GB.xml,884
+Slough,2019-03-20,720,http://ratings.food.gov.uk/OpenDataFiles/FHRS885en-GB.xml,885
+Windsor and Maidenhead,2019-03-12,1259,http://ratings.food.gov.uk/OpenDataFiles/FHRS886en-GB.xml,886
+Wokingham,2019-03-21,930,http://ratings.food.gov.uk/OpenDataFiles/FHRS887en-GB.xml,887
+Peterborough City,2019-03-21,1662,http://ratings.food.gov.uk/OpenDataFiles/FHRS888en-GB.xml,888
+Halton,2019-03-22,908,http://ratings.food.gov.uk/OpenDataFiles/FHRS889en-GB.xml,889
+Warrington,2019-03-22,1740,http://ratings.food.gov.uk/OpenDataFiles/FHRS890en-GB.xml,890
+Plymouth City,2019-03-21,1529,http://ratings.food.gov.uk/OpenDataFiles/FHRS891en-GB.xml,891
+Torbay,2019-03-23,1096,http://ratings.food.gov.uk/OpenDataFiles/FHRS892en-GB.xml,892
+Southend-On-Sea,2019-03-23,1557,http://ratings.food.gov.uk/OpenDataFiles/FHRS893en-GB.xml,893
+Thurrock,2019-03-19,978,http://ratings.food.gov.uk/OpenDataFiles/FHRS894en-GB.xml,894
+Herefordshire,2019-03-23,1906,http://ratings.food.gov.uk/OpenDataFiles/FHRS895en-GB.xml,895
+Medway,2019-03-21,1713,http://ratings.food.gov.uk/OpenDataFiles/FHRS896en-GB.xml,896
+Blackburn,2019-03-22,1180,http://ratings.food.gov.uk/OpenDataFiles/FHRS897en-GB.xml,897
+Blackpool,2019-03-23,1731,http://ratings.food.gov.uk/OpenDataFiles/FHRS898en-GB.xml,898
+Nottingham City,2019-03-23,2664,http://ratings.food.gov.uk/OpenDataFiles/FHRS899en-GB.xml,899
+Telford and Wrekin Council,2019-03-21,1266,http://ratings.food.gov.uk/OpenDataFiles/FHRS900en-GB.xml,900

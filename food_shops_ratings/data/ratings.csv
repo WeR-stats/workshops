@@ -1,0 +1,30 @@
+index,name,value,description
+rating,rating,0,Urgent improvement is required
+rating,rating,1,Major improvement is necessary
+rating,rating,2,Some improvement is necessary
+rating,rating,3,Hygiene standards are generally satisfactory
+rating,rating,4,Hygiene standards are good
+rating,rating,5,Hygiene standards are very good
+rating,rating,7,Awaiting Inspection
+rating,rating,8,Awaiting Publication
+rating,rating,9,Exempt
+rating,rating,11,Pass And Eat Safe
+rating,rating,12,Pass
+rating,rating,13,Improvement Required
+score_H,Hygiene,0,Very Good
+score_H,Hygiene,5,Good
+score_H,Hygiene,10,Generally satisfactory
+score_H,Hygiene,15,Improvement necessary
+score_H,Hygiene,20,Major improvement necessary
+score_H,Hygiene,25,Urgent improvement necessary
+score_S,Structural,0,Very Good
+score_S,Structural,5,Good
+score_S,Structural,10,Generally satisfactory
+score_S,Structural,15,Improvement necessary
+score_S,Structural,20,Major improvement necessary
+score_S,Structural,25,Urgent improvement necessary
+score_C,Confidence,0,Very Good
+score_C,Confidence,5,Good
+score_C,Confidence,10,Generally satisfactory
+score_C,Confidence,20,Major improvement necessary
+score_C,Confidence,30,Urgent improvement necessary
