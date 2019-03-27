@@ -45,21 +45,22 @@
   - [ggplot2]() + its many [extensions](http://www.ggplot2-exts.org/gallery/)
   - [tmap](https://github.com/mtennekes/tmap) {spatial}
 
-### Tools, Palettes, Spatial
+### Palettes, Themes
 [Comparison](https://yutannihilation.github.io/allYourFigureAreBelongToUs/)
 
-  - [classInt](https://r-spatial.github.io/classInt/)
-  - [scales](https://github.com/r-lib/scales)
   - [ggthemes](https://jrnold.github.io/ggthemes/) {ggplot2 extension}
   - [RColorBrewer](https://cran.r-project.org/package=RColorBrewer)
   - [scico](https://github.com/thomasp85/scico)
   - [viridis](https://github.com/sjmgarnier/viridis)
+  - [classInt](https://r-spatial.github.io/classInt/)
+  - [scales](https://github.com/r-lib/scales)
+  
+## Spatial Tools
   - [dggridR](https://github.com/r-barnes/dggridR)
   - [rgdal](http://rgdal.r-forge.r-project.org/)
   - [rgeos](https://r-forge.r-project.org/projects/rgeos/)
   - [rmapshaper](https://github.com/ateucher/rmapshaper)
   - [sp](https://github.com/edzer/sp/)
-  - [htmltools](https://github.com/rstudio/htmltools)
   
 ## Data Presentation 
   - [rmarkdown](https://rmarkdown.rstudio.com/) and its [free books online](https://bookdown.org/yihui/rmarkdown/)
