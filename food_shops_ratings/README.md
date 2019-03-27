@@ -4,7 +4,7 @@
   - [ONS Geography Portal](http://geoportal.statistics.gov.uk/)  
   - [ColorBrewer](http://colorbrewer2.org/)
   - [Maptiles providers](http://leaflet-extras.github.io/leaflet-providers/preview/)
-  
+
 # Notable R Packages
 
 ## Data I/O and Wrangling
@@ -49,20 +49,20 @@
 [Comparison](https://yutannihilation.github.io/allYourFigureAreBelongToUs/)
 
   - [classInt](https://r-spatial.github.io/classInt/)
-  - [scales](https://github.[Comparison]()
-  com/r-lib/scales)
-  - [ggthemes](https://jrnold.github.io/ggthemes/) {ggplot2 extension} see also [this gallery]()
-  - [RColorBrewer]()
-  - [scico]()
-  - [viridis]()
-  - [dggridR]()
-  - [rgdal]()
-  - [rgeos]()
-  - [rmapshaper]()
-  - [sp]()
-  - [htmltools]()
+  - [scales](https://github.com/r-lib/scales)
+  - [ggthemes](https://jrnold.github.io/ggthemes/) {ggplot2 extension}
+  - [RColorBrewer](https://cran.r-project.org/package=RColorBrewer)
+  - [scico](https://github.com/thomasp85/scico)
+  - [viridis](https://github.com/sjmgarnier/viridis)
+  - [dggridR](https://github.com/r-barnes/dggridR)
+  - [rgdal](http://rgdal.r-forge.r-project.org/)
+  - [rgeos](https://r-forge.r-project.org/projects/rgeos/)
+  - [rmapshaper](https://github.com/ateucher/rmapshaper)
+  - [sp](https://github.com/edzer/sp/)
+  - [htmltools](https://github.com/rstudio/htmltools)
   
 ## Data Presentation 
-  - [rmarkdown](https://rmarkdown.rstudio.com/) [free books online](https://bookdown.org/yihui/rmarkdown/)
-  - [shiny]()
-  - [shinyWidgets]()
+  - [rmarkdown](https://rmarkdown.rstudio.com/) and its [free books online](https://bookdown.org/yihui/rmarkdown/)
+  - [shiny](https://shiny.rstudio.com/)
+  - [shinyWidgets](https://dreamrs.github.io/shinyWidgets/index.html)
+  - [shinyjs](https://github.com/daattali/shinyjs)
