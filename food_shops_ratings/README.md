@@ -65,5 +65,5 @@
 ## Data Presentation 
   - [rmarkdown](https://rmarkdown.rstudio.com/) and its [free books online](https://bookdown.org/yihui/rmarkdown/)
   - [shiny](https://shiny.rstudio.com/) and the many [RStudio Webinars](https://www.rstudio.com/resources/webinars/#shinyessentials)
-  - [shinyWidgets](https://dreamrs.github.io/shinyWidgets/index.html)
   - [shinyjs](https://github.com/daattali/shinyjs)
+  - [shinyWidgets](https://dreamrs.github.io/shinyWidgets/index.html)
