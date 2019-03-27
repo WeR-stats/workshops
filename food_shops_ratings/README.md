@@ -10,6 +10,7 @@
 ## Data I/O and Wrangling
   - [data.table](https://github.com/Rdatatable/data.table) 
   - [fst](https://www.fstpackage.org/)
+  - [htmltools](https://github.com/rstudio/htmltools)
   - [rvest](https://rvest.tidyverse.org/)
   - [XML](http://www.omegahat.net/RSXML/)
 
@@ -28,25 +29,37 @@
   - [kable](https://yihui.name/knitr/) + [kableExtra](https://github.com/haozhu233/kableExtra) {HTML/LaTeX}
   - [huxtable](https://github.com/hughjonesd/huxtable) {HTML/LaTeX}
   - [pixiedust](https://github.com/nutterb/pixiedust) {HTML/LaTeX}
-  - [ztable](https://github.com/cardiomoon/ztable) {HTML/LaTeX}
   - [basictabler](https://github.com/cbailiss/basictabler) {Excel}
-  - [stargazer](https://cran.r-project.org/package=stargazer) {LaTeX}
-  - [xtable](http://r-forge.r-project.org/projects/xtable/ {LaTeX} {}
-  - [tables](http://r-forge.r-project.org/projects/tables/) {LaTeX} {}
-
  
 ## Data Visualization
 
 ### Interactive
- - [rbokeh](http://hafen.github.io/rbokeh/) {generic}
- - [echarts4r](https://echarts4r.john-coene.com/) {generic}
- - [highcharter](http://jkunst.com/highcharter/) {generic}
- - [leaflet](https://rstudio.github.io/leaflet/) + [leaflet.extras](https://bhaskarvk.github.io/leaflet.extras/) {spatial}
- - [mapview](https://r-spatial.github.io/mapview/) {spatial}
- - [ggiraph](https://davidgohel.github.io/ggiraph/index.html) {ggplot2 extension}
+  - [rbokeh](http://hafen.github.io/rbokeh/) {generic}
+  - [echarts4r](https://echarts4r.john-coene.com/) {generic}
+  - [highcharter](http://jkunst.com/highcharter/) {generic}
+  - [leaflet](https://rstudio.github.io/leaflet/) + [leaflet.extras](https://bhaskarvk.github.io/leaflet.extras/) {spatial}
+  - [mapview](https://r-spatial.github.io/mapview/) {spatial}
+  - [ggiraph](https://davidgohel.github.io/ggiraph/index.html) {ggplot2 extension}
 
 ### Static
- - [ggplot2]() + its many [extensions](http://www.ggplot2-exts.org/gallery/)
- - [tmap](https://github.com/mtennekes/tmap) {spatial}
+  - [ggplot2]() + its many [extensions](http://www.ggplot2-exts.org/gallery/)
+  - [tmap](https://github.com/mtennekes/tmap) {spatial}
 
-### Tools
+### Tools, Palettes, Spatial
+  - [classInt]()
+  - [scales]()
+  - [ggthemes]() {ggplot2 extension}
+  - [RColorBrewer]()
+  - [scico]()
+  - [viridis]()
+  - [dggridR]()
+  - [rgdal]()
+  - [rgeos]()
+  - [rmapshaper]()
+  - [sp]()
+  - [htmltools]()
+  
+## Data Presentation 
+  - [rmarkdown](https://rmarkdown.rstudio.com/) [free books online](https://bookdown.org/yihui/rmarkdown/)
+  - [shiny]()
+  - [shinyWidgets]()
