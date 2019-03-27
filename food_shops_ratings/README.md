@@ -64,6 +64,7 @@
   - [rgeos](https://r-forge.r-project.org/projects/rgeos/)
   - [rmapshaper](https://github.com/ateucher/rmapshaper)
   - [sp](https://github.com/edzer/sp/)
+  - [sf](https://github.com/r-spatial/sf)
   
 ## Data Presentation 
   - [rmarkdown](https://rmarkdown.rstudio.com/) and its [free books online](https://bookdown.org/yihui/rmarkdown/)
