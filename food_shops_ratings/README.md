@@ -46,9 +46,12 @@
   - [tmap](https://github.com/mtennekes/tmap) {spatial}
 
 ### Tools, Palettes, Spatial
-  - [classInt]()
-  - [scales]()
-  - [ggthemes]() {ggplot2 extension}
+[Comparison](https://yutannihilation.github.io/allYourFigureAreBelongToUs/)
+
+  - [classInt](https://r-spatial.github.io/classInt/)
+  - [scales](https://github.[Comparison]()
+  com/r-lib/scales)
+  - [ggthemes](https://jrnold.github.io/ggthemes/) {ggplot2 extension} see also [this gallery]()
   - [RColorBrewer]()
   - [scico]()
   - [viridis]()
