@@ -1,10 +1,17 @@
 # Resources
   - [FSA Food hygiene ratings website](https://ratings.food.gov.uk/)
-  - [ONS UK geographies]()
+  - [ONS Help on UK geographies](https://www.ons.gov.uk/methodology/geography/ukgeographies)
+  - [ONS Geography Portal](http://geoportal.statistics.gov.uk/)  
   - [ColorBrewer](http://colorbrewer2.org/)
   - [Maptiles providers](http://leaflet-extras.github.io/leaflet-providers/preview/)
   
 # Notable R Packages
+
+## Data I/O and Wrangling
+  - [data.table](https://github.com/Rdatatable/data.table) 
+  - [fst](https://www.fstpackage.org/)
+  - [rvest](https://rvest.tidyverse.org/)
+  - [XML](http://www.omegahat.net/RSXML/)
 
 ## Data Display
 [Comparison](https://hughjonesd.github.io/huxtable/design-principles.html)
@@ -31,19 +38,15 @@
 ## Data Visualization
 
 ### Interactive
- - [rbokeh]() {generic}
+ - [rbokeh](http://hafen.github.io/rbokeh/) {generic}
  - [echarts4r](https://echarts4r.john-coene.com/) {generic}
  - [highcharter](http://jkunst.com/highcharter/) {generic}
- - [leaflet]() + [leaflet.extras]() {spatial}
- - [mapview]() {spatial}
- - []()
- - []()
-
+ - [leaflet](https://rstudio.github.io/leaflet/) + [leaflet.extras](https://bhaskarvk.github.io/leaflet.extras/) {spatial}
+ - [mapview](https://r-spatial.github.io/mapview/) {spatial}
+ - [ggiraph](https://davidgohel.github.io/ggiraph/index.html) {ggplot2 extension}
 
 ### Static
- - [ggplot2]()
- - [tmap]() {spatial}
- - []()
- - []()
- - []()
+ - [ggplot2]() + its many [extensions](http://www.ggplot2-exts.org/gallery/)
+ - [tmap](https://github.com/mtennekes/tmap) {spatial}
 
+### Tools
