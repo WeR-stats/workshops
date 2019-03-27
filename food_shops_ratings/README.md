@@ -2,6 +2,7 @@
   - [FSA Food hygiene ratings website](https://ratings.food.gov.uk/)
   - [ONS]()
   - [ColorBrewer](http://colorbrewer2.org/)
+  - [Maptiles providers](http://leaflet-extras.github.io/leaflet-providers/preview/)
   
 # Notable R Packages
 
