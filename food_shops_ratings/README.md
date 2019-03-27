@@ -2,6 +2,9 @@
   - [FSA Food hygiene ratings website](https://ratings.food.gov.uk/)
   - [ONS Help on UK geographies](https://www.ons.gov.uk/methodology/geography/ukgeographies)
   - [ONS Geography Portal](http://geoportal.statistics.gov.uk/)  
+    - [A Beginners Guide to UK Geography](https://geoportal.statistics.gov.uk/datasets/a-beginners-guide-to-uk-geography-2018-v1-0)
+    - [Hierarchical Representation of UK Statistical Geographies](https://geoportal.statistics.gov.uk/datasets/hierarchical-representation-of-uk-statistical-geographies-december-2018)
+    - [Guides to Presenting Statistics](https://geoportal.statistics.gov.uk/search?sort=name&tags=DOC_GPS)
   - [ColorBrewer](http://colorbrewer2.org/)
   - [Maptiles providers](http://leaflet-extras.github.io/leaflet-providers/preview/)
 
