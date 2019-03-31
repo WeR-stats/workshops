@@ -1,3 +1,5 @@
+Please notice that the geographic datasets and boundaries have all been moved to their own repository [uk_geography](https://github.com/WeR-stats/uk_geography), but the code has not been changed yet.
+
 # Resources
   - [FSA Food hygiene ratings website](https://ratings.food.gov.uk/)
   - [ONS Help on UK geographies](https://www.ons.gov.uk/methodology/geography/ukgeographies)
