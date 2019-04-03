@@ -1,0 +1,732 @@
+sic_code,description,section
+01110,"Growing of cereals (except rice), leguminous crops and oil seeds",A
+01120,Growing of rice,A
+01130,"Growing of vegetables and melons, roots and tubers",A
+01140,Growing of sugar cane,A
+01150,Growing of tobacco,A
+01160,Growing of fibre crops,A
+01190,Growing of other non-perennial crops,A
+01210,Growing of grapes,A
+01220,Growing of tropical and subtropical fruits,A
+01230,Growing of citrus fruits,A
+01240,Growing of pome fruits and stone fruits,A
+01250,Growing of other tree and bush fruits and nuts,A
+01260,Growing of oleaginous fruits,A
+01270,Growing of beverage crops,A
+01280,"Growing of spices, aromatic, drug and pharmaceutical crops",A
+01290,Growing of other perennial crops,A
+01300,Plant propagation,A
+01410,Raising of dairy cattle,A
+01420,Raising of other cattle and buffaloes,A
+01430,Raising of horses and other equines,A
+01440,Raising of camels and camelids,A
+01450,Raising of sheep and  goats,A
+01460,Raising of swine/pigs,A
+01470,Raising of poultry,A
+01490,Raising of other animals,A
+01500,Mixed farming,A
+01610,Support activities for crop production,A
+01621,Farm animal boarding and care,A
+01629,Support activities for animal production (other than farm animal boarding and care) n.e.c.,A
+01630,Post-harvest crop activities,A
+01640,Seed processing for propagation,A
+01700,"Hunting, trapping and related service activities",A
+02100,Silviculture and other forestry activities,A
+02200,Logging,A
+02300,Gathering of wild growing non-wood products,A
+02400,Support services to forestry,A
+03110,Marine fishing,A
+03120,Freshwater fishing,A
+03210,Marine aquaculture,A
+03220,Freshwater aquaculture,A
+05101,Deep coal mines,B
+05102,Open cast coal working,B
+05200,Mining of lignite,B
+06100,Extraction of crude petroleum,B
+06200,Extraction of natural gas,B
+07100,Mining of iron ores,B
+07210,Mining of uranium and thorium ores,B
+07290,Mining of other non-ferrous metal ores,B
+08110,"Quarrying of ornamental and building stone, limestone, gypsum, chalk and slate",B
+08120,Operation of gravel and sand pits; mining of clays and kaolin,B
+08910,Mining of chemical and fertilizer minerals,B
+08920,Extraction of peat,B
+08930,Extraction of salt,B
+08990,Other mining and quarrying n.e.c.,B
+09100,Support activities for petroleum and natural gas mining,B
+09900,Support activities for other mining and quarrying,B
+10110,Processing and preserving of meat,C
+10120,Processing and preserving of poultry meat,C
+10130,Production of meat and poultry meat products,C
+10200,"Processing and preserving of fish, crustaceans and molluscs",C
+10310,Processing and preserving of potatoes,C
+10320,Manufacture of fruit and vegetable juice,C
+10390,Other processing and preserving of fruit and vegetables,C
+10410,Manufacture of oils and fats,C
+10420,Manufacture of margarine and similar edible fats,C
+10511,Liquid milk and cream production,C
+10512,Butter and cheese production,C
+10519,Manufacture of other milk products,C
+10520,Manufacture of ice cream,C
+10611,Grain milling,C
+10612,Manufacture of breakfast cereals and cereals-based food,C
+10620,Manufacture of starches and starch products,C
+10710,Manufacture of bread; manufacture of fresh pastry goods and cakes,C
+10720,Manufacture of rusks and biscuits; manufacture of preserved pastry goods and cakes,C
+10730,"Manufacture of macaroni, noodles, couscous and similar farinaceous products",C
+10810,Manufacture of sugar,C
+10821,Manufacture of cocoa and chocolate confectionery,C
+10822,Manufacture of sugar confectionery,C
+10831,Tea processing,C
+10832,Production of coffee and coffee substitutes,C
+10840,Manufacture of condiments and seasonings,C
+10850,Manufacture of prepared meals and dishes,C
+10860,Manufacture of homogenized food preparations and dietetic food,C
+10890,Manufacture of other food products n.e.c.,C
+10910,Manufacture of prepared feeds for farm animals,C
+10920,Manufacture of prepared pet foods,C
+11010,"Distilling, rectifying and blending of spirits",C
+11020,Manufacture of wine from grape,C
+11030,Manufacture of cider and other fruit wines,C
+11040,Manufacture of other non-distilled fermented beverages,C
+11050,Manufacture of beer,C
+11060,Manufacture of malt,C
+11070,Manufacture of soft drinks; production of mineral waters and other bottled waters,C
+12000,Manufacture of tobacco products,C
+13100,Preparation and spinning of textile fibres,C
+13200,Weaving of textiles,C
+13300,Finishing of textiles,C
+13910,Manufacture of knitted and crocheted fabrics,C
+13921,Manufacture of soft furnishings,C
+13922,"manufacture of canvas goods, sacks, etc.",C
+13923,manufacture of household textiles,C
+13931,Manufacture of woven or tufted carpets and rugs,C
+13939,Manufacture of other carpets and rugs,C
+13940,"Manufacture of cordage, rope, twine and netting",C
+13950,"Manufacture of non-wovens and articles made from non-wovens, except apparel",C
+13960,Manufacture of other technical and industrial textiles,C
+13990,Manufacture of other textiles n.e.c.,C
+14110,Manufacture of leather clothes,C
+14120,Manufacture of workwear,C
+14131,Manufacture of other men's outerwear,C
+14132,Manufacture of other women's outerwear,C
+14141,Manufacture of men's underwear,C
+14142,Manufacture of women's underwear,C
+14190,Manufacture of other wearing apparel and accessories n.e.c.,C
+14200,Manufacture of articles of fur,C
+14310,Manufacture of knitted and crocheted hosiery,C
+14390,Manufacture of other knitted and crocheted apparel,C
+15110,Tanning and dressing of leather; dressing and dyeing of fur,C
+15120,"Manufacture of luggage, handbags and the like, saddlery and harness",C
+15200,Manufacture of footwear,C
+16100,Sawmilling and planing of wood,C
+16210,Manufacture of veneer sheets and wood-based panels,C
+16220,Manufacture of assembled parquet floors,C
+16230,Manufacture of other builders' carpentry and joinery,C
+16240,Manufacture of wooden containers,C
+16290,"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",C
+17110,Manufacture of pulp,C
+17120,Manufacture of paper and paperboard,C
+17211,"Manufacture of corrugated paper and paperboard, sacks and bags",C
+17219,Manufacture of other paper and paperboard containers,C
+17220,Manufacture of household and sanitary goods and of toilet requisites,C
+17230,Manufacture of paper stationery,C
+17240,Manufacture of wallpaper,C
+17290,Manufacture of other articles of paper and paperboard n.e.c.,C
+18110,Printing of newspapers,C
+18121,Manufacture of printed labels,C
+18129,Printing n.e.c.,C
+18130,Pre-press and pre-media services,C
+18140,Binding and related services,C
+18201,Reproduction of sound recording,C
+18202,Reproduction of video recording,C
+18203,Reproduction of computer media,C
+19100,Manufacture of coke oven products,C
+19201,Mineral oil refining,C
+19209,Other treatment of petroleum products (excluding petrochemicals manufacture),C
+20110,Manufacture of industrial gases,C
+20120,Manufacture of dyes and pigments,C
+20130,Manufacture of other inorganic basic chemicals,C
+20140,Manufacture of other organic basic chemicals,C
+20150,Manufacture of fertilizers and nitrogen compounds,C
+20160,Manufacture of plastics in primary forms,C
+20170,Manufacture of synthetic rubber in primary forms,C
+20200,Manufacture of pesticides and other agrochemical products,C
+20301,"Manufacture of paints, varnishes and similar coatings, mastics and sealants",C
+20302,Manufacture of printing ink,C
+20411,Manufacture of soap and detergents,C
+20412,Manufacture of cleaning and polishing preparations,C
+20420,Manufacture of perfumes and toilet preparations,C
+20510,Manufacture of explosives,C
+20520,Manufacture of glues,C
+20530,Manufacture of essential oils,C
+20590,Manufacture of other chemical products n.e.c.,C
+20600,Manufacture of man-made fibres,C
+21100,Manufacture of basic pharmaceutical products,C
+21200,Manufacture of pharmaceutical preparations,C
+22110,Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres,C
+22190,Manufacture of other rubber products,C
+22210,"Manufacture of plastic plates, sheets, tubes and profiles",C
+22220,Manufacture of plastic packing goods,C
+22230,Manufacture of builders  ware of plastic,C
+22290,Manufacture of other plastic products,C
+23110,Manufacture of flat glass,C
+23120,Shaping and processing of flat glass,C
+23130,Manufacture of hollow glass,C
+23140,Manufacture of glass fibres,C
+23190,"Manufacture and processing of other glass, including technical glassware",C
+23200,Manufacture of refractory products,C
+23310,Manufacture of ceramic tiles and flags,C
+23320,"Manufacture of bricks, tiles and construction products, in baked clay",C
+23410,Manufacture of ceramic household and ornamental articles,C
+23420,Manufacture of ceramic sanitary fixtures,C
+23430,Manufacture of ceramic insulators and insulating fittings,C
+23440,Manufacture of other technical ceramic products,C
+23490,Manufacture of other ceramic products n.e.c.,C
+23510,Manufacture of cement,C
+23520,Manufacture of lime and plaster,C
+23610,Manufacture of concrete products for construction purposes,C
+23620,Manufacture of plaster products for construction purposes,C
+23630,Manufacture of ready-mixed concrete,C
+23640,Manufacture of mortars,C
+23650,Manufacture of fibre cement,C
+23690,"Manufacture of other articles of concrete, plaster and cement",C
+23700,"Cutting, shaping and finishing of stone",C
+23910,Production of abrasive products,C
+23990,Manufacture of other non-metallic mineral products n.e.c.,C
+24100,Manufacture of basic iron and steel and of ferro-alloys,C
+24200,"Manufacture of tubes, pipes, hollow profiles and related fittings, of steel",C
+24310,Cold drawing of bars,C
+24320,Cold rolling of narrow strip,C
+24330,Cold forming or folding,C
+24340,Cold drawing of wire,C
+24410,Precious metals production,C
+24420,Aluminium production,C
+24430,"Lead, zinc and tin production",C
+24440,Copper production,C
+24450,Other non-ferrous metal production,C
+24460,Processing of nuclear fuel,C
+24510,Casting of iron,C
+24520,Casting of steel,C
+24530,Casting of light metals,C
+24540,Casting of other non-ferrous metals,C
+25110,Manufacture of metal structures and parts of structures,C
+25120,Manufacture of doors and windows of metal,C
+25210,Manufacture of central heating radiators and boilers,C
+25290,"Manufacture of other tanks, reservoirs and containers of metal",C
+25300,"Manufacture of steam generators, except central heating hot water boilers",C
+25400,Manufacture of weapons and ammunition,C
+25500,"Forging, pressing, stamping and roll-forming of metal; powder metallurgy",C
+25610,Treatment and coating of metals,C
+25620,Machining,C
+25710,Manufacture of cutlery,C
+25720,Manufacture of locks and hinges,C
+25730,Manufacture of tools,C
+25910,Manufacture of steel drums and similar containers,C
+25920,Manufacture of light metal packaging,C
+25930,"Manufacture of wire products, chain and springs",C
+25940,Manufacture of fasteners and screw machine products,C
+25990,Manufacture of other fabricated metal products n.e.c.,C
+26110,Manufacture of electronic components,C
+26120,Manufacture of loaded electronic boards,C
+26200,Manufacture of computers and peripheral equipment,C
+26301,Manufacture of telegraph and telephone apparatus and equipment,C
+26309,"Manufacture of communication equipment other than telegraph, and telephone apparatus and equipment",C
+26400,Manufacture of consumer electronics,C
+26511,"Manufacture of electronic measuring, testing etc. equipment, not for industrial process control",C
+26512,Manufacture of electronic industrial process control equipment,C
+26513,"Manufacture of non-electronic measuring, testing etc. equipment, not for industrial process control",C
+26514,Manufacture of non-electronic industrial process control equipment,C
+26520,Manufacture of watches and clocks,C
+26600,"Manufacture of irradiation, electromedical and electrotherapeutic equipment",C
+26701,Manufacture of optical precision instruments,C
+26702,Manufacture of photographic and cinematographic equipment,C
+26800,Manufacture of magnetic and optical media,C
+27110,"Manufacture of electric motors, generators and transformers",C
+27120,Manufacture of electricity distribution and control apparatus,C
+27200,Manufacture of batteries and accumulators,C
+27310,Manufacture of fibre optic cables,C
+27320,Manufacture of other electronic and electric wires and cables,C
+27330,Manufacture of wiring devices,C
+27400,Manufacture of electric lighting equipment,C
+27510,Manufacture of electric domestic appliances,C
+27520,Manufacture of non-electric domestic appliances,C
+27900,Manufacture of other electrical equipment,C
+28110,"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",C
+28120,Manufacture of fluid power equipment,C
+28131,Manufacture of pumps,C
+28132,Manufacture of compressors,C
+28140,Manufacture of taps and valves,C
+28150,"Manufacture of bearings, gears, gearing and driving elements",C
+28210,"Manufacture of ovens, furnaces and furnace burners",C
+28220,Manufacture of lifting and handling equipment,C
+28230,Manufacture of office machinery and equipment (except computers and peripheral equipment),C
+28240,Manufacture of power-driven hand tools,C
+28250,Manufacture of non-domestic cooling and ventilation equipment,C
+28290,Manufacture of other general-purpose machinery n.e.c.,C
+28301,Manufacture of agricultural tractors,C
+28302,Manufacture of agricultural and forestry machinery other than tractors,C
+28410,Manufacture of metal forming machinery,C
+28490,Manufacture of other machine tools,C
+28910,Manufacture of machinery for metallurgy,C
+28921,Manufacture of machinery for mining,C
+28922,Manufacture of earthmoving equipment,C
+28923,Manufacture of equipment for concrete crushing and screening and roadworks,C
+28930,"Manufacture of machinery for food, beverage and tobacco processing",C
+28940,"Manufacture of machinery for textile, apparel and leather production",C
+28950,Manufacture of machinery for paper and paperboard production,C
+28960,Manufacture of plastics and rubber machinery,C
+28990,Manufacture of other special-purpose machinery n.e.c.,C
+29100,Manufacture of motor vehicles,C
+29201,Manufacture of bodies (coachwork) for motor vehicles (except caravans),C
+29202,Manufacture of trailers and semi-trailers,C
+29203,Manufacture of caravans,C
+29310,Manufacture of electrical and electronic equipment for motor vehicles and their engines,C
+29320,Manufacture of other parts and accessories for motor vehicles,C
+30110,Building of ships and floating structures,C
+30120,Building of pleasure and sporting boats,C
+30200,Manufacture of railway locomotives and rolling stock,C
+30300,Manufacture of air and spacecraft and related machinery,C
+30400,Manufacture of military fighting vehicles,C
+30910,Manufacture of motorcycles,C
+30920,Manufacture of bicycles and invalid carriages,C
+30990,Manufacture of other transport equipment n.e.c.,C
+31010,Manufacture of office and shop furniture,C
+31020,Manufacture of kitchen furniture,C
+31030,Manufacture of mattresses,C
+31090,Manufacture of other furniture,C
+32110,Striking of coins,C
+32120,Manufacture of jewellery and related articles,C
+32130,Manufacture of imitation jewellery and related articles,C
+32200,Manufacture of musical instruments,C
+32300,Manufacture of sports goods,C
+32401,Manufacture of professional and arcade games and toys,C
+32409,"Manufacture of other games and toys, n.e.c.",C
+32500,Manufacture of medical and dental instruments and supplies,C
+32910,Manufacture of brooms and brushes,C
+32990,Other manufacturing n.e.c.,C
+33110,Repair of fabricated metal products,C
+33120,Repair of machinery,C
+33130,Repair of electronic and optical equipment,C
+33140,Repair of electrical equipment,C
+33150,Repair and maintenance of ships and boats,C
+33160,Repair and maintenance of aircraft and spacecraft,C
+33170,Repair and maintenance of other transport equipment n.e.c.,C
+33190,Repair of other equipment,C
+33200,Installation of industrial machinery and equipment,C
+35110,Production of electricity,D
+35120,Transmission of electricity,D
+35130,Distribution of electricity,D
+35140,Trade of electricity,D
+35210,Manufacture of gas,D
+35220,Distribution of gaseous fuels through mains,D
+35230,Trade of gas through mains,D
+35300,Steam and air conditioning supply,D
+36000,"Water collection, treatment and supply",E
+37000,Sewerage,E
+38110,Collection of non-hazardous waste,E
+38120,Collection of hazardous waste,E
+38210,Treatment and disposal of non-hazardous waste,E
+38220,Treatment and disposal of hazardous waste,E
+38310,Dismantling of wrecks,E
+38320,Recovery of sorted materials,E
+39000,Remediation activities and other waste management services,E
+41100,Development of building projects,F
+41201,Construction of commercial buildings,F
+41202,Construction of domestic buildings,F
+42110,Construction of roads and motorways,F
+42120,Construction of railways and underground railways,F
+42130,Construction of bridges and tunnels,F
+42210,Construction of utility projects for fluids,F
+42220,Construction of utility projects for electricity and telecommunications,F
+42910,Construction of water projects,F
+42990,Construction of other civil engineering projects n.e.c.,F
+43110,Demolition,F
+43120,Site preparation,F
+43130,Test drilling and boring,F
+43210,Electrical installation,F
+43220,"Plumbing, heat and air-conditioning installation",F
+43290,Other construction installation,F
+43310,Plastering,F
+43320,Joinery installation,F
+43330,Floor and wall covering,F
+43341,Painting,F
+43342,Glazing,F
+43390,Other building completion and finishing,F
+43910,Roofing activities,F
+43991,Scaffold erection,F
+43999,Other specialised construction activities n.e.c.,F
+45111,Sale of new cars and light motor vehicles,G
+45112,Sale of used cars and light motor vehicles,G
+45190,Sale of other motor vehicles,G
+45200,Maintenance and repair of motor vehicles,G
+45310,Wholesale trade of motor vehicle parts and accessories,G
+45320,Retail trade of motor vehicle parts and accessories,G
+45400,"Sale, maintenance and repair of motorcycles and related parts and accessories",G
+46110,"Agents selling agricultural raw materials, livestock, textile raw materials and semi-finished goods",G
+46120,"Agents involved in the sale of fuels, ores, metals and industrial chemicals",G
+46130,Agents involved in the sale of timber and building materials,G
+46140,"Agents involved in the sale of machinery, industrial equipment, ships and aircraft",G
+46150,"Agents involved in the sale of furniture, household goods, hardware and ironmongery",G
+46160,"Agents involved in the sale of textiles, clothing, fur, footwear and leather goods",G
+46170,"Agents involved in the sale of food, beverages and tobacco",G
+46180,Agents specialised in the sale of other particular products,G
+46190,Agents involved in the sale of a variety of goods,G
+46210,"Wholesale of grain, unmanufactured tobacco, seeds and animal feeds",G
+46220,Wholesale of flowers and plants,G
+46230,Wholesale of live animals,G
+46240,"Wholesale of hides, skins and leather",G
+46310,Wholesale of fruit and vegetables,G
+46320,Wholesale of meat and meat products,G
+46330,"Wholesale of dairy products, eggs and edible oils and fats",G
+46341,"Wholesale of fruit and vegetable juices, mineral water and soft drinks",G
+46342,"Wholesale of wine, beer, spirits and other alcoholic beverages",G
+46350,Wholesale of tobacco products,G
+46360,Wholesale of sugar and chocolate and sugar confectionery,G
+46370,"Wholesale of coffee, tea, cocoa and spices",G
+46380,"Wholesale of other food, including fish, crustaceans and molluscs",G
+46390,"Non-specialised wholesale of food, beverages and tobacco",G
+46410,Wholesale of textiles,G
+46420,Wholesale of clothing and footwear,G
+46431,"Wholesale of audio tapes, records, CDs and video tapes and the equipment on which these are played",G
+46439,"Wholesale of radio, television goods & electrical household appliances (other than records, tapes, CD's & video tapes and the equipment used for playing them)",G
+46440,Wholesale of china and glassware and cleaning materials,G
+46450,Wholesale of perfume and cosmetics,G
+46460,Wholesale of pharmaceutical goods,G
+46470,"Wholesale of furniture, carpets and lighting equipment",G
+46480,Wholesale of watches and jewellery,G
+46491,Wholesale of musical instruments,G
+46499,Wholesale of household goods (other than musical instruments) n.e.c,G
+46510,"Wholesale of computers, computer peripheral equipment and software",G
+46520,Wholesale of electronic and telecommunications equipment and parts,G
+46610,"Wholesale of agricultural machinery, equipment and supplies",G
+46620,Wholesale of machine tools,G
+46630,"Wholesale of mining, construction and civil engineering machinery",G
+46640,Wholesale of machinery for the textile industry and of sewing and knitting machines,G
+46650,Wholesale of office furniture,G
+46660,Wholesale of other office machinery and equipment,G
+46690,Wholesale of other machinery and equipment,G
+46711,Wholesale of petroleum and petroleum products,G
+46719,Wholesale of other fuels and related products,G
+46720,Wholesale of metals and metal ores,G
+46730,"Wholesale of wood, construction materials and sanitary equipment",G
+46740,"Wholesale of hardware, plumbing and heating equipment and supplies",G
+46750,Wholesale of chemical products,G
+46760,Wholesale of other intermediate products,G
+46770,Wholesale of waste and scrap,G
+46900,Non-specialised wholesale trade,G
+47110,"Retail sale in non-specialised stores with food, beverages or tobacco predominating",G
+47190,Other retail sale in non-specialised stores,G
+47210,Retail sale of fruit and vegetables in specialised stores,G
+47220,Retail sale of meat and meat products in specialised stores,G
+47230,"Retail sale of fish, crustaceans and molluscs in specialised stores",G
+47240,"Retail sale of bread, cakes, flour confectionery and sugar confectionery in specialised stores",G
+47250,Retail sale of beverages in specialised stores,G
+47260,Retail sale of tobacco products in specialised stores,G
+47290,Other retail sale of food in specialised stores,G
+47300,Retail sale of automotive fuel in specialised stores,G
+47410,"Retail sale of computers, peripheral units and software in specialised stores",G
+47421,Retail sale of mobile telephones,G
+47429,Retail sale of telecommunications equipment other than mobile telephones,G
+47430,Retail sale of audio and video equipment in specialised stores,G
+47510,Retail sale of textiles in specialised stores,G
+47520,"Retail sale of hardware, paints and glass in specialised stores",G
+47530,"Retail sale of carpets, rugs, wall and floor coverings in specialised stores",G
+47540,Retail sale of electrical household appliances in specialised stores,G
+47591,Retail sale of musical instruments and scores,G
+47599,"Retail of furniture, lighting, and similar (not musical instruments or scores) in specialised store",G
+47610,Retail sale of books in specialised stores,G
+47620,Retail sale of newspapers and stationery in specialised stores,G
+47630,Retail sale of music and video recordings in specialised stores,G
+47640,"Retail sale of sports goods, fishing gear, camping goods, boats and bicycles",G
+47650,Retail sale of games and toys in specialised stores,G
+47710,Retail sale of clothing in specialised stores,G
+47721,Retail sale of footwear in specialised stores,G
+47722,Retail sale of leather goods in specialised stores,G
+47730,Dispensing chemist in specialised stores,G
+47741,Retail sale of hearing aids,G
+47749,Retail sale of medical and orthopaedic goods in specialised stores (not incl. hearing aids) n.e.c.,G
+47750,Retail sale of cosmetic and toilet articles in specialised stores,G
+47760,"Retail sale of flowers, plants, seeds, fertilizers, pet animals and pet food in specialised stores",G
+47770,Retail sale of watches and jewellery in specialised stores,G
+47781,Retail sale in commercial art galleries,G
+47782,Retail sale by opticians,G
+47789,Other retail sale of new goods in specialised stores (not commercial art galleries and opticians),G
+47791,Retail sale of antiques including antique books in stores,G
+47799,Retail sale of other second-hand goods in stores (not incl. antiques),G
+47810,"Retail sale via stalls and markets of food, beverages and tobacco products",G
+47820,"Retail sale via stalls and markets of textiles, clothing and footwear",G
+47890,Retail sale via stalls and markets of other goods,G
+47910,Retail sale via mail order houses or via Internet,G
+47990,"Other retail sale not in stores, stalls or markets",G
+49100,"Passenger rail transport, interurban",H
+49200,Freight rail transport,H
+49311,"Urban and suburban passenger railway transportation by underground, metro and similar systems",H
+49319,"Other urban, suburban or metropolitan passenger land transport (not underground, metro or similar)",H
+49320,Taxi operation,H
+49390,Other passenger land transport,H
+49410,Freight transport by road,H
+49420,Removal services,H
+49500,Transport via pipeline,H
+50100,Sea and coastal passenger water transport,H
+50200,Sea and coastal freight water transport,H
+50300,Inland passenger water transport,H
+50400,Inland freight water transport,H
+51101,Scheduled passenger air transport,H
+51102,Non-scheduled passenger air transport,H
+51210,Freight air transport,H
+51220,Space transport,H
+52101,Operation of warehousing and storage facilities for water transport activities,H
+52102,Operation of warehousing and storage facilities for air transport activities,H
+52103,Operation of warehousing and storage facilities for land transport activities,H
+52211,Operation of rail freight terminals,H
+52212,Operation of rail passenger facilities at railway stations,H
+52213,Operation of bus and coach passenger facilities at bus and coach stations,H
+52219,"Other service activities incidental to land transportation, n.e.c.",H
+52220,Service activities incidental to water transportation,H
+52230,Service activities incidental to air transportation,H
+52241,Cargo handling for water transport activities,H
+52242,Cargo handling for air transport activities,H
+52243,Cargo handling for land transport activities,H
+52290,Other transportation support activities,H
+53100,Postal activities under universal service obligation,H
+53201,Licensed carriers,H
+53202,Unlicensed carriers,H
+55100,Hotels and similar accommodation,I
+55201,Holiday centres and villages,I
+55202,Youth hostels,I
+55209,Other holiday and other collective accommodation,I
+55300,"Recreational vehicle parks, trailer parks and camping grounds",I
+55900,Other accommodation,I
+56101,Licenced restaurants,I
+56102,Unlicenced restaurants and cafes,I
+56103,Take-away food shops and mobile food stands,I
+56210,Event catering activities,I
+56290,Other food services,I
+56301,Licenced clubs,I
+56302,Public houses and bars,I
+58110,Book publishing,J
+58120,Publishing of directories and mailing lists,J
+58130,Publishing of newspapers,J
+58141,Publishing of learned journals,J
+58142,Publishing of  consumer and business journals and periodicals,J
+58190,Other publishing activities,J
+58210,Publishing of computer games,J
+58290,Other software publishing,J
+59111,Motion picture production activities,J
+59112,Video production activities,J
+59113,Television programme production activities,J
+59120,"Motion picture, video and television programme post-production activities",J
+59131,Motion picture distribution activities,J
+59132,Video distribution activities,J
+59133,Television programme distribution activities,J
+59140,Motion picture projection activities,J
+59200,Sound recording and music publishing activities,J
+60100,Radio broadcasting,J
+60200,Television programming and broadcasting activities,J
+61100,Wired telecommunications activities,J
+61200,Wireless telecommunications activities,J
+61300,Satellite telecommunications activities,J
+61900,Other telecommunications activities,J
+62011,Ready-made interactive leisure and entertainment software development,J
+62012,Business and domestic software development,J
+62020,Information technology consultancy activities,J
+62030,Computer facilities management activities,J
+62090,Other information technology service activities,J
+63110,"Data processing, hosting and related activities",J
+63120,Web portals,J
+63910,News agency activities,J
+63990,Other information service activities n.e.c.,J
+64110,Central banking,K
+64191,Banks,K
+64192,Building societies,K
+64201,Activities of agricultural holding companies,K
+64202,Activities of production holding companies,K
+64203,Activities of construction holding companies,K
+64204,Activities of distribution holding companies,K
+64205,Activities of financial services holding companies,K
+64209,Activities of other holding companies n.e.c.,K
+64301,Activities of investment trusts,K
+64302,Activities of unit trusts,K
+64303,Activities of venture and development capital companies,K
+64304,Activities of open-ended investment companies,K
+64305,Activities of property unit trusts,K
+64306,Activities of real estate investment trusts,K
+64910,Financial leasing,K
+64921,Credit granting by non-deposit taking finance houses and other specialist consumer credit grantors,K
+64922,Activities of mortgage finance companies,K
+64929,Other credit granting n.e.c.,K
+64991,Security dealing on own account,K
+64992,Factoring,K
+64999,Financial intermediation not elsewhere classified,K
+65110,Life insurance,K
+65120,Non-life insurance,K
+65201,Life reinsurance,K
+65202,Non-life reinsurance,K
+65300,Pension funding,K
+66110,Administration of financial markets,K
+66120,Security and commodity contracts dealing activities,K
+66190,Activities auxiliary to financial intermediation n.e.c.,K
+66210,Risk and damage evaluation,K
+66220,Activities of insurance agents and brokers,K
+66290,Other activities auxiliary to insurance and pension funding,K
+66300,Fund management activities,K
+68100,Buying and selling of own real estate,L
+68201,Renting and operating of Housing Association real estate,L
+68202,Letting and operating of conference and exhibition centres,L
+68209,Other letting and operating of own or leased real estate,L
+68310,Real estate agencies,L
+68320,Management of real estate on a fee or contract basis,L
+69101,Barristers at law,M
+69102,Solicitors,M
+69109,Activities of patent and copyright agents; other legal activities n.e.c.,M
+69201,Accounting and auditing activities,M
+69202,Bookkeeping activities,M
+69203,Tax consultancy,M
+70100,Activities of head offices,M
+70210,Public relations and communications activities,M
+70221,Financial management,M
+70229,Management consultancy activities other than financial management,M
+71111,Architectural activities,M
+71112,Urban planning and landscape architectural activities,M
+71121,Engineering design activities for industrial process and production,M
+71122,Engineering related scientific and technical consulting activities,M
+71129,Other engineering activities,M
+71200,Technical testing and analysis,M
+72110,Research and experimental development on biotechnology,M
+72190,Other research and experimental development on natural sciences and engineering,M
+72200,Research and experimental development on social sciences and humanities,M
+73110,Advertising agencies,M
+73120,Media representation services,M
+73200,Market research and public opinion polling,M
+74100,specialised design activities,M
+74201,Portrait photographic activities,M
+74202,Other specialist photography,M
+74203,Film processing,M
+74209,Photographic activities not elsewhere classified,M
+74300,Translation and interpretation activities,M
+74901,Environmental consulting activities,M
+74902,Quantity surveying activities,M
+74909,"Other professional, scientific and technical activities n.e.c.",M
+74990,Non-trading company non trading,M
+75000,Veterinary activities,M
+77110,Renting and leasing of cars and light motor vehicles,N
+77120,Renting and leasing of trucks and other heavy vehicles,N
+77210,Renting and leasing of recreational and sports goods,N
+77220,Renting of video tapes and disks,N
+77291,Renting and leasing of media entertainment equipment,N
+77299,Renting and leasing of other personal and household goods,N
+77310,Renting and leasing of agricultural machinery and equipment,N
+77320,Renting and leasing of construction and civil engineering machinery and equipment,N
+77330,Renting and leasing of office machinery and equipment (including computers),N
+77341,Renting and leasing of passenger water transport equipment,N
+77342,Renting and leasing of freight water transport equipment,N
+77351,Renting and leasing of air passenger transport equipment,N
+77352,Renting and leasing of freight air transport equipment,N
+77390,"Renting and leasing of other machinery, equipment and tangible goods n.e.c.",N
+77400,"Leasing of intellectual property and similar products, except copyright works",N
+78101,"Motion picture, television and other theatrical casting activities",N
+78109,Other activities of employment placement agencies,N
+78200,Temporary employment agency activities,N
+78300,Human resources provision and management of human resources functions,N
+79110,Travel agency activities,N
+79120,Tour operator activities,N
+79901,Activities of tourist guides,N
+79909,Other reservation service activities n.e.c.,N
+80100,Private security activities,N
+80200,Security systems service activities,N
+80300,Investigation activities,N
+81100,Combined facilities support activities,N
+81210,General cleaning of buildings,N
+81221,Window cleaning services,N
+81222,Specialised cleaning services,N
+81223,Furnace and chimney cleaning services,N
+81229,Other building and industrial cleaning activities,N
+81291,Disinfecting and exterminating services,N
+81299,Other cleaning services,N
+81300,Landscape service activities,N
+82110,Combined office administrative service activities,N
+82190,"Photocopying, document preparation and other specialised office support activities",N
+82200,Activities of call centres,N
+82301,Activities of exhibition and fair organisers,N
+82302,Activities of conference organisers,N
+82911,Activities of collection agencies,N
+82912,Activities of credit bureaus,N
+82920,Packaging activities,N
+82990,Other business support service activities n.e.c.,N
+84110,General public administration activities,O
+84120,"Regulation of health care, education, cultural and other social services, not incl. social security",O
+84130,Regulation of and contribution to more efficient operation of businesses,O
+84210,Foreign affairs,O
+84220,Defence activities,O
+84230,Justice and judicial activities,O
+84240,Public order and safety activities,O
+84250,Fire service activities,O
+84300,Compulsory social security activities,O
+85100,Pre-primary education,P
+85200,Primary education,P
+85310,General secondary education,P
+85320,Technical and vocational secondary education,P
+85410,Post-secondary non-tertiary education,P
+85421,First-degree level higher education,P
+85422,Post-graduate level higher education,P
+85510,Sports and recreation education,P
+85520,Cultural education,P
+85530,Driving school activities,P
+85590,Other education n.e.c.,P
+85600,Educational support services,P
+86101,Hospital activities,Q
+86102,Medical nursing home activities,Q
+86210,General medical practice activities,Q
+86220,Specialists medical practice activities,Q
+86230,Dental practice activities,Q
+86900,Other human health activities,Q
+87100,Residential nursing care facilities,Q
+87200,"Residential care activities for learning difficulties, mental health and substance abuse",Q
+87300,Residential care activities for the elderly and disabled,Q
+87900,Other residential care activities n.e.c.,Q
+88100,Social work activities without accommodation for the elderly and disabled,Q
+88910,Child day-care activities,Q
+88990,Other social work activities without accommodation n.e.c.,Q
+90010,Performing arts,R
+90020,Support activities to performing arts,R
+90030,Artistic creation,R
+90040,Operation of arts facilities,R
+91011,Library activities,R
+91012,Archives activities,R
+91020,Museums activities,R
+91030,Operation of historical sites and buildings and similar visitor attractions,R
+91040,Botanical and zoological gardens and nature reserves activities,R
+92000,Gambling and betting activities,R
+93110,Operation of sports facilities,R
+93120,Activities of sport clubs,R
+93130,Fitness facilities,R
+93191,Activities of racehorse owners,R
+93199,Other sports activities,R
+93210,Activities of amusement parks and theme parks,R
+93290,Other amusement and recreation activities n.e.c.,R
+94110,Activities of business and employers membership organisations,S
+94120,Activities of professional membership organisations,S
+94200,Activities of trade unions,S
+94910,Activities of religious organisations,S
+94920,Activities of political organisations,S
+94990,Activities of other membership organisations n.e.c.,S
+95110,Repair of computers and peripheral equipment,S
+95120,Repair of communication equipment,S
+95210,Repair of consumer electronics,S
+95220,Repair of household appliances and home and garden equipment,S
+95230,Repair of footwear and leather goods,S
+95240,Repair of furniture and home furnishings,S
+95250,"Repair of watches, clocks and jewellery",S
+95290,Repair of personal and household goods n.e.c.,S
+96010,Washing and (dry-)cleaning of textile and fur products,S
+96020,Hairdressing and other beauty treatment,S
+96030,Funeral and related activities,S
+96040,Physical well-being activities,S
+96090,Other service activities n.e.c.,S
+97000,Activities of households as employers of domestic personnel,T
+98000,Residents property management,T
+98100,Undifferentiated goods-producing activities of private households for own use,T
+98200,Undifferentiated service-producing activities of private households for own use,T
+99000,Activities of extraterritorial organisations and bodies,U
+99999,Dormant Company,U
