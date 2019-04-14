@@ -46,6 +46,8 @@ shiny-apps/uk_gender_pay_gap
 shiny-apps/uk_multiple_deprivation
 shiny-apps/uk_petitions
 shiny-apps/wd_city_temperatures
+shiny-server/logs
+shiny-server/pwds
 styles
 workshops
 www

@@ -10,7 +10,7 @@ invisible(lapply(pkgs, require, character.only = TRUE))
 
 # set constants
 data_path <- './gender_paygap/data'
-gm_key <- 'AIzaSyBsxHR5R1Y1Gyrl8wjVMu23LDwAalLVjic'
+gm_key <- ''
 
 # load dataset
 if(file.exists(file.path(data_path, 'dts_geo.csv'))){

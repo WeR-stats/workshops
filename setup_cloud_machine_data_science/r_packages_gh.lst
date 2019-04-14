@@ -6,6 +6,7 @@ ThomasSiegmund/D3TableFilter
 hadley/emo
 rstudio/fontawesome
 RinteRface/fullPage
+ropensci/geojsonio
 AckerDWM/gg3D
 guiastrennec/ggplus
 gadenbuie/ggpomological
@@ -15,6 +16,7 @@ cttobin/ggthemr
 homeaway/great-circles
 mikkelkrogsholm/hexamapmaker
 psychemedia/htmlwidget-hexjson
+ropenscilabs/icon
 johannesbjork/LaCroixColoR
 datavisyn/lineup_htmlwidget
 cmap/morpheus.R
@@ -24,6 +26,7 @@ ropenscilabs/ochRe
 timelyportfolio/parcoords
 thomasp85/patchwork
 EmilHvitfeldt/quickpalette
+vankesteren/rijkspalette
 bwlewis/rthreejs
 hoesler/rwantshue
 redichh/shapleyR
