@@ -10,7 +10,7 @@ invisible(lapply(pkgs, require, character.only = TRUE))
 
 # set constants
 data_path <- './gender_paygap/data'
-dates <- c(2017, 2018)
+dates <- c(2017, 2018, 2019)
 cols = c(
     'company', 'address', 'company_id', 'sic', 
     'DMH', 'DMdH', 'DMB', 'DMdB', 'BPM', 'BPF', 'Q1M', 'Q1F', 'Q2M', 'Q2F', 'Q3M', 'Q3F', 'Q4M', 'Q4F',
