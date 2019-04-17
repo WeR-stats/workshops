@@ -75,12 +75,23 @@ Data Visualization: Interactive (htmlwidgets)
   - [echarts4r](https://echarts4r.john-coene.com/) {generic}
   - [highcharter](http://jkunst.com/highcharter/) {generic}
   - [leaflet](https://rstudio.github.io/leaflet/) + [leaflet.extras](https://bhaskarvk.github.io/leaflet.extras/) {spatial}
+  - [tmap](https://github.com/mtennekes/tmap) {spatial}
   - [mapview](https://r-spatial.github.io/mapview/) {spatial}
   - [ggiraph](https://davidgohel.github.io/ggiraph/index.html) {ggplot2 extension}
 
-Data Visualization: Palettes, Fonts, Colours
+Data Visualization: Palettes and Themes
 ========================================================
-
+  - [RColorBrewer]() supported in *ggplot2* using `scale_*_brewer`
+  - [viridis]() supported in *ggplot2* using `scale_*_viridis_*`
+  - [scico](https://github.com/thomasp85/scico) supported in *ggplot2* using `scale_*_scico`
+  - [ghibli](https://ewenme.github.io/ghibli/)
+  - []()
+  - []()
+  - []()
+  - []()
+  - [colorspace](http://colorspace.r-forge.r-project.org/)
+  - [*hclwizard*, The Palette Creator](http://hclwizard.org:64230/hclwizard/)
+  - [classInt]()
 
 Spatial tools
 ========================================================
