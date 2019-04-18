@@ -30,7 +30,54 @@ dts.s <- melt(dts, id.vars = fix_cols, measure.vars = mtc_cols.sex)
 dts.s[, c('metric', 'sex') := tstrsplit(variable, "(?<=.{2})", perl = TRUE)][, variable := NULL]
 
 # HISTOGRAMS ----------------------------------------------------------------------------------------------------------
+mtc <- 'DMdH'
+attr <- 'size'
+y <- dts.g[datefield == 2018 & metric == mtc]
 
+# define first layer
+gp <- ggplot(y, aes(x = value)) 
+
+# basic histogram
+gp + geom_histogram(bins = 100)
+
+# draw with black outline, white fill
+gp + geom_histogram(bins = 100, colour = 'black', fill = 'white')
+
+gp +
+    geom_histogram(aes(y=..density..), bins = 100, colour="black", fill="white") +
+    geom_density(alpha=.2, fill="#FF6666") 
+
+gp <- gp + theme_few()
+
+gp + 
+    geom_histogram(bins = 100, colour = 'black', fill = 'white') +
+    geom_vline(aes(xintercept = 0), color = "red", linetype = "dashed", size = 1) +
+    geom_vline(aes(xintercept = mean(value, na.rm = TRUE))) +
+    facet_wrap(~section)
+#    facet_grid(section~size)
+
+
+# DOTPLOTS ----------------------------------------------------------------------------------------------------------
+mtc <- 'DMdH'
+attr <- 'size'
+y <- dts.g[datefield == 2018 & metric == mtc & value > - 50 & value < 50]
+y <- y[, .(value = median(value, na.rm = TRUE)), .(Y = get(attr))][!is.na(Y)]
+ggplot(y, aes(x = value, y = reorder(Y, value))) +
+	geom_point(color = "blue") +
+	scale_x_continuous(limits = c(floor(min(y$value)), ceiling(max(y$value))) ) +
+    labs(x = vars[var_id == mtc, description], y = toupper(attr)) +
+	theme_dotplot
+
+theme_dotplot <- 
+    theme_bw(14) +
+        theme(
+            axis.text.y = element_text(size = rel(.75)),
+    	    axis.ticks.y = element_blank(),
+            axis.title.x = element_text(size = rel(.75)),
+            panel.grid.major.x = element_blank(),
+            panel.grid.major.y = element_line(size = 0.5),
+            panel.grid.minor.x = element_blank()
+        )
 
 
 # BOXPLOTS ----------------------------------------------------------------------------------------------------------
