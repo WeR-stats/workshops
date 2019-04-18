@@ -27,3 +27,5 @@ rsconnect/
 .Rproj.user
 workshops.Rproj
 WeR-workshops.Rproj
+test.html
+test_files/*.*
