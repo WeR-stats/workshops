@@ -10,35 +10,126 @@ invisible(lapply(pkgs, require, character.only = TRUE))
 
 # set constants
 data_path <- './gender_paygap/data'
+geo_path <- '../uk_geography/datasets'
+bnd_path <- '../uk_geography/boundaries/'
+geo_cols <- c('LSOA', 'MSOA', 'LAD', 'CTY', 'RGN', 'CTRY', 'WARD', 'PCON', 'CCG')
 
 # load data
-dts <- fread(file.path(data_path, 'dts.csv'))
-lcn <- read.fst(file.path(data_path, 'locations'), as.data.table = TRUE)
-sic <- fread(file.path(data_path, 'data', 'sic.csv'))
+dts <- read.fst(file.path(data_path, 'dts'), as.data.table = TRUE)
+sic <- fread(file.path(data_path, 'sic.csv'))
+sections <- fread(file.path(data_path, 'sections.csv'))
+vars <- fread(file.path(data_path, 'vars.csv'))
+lcn <- read.fst(file.path(geo_path, 'locations'), as.data.table = TRUE)
 
 ## Some query ----------------------------------------------------------------------------------------------------------
 
-# check some famous brand
-brand.pret <- shops[grepl('pret a manger', tolower(name))]
+y <- dts[datefield == 2018]
 
-# not so easy for another one
-brand.star <- shops[grepl('starbucks', tolower(name))]
+# Totals by size
+qhtbl(y[, .N, size], firstColumnAsRowHeaders = TRUE, columnFormats = list(NULL, list(big.mark = ',')))
+qhtbl(rbindlist(list( y[, .N, size], c('TOTAL', y[, .(.N)]) )), firstColumnAsRowHeaders = TRUE, columnFormats = list(NULL, list(big.mark = ',')))
+
+# Totals by section with pct distribution
+qhtbl(
+  y[, .N, dsection][, pct := 100*N/sum(N)][order(dsection)],
+  firstColumnAsRowHeaders = TRUE,
+  columnFormats = list(NULL, list(big.mark = ","), "%1.2f%%")
+)
+
+# Average Metrics by section
+cols <- names(dts)[((which(names(dts) == 'DMH')):ncol(dts))]
+y <- y[, lapply(.SD, mean, na.rm = TRUE), dsection,  .SDcols = cols][order(dsection)]
+tbl <- BasicTable$new()
+tbl$addData(y, 
+        firstColumnAsRowHeaders = TRUE, 
+        explicitColumnHeaders = c('Section', vars$description),
+        columnFormats = rep(list("%.2f"), ncol(y))
+)
+cells <- tbl$findCells(columnNumbers = 2:5, maxValue = 0, includeNull = FALSE, includeNA = FALSE)
+tbl$setStyling(cells = cells, declarations = list("background-color" = "#38EB6B", "color" = "#9C0006"))
+cells <- tbl$findCells(columnNumbers = 2:5, minValue = 20, maxValue = 40, includeNull = FALSE, includeNA = FALSE)
+tbl$setStyling(cells = cells, declarations = list("background-color" = "#FFC60A", "color" = "#9C0006"))
+cells <- tbl$findCells(columnNumbers = 2:5, minValue = 40, includeNull = FALSE, includeNA = FALSE)
+tbl$setStyling(cells = cells, declarations = list("background-color" = "#FF050D", "color" = "#9C0006"))
+tbl$renderTable()
+
+# Variation by sections
+y <- dts[datefield < 2019 & !is.na(section)]
+y <- dcast(y, dsection~datefield, value.var = 'DMH', fun.aggregate = mean, na.rm = TRUE)
+y[, var := 100 * (`2018` / `2017` - 1)]
+tbl <- BasicTable$new()
+tbl$addData(y, 
+        firstColumnAsRowHeaders = TRUE, 
+        explicitColumnHeaders = c('Section', '2017', '2018', 'Variation'),
+        columnFormats = rep(list("%.2f"), ncol(y))
+)
+cells <- tbl$findCells(columnNumbers = 4, maxValue = 0, includeNull = FALSE, includeNA = FALSE)
+tbl$setStyling(cells = cells, declarations = list("background-color" = "#38EB6B", "color" = "#9C0006"))
+cells <- tbl$findCells(columnNumbers = 4, minValue = 2, maxValue = 8, includeNull = FALSE, includeNA = FALSE)
+tbl$setStyling(cells = cells, declarations = list("background-color" = "#FFC60A", "color" = "#9C0006"))
+cells <- tbl$findCells(columnNumbers = 4, minValue = 8, includeNull = FALSE, includeNA = FALSE)
+tbl$setStyling(cells = cells, declarations = list("background-color" = "#FF050D", "color" = "#9C0006"))
+tbl$renderTable()
+
+# Variation by sic (subsection)
+get_tbl_sic <- function(x){
+  y <- dts[datefield < 2019 & section == x][, subsection := as.integer(gsub(',.*', '', sic))]
+  y <- sic[section == x][y, on = c(sic_code = 'subsection')][, sic_code := NULL][!is.na(description)]
+  setnames(y, 'description', 'sit_desc')
+  y <- dcast(y, sit_desc~datefield, value.var = 'DMH', fun.aggregate = mean, na.rm = TRUE)
+  y[, var := 100 * (`2018` / `2017` - 1)]
+  tbl <- BasicTable$new()
+  tbl$addData(y, 
+          firstColumnAsRowHeaders = TRUE, 
+          explicitColumnHeaders = c(paste('SIC of Section:', sections[section == x, description]), '2017', '2018', 'Variation'),
+          columnFormats = rep(list("%.2f"), ncol(y))
+  )
+  cells <- tbl$findCells(columnNumbers = 4, maxValue = 0, includeNull = FALSE, includeNA = FALSE)
+  tbl$setStyling(cells = cells, declarations = list("background-color" = "#38EB6B", "color" = "#9C0006"))
+  cells <- tbl$findCells(columnNumbers = 4, minValue = 2, maxValue = 8, includeNull = FALSE, includeNA = FALSE)
+  tbl$setStyling(cells = cells, declarations = list("background-color" = "#FFC60A", "color" = "#9C0006"))
+  cells <- tbl$findCells(columnNumbers = 4, minValue = 8, includeNull = FALSE, includeNA = FALSE)
+  tbl$setStyling(cells = cells, declarations = list("background-color" = "#FF050D", "color" = "#9C0006"))
+  tbl$renderTable()
+}
+get_tbl_sic('A')
+
+# Variation by Regions / LAD in Region
+get_tbl_rgn <- function(x){
+  y <- dts[datefield < 2019 & RGN == x]
+  y <- dcast(y, LAD~datefield, value.var = 'DMH', fun.aggregate = mean, na.rm = TRUE)
+  y[, var := 100 * (`2018` / `2017` - 1)]
+  y <- lcn[type == 'LAD', .(location_id, name)][y, on = c(location_id = 'LAD')][, location_id := NULL][order(name)]
+  tbl <- BasicTable$new()
+  tbl$addData(y, 
+          firstColumnAsRowHeaders = TRUE, 
+          explicitColumnHeaders = c(paste('Local Authorities for:', lcn[location_id == x, name]), '2017', '2018', 'Variation'),
+          columnFormats = rep(list("%.2f"), ncol(y))
+  )
+  cells <- tbl$findCells(columnNumbers = 4, maxValue = 0, includeNull = FALSE, includeNA = FALSE)
+  tbl$setStyling(cells = cells, declarations = list("background-color" = "#38EB6B", "color" = "#9C0006"))
+  cells <- tbl$findCells(columnNumbers = 4, minValue = 2, maxValue = 8, includeNull = FALSE, includeNA = FALSE)
+  tbl$setStyling(cells = cells, declarations = list("background-color" = "#FFC60A", "color" = "#9C0006"))
+  cells <- tbl$findCells(columnNumbers = 4, minValue = 8, includeNull = FALSE, includeNA = FALSE)
+  tbl$setStyling(cells = cells, declarations = list("background-color" = "#FF050D", "color" = "#9C0006"))
+  tbl$renderTable()
+}
+get_tbl_rgn('E12000008')  # lcn[type=='RGN']
 
 
-## Average Ratings and Counting by Rating for Local Authorities --------------------------------------------------------
+## Average Bonus by Local Authorities --------------------------------------------------------
+y <- dts[datefield == 2018, .(LAD, BPM, BPF)]
+y <- lcn[type == 'LAD', .(location_id, name)][y, on = c(location_id = 'LAD')][, location_id := NULL][order(name)]
+y <- y[, .(.N, BPM = mean(BPM), BPF = mean(BPF)), name]
 
-ys <- shops[as.numeric(rating) <= 6]
-y <- dcast(ys, lad_id~(as.numeric(rating) -1 ))
-ym <- ys[, .(avg = mean(as.numeric(rating) - 1, na.rm = TRUE)), lad_id]
-y <- ym[y, on = 'lad_id']
-y <- lads[, .(lad_id, name)][y, on = 'lad_id'][, lad_id := NULL]
-setorder(y, 'name')
-y <- cbind(y, rowSums(y[, as.character(0:5), with = FALSE]) )
-    
+# y <- dts[datefield == 2018, .(LAD, size, BPM, BPF)]
+# y <- lcn[type == 'LAD', .(location_id, name)][y, on = c(location_id = 'LAD')][, location_id := NULL][order(name, size)]
+# y <- y[, .(.N, BPM = mean(BPM), BPF = mean(BPF)), .(name, size)]
+
 dt <- datatable( 
         y, 
         rownames = FALSE ,
-        colnames = c('Local Authority', 'Rating', 0:5, 'Total'),
+        colnames = c('Local Authority', 'Counting', 'Bonus Men', 'Bonus Women'),
         selection = 'none',
         class = 'cell-border nowrap',
         extensions = c('Buttons', 'FixedColumns', 'Scroller'),
@@ -66,49 +157,37 @@ dt <- datatable(
         ) 
     ) 
 
-dt <- dt %>% formatCurrency('avg', '', digits = 3) %>% formatCurrency(as.character(0:5), '', digits = 0)
+dt <- dt %>% formatCurrency('N', '', digits = 0) %>% formatCurrency(c('BPM', 'BPF'), '', digits = 2)
 
 n_cls <- 9
-v_cls <- classIntervals(y$avg, n_cls)[[2]][2:n_cls]
+v_cls <- classIntervals(c(y$BPM, y$BPF), n_cls)[[2]][2:n_cls]
 dt <- dt %>% 
-        formatStyle('avg', 
+        formatStyle(c('BPM', 'BPF'), 
             `font-weight` = '600',
             backgroundColor = styleInterval(v_cls , brewer.pal(9, 'OrRd')),
             color = styleInterval( v_cls, c(rep('black', 6), rep('white', 3))) 
         )
-bars_col <- c('orangered', 'darkorange', 'gold', 'paleturquoise', 'lightskyblue', 'palegreen')
-show_col(bars_col)
-for(idx in as.character(0:5))
-    dt <- dt %>% 
-        formatStyle(idx,
-           background = styleColorBar( y[, get(idx)], bars_col[as.numeric(idx) + 1] ),
-           backgroundSize = '90% 75%',
-           backgroundRepeat = 'no-repeat',
-           backgroundPosition = 'center'
-        )
-
 
 saveWidget(dt, 
-   file.path(getwd(), 'food_shops_ratings', 'outputs', 'ratings_by_lads.html'), 
+   file.path(getwd(), 'gender_paygap', 'outputs', 'bonus_by_lads.html'), 
    selfcontained = TRUE,
    libdir = 'dependencies',
    background = 'deepskyblue',
-   title = 'Average and Counting Ratings by Local Autorithies'
+   title = 'Bonus by Local Autorithies'
 )
 
-## Average Ratings for Local Authority by Sector --------------------------------------------------------------------------------
+## Quartiles by Sector --------------------------------------------------------------------------------
 
-ys <- shops[as.numeric(rating) <= 6][, ratingn := as.numeric(rating) - 1]
-y <- dcast(ys, lad_id~sector, fun.aggregate = mean, value.var = 'ratingn', fill = NA)
-ym <- ys[, .(avg = mean(ratingn, na.rm = TRUE)), lad_id]
-y <- ym[y, on = 'lad_id']
-y <- lads[, .(lad_id, name)][y, on = 'lad_id'][, lad_id := NULL]
-setorder(y, 'name')
+cols <- names(dts)[grepl('Q', names(dts))]
+y <- dts[datefield == 2018, c('dsection', cols), with = FALSE]
+# y <- lcn[type == 'LAD', .(location_id, name)][y, on = c(location_id = 'LAD')][, location_id := NULL][order(name)]
+y <- y[, lapply(.SD, mean), dsection, .SDcols = cols][order(dsection)]
+
 
 dt <- datatable( 
         y, 
         rownames = FALSE ,
-        colnames = c('Local Authority' = 'name', 'Total Rating' = 'avg'),
+        colnames = c('Section' = 'dsection'),
         selection = 'none',
         class = 'cell-border nowrap',
         extensions = c('Buttons', 'FixedColumns', 'Scroller'),
@@ -116,29 +195,41 @@ dt <- datatable(
             scrollX = TRUE,
             scrollY = 800,
             scroller = TRUE,
-            fixedColumns = list(leftColumns = 2),
+            fixedColumns = list(leftColumns = 1),
             searchHighlight = TRUE,
             buttons = c('copy', 'csv', 'print'),
             ordering = TRUE,
-            columnDefs = list(list(className = 'dt-center', targets = 1:(ncol(y) - 1))),
+            columnDefs = list(
+                list(className = 'dt-center', targets = 1:(ncol(y))),
+                list(
+                    targets = 0,
+                    render = JS(
+                      "function(data, type, row, meta) {",
+                      "return type === 'display' && data.length > 50 ?",
+                      "'<span title=\"' + data + '\">' + data.substr(0, 50) + '...</span>' : data;",
+                      "}"
+                    )
+                )            
+            ),
             deferRender = TRUE,
-                initComplete = JS(
-                    "function(settings, json) {",
-                        "$(this.api().table().header()).css({
-                            'text-align': 'center',
-                            'background-color': '#000000', 
-                            'color': '#F2FF00',
-                            'font-size': '120%'
-                        });",
-                    "}"
-                ),
+            initComplete = JS(
+                "function(settings, json) {",
+                    "$(this.api().table().header()).css({
+                        'text-align':'center',
+                        'background-color':'#000000', 
+                        'color':'#F2FF00',
+                        'font-size':'120%'
+                    });",
+                "}"
+            ),
             dom = 'Biftp'
         ) 
     ) 
 
-dt <- dt %>% formatCurrency(1:ncol(y), '', digits = 3) 
+dt <- dt %>% formatCurrency(2:ncol(y), '', digits = 2) 
 
-brks <- quantile(y[,2:ncol(y)], probs = seq(.05, .95, .05), na.rm = TRUE)
+brks <- quantile(y[, 2:ncol(y)], probs = seq(.05, .95, .05), na.rm = TRUE)
 clrs <- round(seq(255, 40, length.out = length(brks) + 1), 0) %>%
   {paste0("rgb(255,", ., ",", ., ")")}
 dt <- dt %>% formatStyle(2:ncol(y), backgroundColor = styleInterval(brks, rev(clrs)))
+dt
