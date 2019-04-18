@@ -21,15 +21,15 @@ sections <- fread(file.path(data_path, 'sections.csv'))
 vars <- fread(file.path(data_path, 'vars.csv'))
 lcn <- read.fst(file.path(geo_path, 'locations'), as.data.table = TRUE)
 
-## Some query ----------------------------------------------------------------------------------------------------------
-
-y <- dts[datefield == 2018]
+## Simple tables ---------------------------------------------------------------------------------------------------------
 
 # Totals by size
+y <- dts[datefield == 2018]
 qhtbl(y[, .N, size], firstColumnAsRowHeaders = TRUE, columnFormats = list(NULL, list(big.mark = ',')))
 qhtbl(rbindlist(list( y[, .N, size], c('TOTAL', y[, .(.N)]) )), firstColumnAsRowHeaders = TRUE, columnFormats = list(NULL, list(big.mark = ',')))
 
 # Totals by section with pct distribution
+y <- dts[datefield == 2018]
 qhtbl(
   y[, .N, dsection][, pct := 100*N/sum(N)][order(dsection)],
   firstColumnAsRowHeaders = TRUE,
@@ -37,6 +37,7 @@ qhtbl(
 )
 
 # Average Metrics by section
+y <- dts[datefield == 2018]
 cols <- names(dts)[((which(names(dts) == 'DMH')):ncol(dts))]
 y <- y[, lapply(.SD, mean, na.rm = TRUE), dsection,  .SDcols = cols][order(dsection)]
 tbl <- BasicTable$new()
@@ -117,7 +118,8 @@ get_tbl_rgn <- function(x){
 get_tbl_rgn('E12000008')  # lcn[type=='RGN']
 
 
-## Average Bonus by Local Authorities --------------------------------------------------------
+## DataTables ---------------------------------------------------------------------------------------------------------
+
 y <- dts[datefield == 2018, .(LAD, BPM, BPF)]
 y <- lcn[type == 'LAD', .(location_id, name)][y, on = c(location_id = 'LAD')][, location_id := NULL][order(name)]
 y <- y[, .(.N, BPM = mean(BPM), BPF = mean(BPF)), name]
