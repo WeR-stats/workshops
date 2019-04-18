@@ -60,11 +60,11 @@ build_poly_popup <- function(x){
 
 # set parameters
 dte <- 2018
-# area_code <- 'LAD'
-# has_parent <- FALSE
-area_code <- 'MSOA'
-has_parent <- TRUE
-parent_code <- 'E12000007'
+area_code <- 'LAD'
+has_parent <- FALSE
+# area_code <- 'MSOA'
+# has_parent <- TRUE
+# parent_code <- 'E12000007'
 mtc_num <- 'n_companies'
 mtc_den <- 'population'
 mtc_name <- 'Density (%)'
