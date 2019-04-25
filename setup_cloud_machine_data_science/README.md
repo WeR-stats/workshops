@@ -1,10 +1,9 @@
 # How to Setup a Cloud Server for Data Science
 
-**Author**: [Luca Valnegri](https://www.linkedin.com/in/lucavalnegri/) [@datamaps](https://twitter.com/datamaps)
+**Author**: [Luca Valnegri](https://www.linkedin.com/in/lucavalnegri/)   
+**Last Updated**: 25-Apr-2019
 
-**Last Updated**:  07-Mar-2019
-
-  <a name="index"/>
+<a name="index"/>
 
 ---
   * [Motivations](#motivations)
@@ -12,48 +11,35 @@
     + [Sign up to Digital Ocean](#sign-up-do)
     + [Login into Digital Ocean](#login-do)
     + [Secure Digital Ocean Account](#secure-do)
-    + [Create *droplet*](#droplet-without-ssh-key)
+    + [Create Your First *droplet*](#droplet-without-ssh-key)
     + [First Connection](#first-connection)
       - [Windows Users](#without-key-windows)
       - [Linux and macOS Users](#without-key-linux-macos)
   * [Customize Your New Server](#customize-your-new-server)
     + [Upgrade the System](#upgrade-system)
     + [Add Admin User](#add-admin-user)
-    + [Add *public* Group](#add-public-group)
-    + [Add *public* Repository](#add-public-repository)
-    + [Add Security Layer](#add-security)
+    + [Add *public* Group and Repository](#add-public)
+    + [Add Security Layers](#add-security)
     + [Install *Webmin*](#install-webmin)
     + [Add Domain Name](#domain-name)
     + [Take Your First *Snapshot*](#first-snapshot)
   * [The *R* Stack](#r-stack)
     + [Install core *R*](#install-r)
-      - [Packages Management](#r-packages-management)
     + [Install *RStudio Server*](#install-rstudio-server)
       - [Using Projects with Version Control](#rstudio-using-projects-with-version-control)
     + [Install *Shiny Server*](#install-shiny-server)
+    + [Testing the *R* stack](#testing-the-r-stack)
     + [Install *Ubuntu* Dependencies for *R* packages](#install-linux-dependencies-for-r-packages)
     + [Install *R* packages](#install-r-packages)
-      - [Data Preparation](#r-packages-data-preparation)
-      - [Data Processing](#r-packages-data-processing)
-      - [Data Display and Visualization](#r-packages-data-display-and-visualization)
-        * [*htmlwidgets*, *JS* wrappers](#r-packages-htmlwidgets--js-wrappers)
-        * [*ggplot* extensions](#r-packages-ggplot-extensions)
-      - [Data Modeling, Mining and Learning](#r-packages-data-modeling--mining-and-learning)
-      - [Spatial Data](#r-packages-spatial-data)
-      - [Graphs, Network](#r-packages-graphs--network)
-      - [Data Presentation, *Shiny*](#r-packages-data-presentation--shiny)
-      - [Applications](#r-packages-applications)
-      - [Tools and Utilities](#r-packages-tools-and-utilities)
-    + [Testing the *R* stack](#testing-the-r-stack)
   * [Ngnix](#ngnix)
     + [Install Nginx](#nginx-install)
-    + [Nginx Configuration](#nginx-configuration)
-    + [Make Pretty URLs for RStudio Server and Shiny Server](#pretty-url)
-    + [Add SSL Certificate](#ssl-certificate)
-    + [Install php preprocessor](#php)
-    + [Add Authentication to Shiny Server](#shiny-auth)
-  * [The *Python* Data Science Stack](#python-data-science-stack)
-    + [Install *Python*](#inpython)
+    + [Install php preprocessor](#nginx-php)
+    + [Dedicated URLs for RStudio Server and Shiny Server](#nginx-url)
+    + [Add SSL Certificate for encrypted *https* connection](#nginx-ssl)
+    + [Add Basic Authentication to Shiny Apps](#nginx-auth)
+    + [Nginx Configuration](#nginx-conf)
+  * [The *Python* Data Science Stack](#python)
+    + [Install *Python*](#python-install)
     + [Install the Data Science Stack](#python-stack)
     + [Install *Jupyterlab*](#jupyterlab)
   * [Storage engines](#storage-engines)
@@ -62,16 +48,14 @@
     + [Neo4j](#neo4j)
     + [MongoDB](#mongodb)
     + [Redis](#redis)
-    + $ [PostgreSQL](#postgresql)
-    + $ [MonetDBLite](#monetdblite)
-    + $ [Hive / Hbase](#hive-hbase)
-    + $ [Influx DB](#influx-db)
+    + [MonetDB Lite](#monetdb)
+    + [Influx DB](#influxdb)
   * [Docker](#docker)
     + [Install Docker](#docker-install)
     + [Basic Commands](#docker-commands)
     + [Dockerfile](#dockerfile)
     + [Example: *Selenium* for Web Driving](#docker-selenium)
-    + [Resources](#docker+resources)
+    + [Resources](#docker-resources)
   * [Additional Tools](#additional-tools)
     + [Fonts](#fonts)
     + [Spark](#spark)
@@ -92,8 +76,15 @@
   <a name="motivations"/>
 
 ## Motivations 
+If you’ve always wanted to have:
+  - an RStudio Server of your own so that you can access your R projects from anywhere (albeit with an internet connection)
+  - your own Shiny Server to host your awesome data visualizations, the results of statisical modeling,  or simply some Rmarkdown documents
+  - a jupyterlab server to share your knowledge with your team colleagues
+  - one or more database server to store any kind of data, small or/and big, relational and/or schema-less
+  - your own cloud storage to acces your file from everyhere without paying another company to do so
+the following notes will help you!
 
-
+This tutorial is quite lengthy, as it is full of details for the novice. If you just want the step-by-step list, a sort of cheat-sheet, it's better for you to follow [this document]().
 
 <br/>
 
@@ -126,17 +117,17 @@
 
   <a name="droplet-without-ssh-key"/>
 
-### Create *droplet*
+### Create Your First *droplet*
   - Click the green "Create" button in the top right
   - Click "Droplet" from the unfolding menu
   - For the installation step, you should create a VPS which is at least 2GB RAM, because a few packages require more than 1GB RAM to compile. You can always change up or down either number of CPUs or amount of RAM later.
-     For the moment being, choose the following:
-    - Distribution: `Ubuntu 18.04.x x64`
-    - Size: RAM 2GBPower: 1vCPUs, Storage: 50GB, Bandwith: 4TB, Cost: $10/mo ($0.030/hr)
-	- Region: `London`
-	- Choose a memorable name. You can always change it later from inside the machine
-	- Choose the reference project. I guess you only have the default one at the moment though. You can build more structure to your account later if you decide to stick with Digital Ocean.
-    - Click `Create`
+     For the moment being, choose the following (moving top to bottom):
+    - Image / Distributions: `Ubuntu 18.04.x x64`
+    - Plan / Starter (Standard): C 4TB, RAM 2GB, Power CP, Storage 50GB, Transfer 4TB
+	- Datacenter Region: `London`
+	- Hostname: choose a memorable name ou can always change it later from inside the machine
+	- Tags: choose the reference project. I guess you only have the default one at the moment though. You can build more structure to your account later if you decide to stick with Digital Ocean.
+  - Click `Create`
   - Wait for the email containing the IP public address of the server, and the password for the *root* user. The IP address could also be found in the *Resources* tab besides the name of the droplet. 
 
 Notice that Digital Ocean highly discourage the creation of *swap space*, practice often used to keep down the size, and hence the cost, of the droplet. This is due to the fact that their system is all made up of SSD storage, that is highly degraded by the continous read/write access, typical when swapping. Besides, upgrading the droplet leads to much better results in general.
@@ -187,7 +178,7 @@ If the IP address and the user name are correctly recognized, the system then pr
 ### Upgrade the System
   - To enable monitoring from the DO dashboard enter the following command (or simply copy and paste, it doesn't hurt):
     ~~~
-    curl -sSL https://agent.digitalocean.com/install.sh | sh
+    curl -sSL https://insights.nyc3.cdn.digitaloceanspaces.com/install.sh | sudo bash
     ~~~
     After a few minutes, you'll see a bunch of graphs and KPIs populating your droplets dashboard.
   - Enter the command  `date` to test if the timezone is correct. If it doesn't show the correct time and/or desired timezone, run the following commands: 
@@ -208,7 +199,7 @@ If the IP address and the user name are correctly recognized, the system then pr
 	`keep the local version currently installed`
   - install some needed *basic* libraries that could be missed from the system (this much depends on how your chosen provider has decided to install the OS):
     ~~~
-    apt-get -y install apt-transport-https software-properties-common nano dos2unix man-db ufw git-core libgit2-dev libauthen-oath-perl openssh-server
+    apt-get -y install apt-transport-https software-properties-common nano dos2unix man-db ufw git-core libgit2-dev libauthen-oath-perl openssh-server build-essential
     ~~~
   - restart the system: 
     ~~~
@@ -257,24 +248,37 @@ It's customary instead to use a group called *sudo* that will act as a temporary
     ~~~
     exit
     ~~~
- 
-From now on you should forget there exists a user called *root*, and always use instead *usrname* to run admin commands.
 
-  <a name="add-public-group"/>
+From now on you should forget there exists a user called *root*, and always use instead *usrname* to run admin stat through the *sudo* commands.
 
-### Add *public* group
+If you need to change a user's password, run the command:
+~~~
+sudo passwd usrname
+~~~
+then enter the new password. Notice that only the *root* user, or a *sudoer*, can change a password of any other user.
+If you want instead to completely delete a user, log in as *root*, or switch to the *root* user:
+~~~
+sudo su -
+~~~
+then run the command:
+~~~
+userdel -r usrname
+~~~
+You would drop the `-r` option if you want to keep the user's *home* dire.
+
+
+  <a name="add-public"/>
+
+### Add *public* group and repository
 
 ~~~
 sudo groupadd public
 sudo usermod -aG public usrname
 ~~~
 
-  <a name="add-public-repository"/>
-
-### Add *public* repository
 I decided to go for `/usr/local/share/public`, but feel free to change the location as you wish.
 ~~~
-sudo mkdir -p /usr/local/share/public/
+sudo mkdir /usr/local/share/public/
 sudo chgrp -R public /usr/local/share/public/
 sudo chmod -R 2775 /usr/local/share/public/
 ~~~
@@ -286,13 +290,13 @@ after which the path can be retrieved issuing a simple `$PUB_PATH` command. It's
 ~~~
 sudo nano /etc/environment
 ~~~
-then add the following line at the end
+then add the following line at the end:
 ~~~
 PUB_PATH="/usr/local/share/public"
 ~~~
 Reboot to make sure the above changes have been applied.
 
-Once you've decided the actual location, you have to build some structure in it, and that mostly depends on your projects. Any of the subdir can been created with the generic command:
+Once you've decided the actual location, you have to build some structure in it, and that task mostly depends on your future projects. Any of the subdir can been created with the generic command:
 ~~~
 mkdir -p /usr/local/share/public/newsubdir
 ~~~
@@ -302,49 +306,101 @@ mkdir -p $PUB_PATH/newsubdir
 ~~~
 
 A possible quicker way to build a complete structure at once is to create a loop over a list of subdirs conveniently saved in a text file, as in the following example:
-  - first save a plain text file as `subdirs.lst` in some directory in your *home* folder with the list of subdirs to be installed, each on its own line
-  - save the following commands as text file named `subdirs.sh` in the same directory as the previous `subdirs.lst`:
-    ```
+  - first save a plain text file as `subdirs.lst` in some directory in your *home* folder with the list of subdirs to be created, each on its own line
+  - save the following commands as a text file named `subdirs.sh` in the same directory as the previous `subdirs.lst`:
+    ~~~
     #!/bin/sh
     while read SDIR
     do
         mkdir -p $PUB_PATH/$SDIR
     done < `dirname $0`/subdirs.lst
-    ```
+    ~~~
   - make the above file an executable script:
-    `chmod +x ~/path/to/subdirs.sh`
+    ~~~
+    chmod +x ~/path/to/subdirs.sh
+    ~~~`
   - run it as:
-    `~/path/to/subdirs.sh`
+    ~~~
+    ~/path/to/subdirs.sh
+    ~~~
+  - check the folders structure hasactually been built:
+    ~~~
+    ls $PUB_PATH -l
+    ~~~
+
+You can use an online service to speed up a bit, and automate the above process, in case you plan to use multiple VPS. I saved two example files [subdirs.lst](https://github.com/WeR-stats/workshops/blob/master/setup_cloud_machine_data_science/subdirs.lst) and [subdirs.sh](https://github.com/WeR-stats/workshops/blob/master/setup_cloud_machine_data_science/subdirs.sh) in the [workshop](https://github.com/WeR-stats/workshops) repository of the [WeR meetup GitHub](https://github.com/WeR-stats) account, but you should create two of your own, using whichever service you prefer, and change the below command accordingly. The complete process is outlined below:
+~~~
+mkdir -p ~/scripts/subs
+cd ~/scripts/subs
+wget -O subdirs.lst https://raw.githubusercontent.com/WeR-stats/workshops/master/setup_cloud_machine_data_science/subdirs.lst
+wget -O subdirs.sh https://raw.githubusercontent.com/WeR-stats/workshops/master/setup_cloud_machine_data_science/subdirs.sh
+chmod +x subdirs.sh
+./subdirs.sh
+~~~
+Notice that some service, like [Pastebin]([https://pastebin.com/), returns text files in *DOS format*, that uses  as a line separator a combination of *carriage return* followed by a *linefeed* (usually abbreviated as *CRLF*), typical of Windows machines, instead of a linefeed character (*LF*), like all other modern operating systems. This means that once you've downloaded them, you have to convert every line separator before processing. Following you can see the same example as above, but using the files [subdirs.lst](https://pastebin.com/dshKNkDu) and [subdirs.sh](https://pastebin.com/WRsSWjgS)  hosted on  [Pastebin]([https://pastebin.com/):
+~~~
+mkdir -p ~/scripts/subs
+cd ~/scripts/subs
+wget -O subdirs.lst https://pastebin.com/raw/dshKNkDu
+wget -O subdirs.sh https://pastebin.com/raw/WRsSWjgS
+dos2unix *
+chmod +x subdirs.sh
+./subdirs.sh
+~~~
+
+You can follow a similar approach if you plan to partition your *home* folder in lots of subfolders.
+
 
   <a name="add-security"/>
   
 ### Add security layers
-First, deny the `root` user direct access via SSH:
-  - open the SSH configuration file (if `nano: command not found` then `sudo apt-get install nano`):
-    `sudo nano /etc/ssh/sshd_config`
- - change and Insert the following lines, then save the file (CTRL+x ==> y ==> Enter) :
-	`PermitRootLogin no`
-  - restart the service:
-	`sudo systemctl restart ssh`	
-  - logout, and test that the *root* user is NOT capable to ssh into the machine
+The first step in highten the security of your new VPS is to block any remote access for the `root` user:
+  - open the SSH configuration file for editing (we always use the simplest [nano editor](https://www.nano-editor.org/)):
+    ~~~
+    sudo nano /etc/ssh/sshd_config
+    ~~~
+  - scroll down (using the *key down* button, not the mouse!) until you find the line:
+    ~~~
+	PermitRootLogin yes
+    ~~~
+    then change `yes` to `no` 
+  - save the file: `CTRL+x` ==> `y` ==> `Enter`
+  - restart the SSH service:
+    ~~~
+    sudo systemctl restart ssh
+    ~~~
+  - logout, or open a new connection window/tab, and test that the *root* user is NOT capable to *ssh* into the machine
 
-Login back again as the *new* user, and let's change the standard ssh port **22** to a random integer number `xxxx` between 1024 and 65535:
-  - open the SSH configuration file:
-    `sudo nano /etc/ssh/sshd_config`
-  - change the following line as desired, then save the file (CTRL+x ==> y ==> Enter)
-	`Port xxxx`
-	If there is a *hashtag* **#** at the start of the line, which means that the line is a comment and so not to be read by the system, delete it.
+Login back again as the *new* user, and let's change the standard *ssh* port **22** to some random integer number `xxxx` between 1024 and 65535:
+  - open the SSH configuration file for editing:
+    ~~~
+    `sudo nano /etc/ssh/sshd_config
+    ~~~
+  - scroll down until you find the line:
+    ~~~
+	Port 22
+    ~~~
+  - change the number `22` into the number `xxxx` you've settled upon, then save the file (CTRL+x ==> Enter). If there's a *hashtag* `#` at the start of the line, meaning that the line is a comment and so not to be processed by the system, delete it.
   - restart the service 
-	`sudo systemctl restart ssh`
-  - **without logging out from the current session**, open another session besides the one already open, and test that the new user is capable to *ssh* into the machine using the new `xxxx` port, but not from the standard **22**. If anything does not sounds right, close this session and fix using the original session.
+    ~~~
+    sudo systemctl restart ssh
+    ~~~
+  - **without logging out from the current session**, open another session besides the one already open, and test that the new user is capable to *ssh* into the machine using the new `xxxx` port, but not from the standard `22`. If anything does not sounds right, close this session and fix using the original session.
 
 Lastly, enable the standard firewall *ufw* allowing at once the new above port (THIS IS IMPORTANT!!!)
-  - enable firewall
-	`sudo ufw enable`
-  - allow the *ssh* port (the new `xxxx` if it's been changed, or the standard **22** if it's not been changed)
-	`sudo ufw allow xxxx`
+  - enable the firewall software:
+    ~~~
+    sudo ufw enable
+    ~~~
+    answering `y`es to the question
+  - allow the *ssh* port (the new `xxxx` if it's been changed, or the standard `22` if you inadvertently haven't follow my above suggestion to change it)
+    ~~~
+    sudo ufw allow xxxx
+    ~~~
   - check if the rule has been correctly applied, check again the number is correct!
-	`sudo ufw status`
+    ~~~
+    sudo ufw status
+    ~~~
 	Now, using a different session as earlier, test that the new user is still capable to ssh into the machine.
 
 The following table lists the default ports for the main services used in this document. For a more comprehensive list of default ports used by various well-known services see [this Wikipedia article](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers) .
@@ -372,42 +428,41 @@ The following table lists the default ports for the main services used in this d
 | NEXTCLOUD |  |
 | CALIBRE   |  |
 
-A short list of some of the most used commands for the standard firewall is the following:
+A short list of some of the most used commands for the standard firewall `ufw` is the following:
   - `ufw enable` 
   - `ufw disable` 
   - `ufw status` 
   - `ufw status verbose` 
-  - `ufw allow XXXX` 
   - `ufw allow app list` 
   - `ufw allow app_profile`  
   - `ufw allow XXXX/tcp` 
   - `ufw allow XXXX/udp` 
   - `ufw allow XXXX:YYYY` 
   - `ufw allow from www.xxx.yyy.zzz` 
-  - `ufw delete allow XXXX` 
+  - `ufw delete rule` where `rule` is any of the literal you have previously specified in an `allow` command.allow XXXX` 
   - `ufw deny XXXX` 
   - `ufw reset` 
 
 All the above commands must obviously be launched as a *sudoer*.
 
-If anything happens, and you can't login anymore through remote SSH, most VPS and Cloud providers allow users to open a shell from the dashboard account. 
-On Digital Ocean head for the droplet dashboard. At the top right, there is a **Console** button which allows to login directly using password authentication. You often need to actually click into it before it becomes active.
-Moreover, if you forget the root password, or you've never set it, head again for the droplet dashboard, and from the left menu click on the **Access** item. There you can find the magic button to reset the root password. Once you log in, if not asked by the system itself, you should reset the password again using the following commands:
+If anything happens, and you can't login anymore through remote SSH, most VPS and Cloud providers allow users to open a shell from the dashboard account. On Digital Ocean head for the droplet dashboard. At the top right, there is a **Console** button which allows to login directly using password authentication. You often need to actually click into it before it becomes active.
+
+Moreover, if you forget the root password, or you've never set it, head again for the dropletdashboard, and from the left menu click on the **Access** item. There you can find the magic button to reset the root password. Once you log in, if not asked by the system itself, you should reset the password again using the following commands:
 ~~~
 sudo -i
 passwd
 ~~~
  
-  <a name="install-webmin"/>
+  <a name="install-ebmin"/>
 
 ### Install Webmin
-While powerful and efficient, sometimes it's just nicer to work with a simple and intuitive graphic interface to manage the system. Here comes [Webmin](http://www.webmin.com/).
+While powerful and efficient, sometimes it's just nicer to work with a simple and intuitive graphic interface to manage the system. Here comes [*Webmin*](http://www.webmin.com/).
 
-  - add the Webmin address to the list of trusted packages repositories:
+  - add the *Webmin* address to the list of trusted packages repositories:
     ~~~
     echo -e "\n# WEBMIN\ndeb http://download.webmin.com/download/repository sarge contrib\n" | sudo tee -a /etc/apt/sources.list
     ~~~
-  - download the *public key* of the Webmin developer [Jamie Cameron](https://github.com/jcameron) to secure the Ubuntu package manager:
+  - download the *public key* of the *Webmin* developer [Jamie Cameron](https://github.com/jcameron) to secure the Ubuntu package manager:
     ~~~
     wget http://www.webmin.com/jcameron-key.asc
     ~~~
@@ -419,16 +474,16 @@ While powerful and efficient, sometimes it's just nicer to work with a simple an
     ~~~
     sudo apt-get update
     ~~~
-  - install webmin:
+  - install *Webmin*:
     ~~~
     sudo apt-get install -y webmin
     ~~~
-  - allow access to the default Webmin port: 
+  - allow access to the default *Webmin* port: 
     ~~~
     sudo ufw allow 10000
     ~~~
-  - navigate to the *secure* URL [https://server_ip:10000/](https://server_ip:10000/) (notice that the *default* protocol `http` does not work), don't worry for now about the warnings
-  - enter your now usual username and password to log in into the Webmin console
+  - navigate to the *secure* URL [https://server_ip:10000/](https://server_ip:10000/) (notice that the *default* protocol `http` does not work) --, don't worry for now about the warnings, we'll solve it later
+  - enter your *Ubuntu*now usual username and password to log 	in into the *Webmin* console
   - redirect standard `http` calls to encrypted `https` protocol:
     ~~~
     Webmin > 
@@ -436,7 +491,7 @@ While powerful and efficient, sometimes it's just nicer to work with a simple an
 	    SSL Encryption >
     ~~~
     Check **Yes** for `Redirect non-SSL requests to SSL mode?`, then `Save`
-  - change default port to some random number `XXXX` :
+  - change default port to some random integer number `xxxx`  of your choice between 1024 and 65535, but obviously different from the one you previously chose for the *SSH* service:
     ~~~
     Webmin > 
 	  Webmin Configuration >
@@ -446,24 +501,25 @@ While powerful and efficient, sometimes it's just nicer to work with a simple an
     ~~~
 	Also check:
     - **NO** for `Accept IPv6 connections? `
-    - **Don't listen** for `Listen for broadcasts on UDP port` 
-  - after the last change has been saved, the website will go down as the port has changed and it can't reconnect to its server anymore
+    - **Don't listen** for `Listen for broadcasts on UDP port`
+    
+    When you're done with the changes click `Save`. T After the last change has been saved, the website will go down, as the port has changed and it can't reconnect to its server anymore
   - restart *Webmin* to load the new configuration:
     ~~~
     sudo service webmin restart
     ~~~
-  - go back to the terminal, and allow access to the new `XXXX` port: 
+  - go back to the terminal, and allow access to the new `xxxx` port: 
     ~~~
-    sudo ufw allow XXXX
+    sudo ufw allow xxxx
     ~~~
-  - delete the previous rule for the default **10000** port:
+  - delete the previous rule for the default `10 port:
     ~~~
     sudo ufw delete allow 10000
     ~~~
-  - check the software is now reachable at the new port even without specifying the secure protocol: [server_ip:XXXX/](http://server_ip:XXXX/)
+  - check the software is now reachableew port
 
 It's a safer choice to add [Two-Factor Authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication) to all web services that offer it. To do it with your new *Webmin* system configuration manager:
-  - after opening the Webmin page, go to:
+  - after opening the *Webmin* page go to:
     ~~~
     Webmin > 
 	  Webmin Configuration >
@@ -476,29 +532,33 @@ It's a safer choice to add [Two-Factor Authentication](https://en.wikipedia.org/
 	  Webmin Users >
 	    Two-Factor Authentication
     ~~~
-    click `Enroll For Two-Factor Authentication`, and follow the instructions. If you choose the *Google* authenticator, you now have to open the app, click the *plus sign*, and scan the barcode. From now on, you need *user*, *password* and Google app temporary *token* to enter the Webmin manager.
+    click `Enroll For Two-Factor Authentication`, and follow the instructions. If you choose the *Google* authenticator, you now have to open the app on your phone, click the *plus sign*, and scan the barcode. From now on, you need *user*, *password* and Google app temporary *token* to enter the Webmin manager. You should try it now to check it actually works!
 
 <a name="domain-name"/>
 
 ### Add Domain Name
 How boring and annoying is to always remember an IP address? Enter [domain names](https://en.wikipedia.org/wiki/Domain_name)! For the current purpose, there's no point though in spending lots of money to own a fancy domain. Head to [Freenom World](http://www.freenom.org) to grab a free one! The catch here is that the choice of [Top-Level Domain](https://en.wikipedia.org/wiki/Top-level_domain) is restricted in the set: *tk*, *ga*, *ml*, *cf* and *gq*. 
 
-Anyway, once you're on the *Freenom* landing page, look for a domain name you like, and click Get it Now and then move to the checkout page. Once there, click first `Use DNS` then the tab `Use your own DNS`, and in the texboxes labelled with `Nameserver` insert respectively:
-`ns1.digitalocean.com` 
+Anyway, once you're on the *Freenom* landing page:
+  -, look for a domain name you like, and make sure it is actually free of charge, as some combinations with the five above TLDs are subscription based.
+  - click `Get it Now`, and then move to the checkout page.
+  - Once there, click first `Use DNS`, then the tab `Use your own DNS`, and in the two textboxes labelled with `Nameserver` insert respectively:
+    - `ns1.digitalocean.com`
+    - 
 `ns2.digitalocean.com`
-Go on and complete the sign up and checkout processes.
+  -Go on and complete the sign up and checkout processes.
 
-Once you own a domain, head to the [Digital Ocean](https://cloud.digitalocean.com/) website. 
-  - from the main menu on the left click `Networking`, then enter the tab `Domains`. 
-  - in the textbox *Enter domain* under `Add a domain` write your hostname, 
+Once you own a domain, head to the [Digital Ocean](https://cloud.digitalocean.com/) website, then:. 
+  - from the main menu on the left click `Manage` > `Networking`, then enter the tab `Domains`. 
+  - in the textbox with the placeholder `Enter domain` write the domain name you've just *bought**Enter domain* under `Add a domain` write your hostname, 
   - from the listbox on the right choose the project that include the server you want to apply the domain to
-  - finally click `Add Domain`, and the domain should appear in the list below. Click on it!
+  - finally click `Add Domain`, and the domain should appear in a newthe list below. Click on it!
     - in the `HOSTNAME` textbox enter `@`, 
     - in the `WILL DIRECT TO` choose the server
     - finally click `Create Record`
-  - repeat the last steps entering `www`  in the `HOSTNAME` textbox 
+  - repeat the last two steps after entering `www`  in the `HOSTNAME` textbox 
 
-Now you should simply wait from a few seconds to a few hours, depending on how fast the global sytem will update your changes, and if you head to [http://hostname]() you should see the same content as [http://ip_address]()
+Now you should simply wait from a few seconds to a few hours, depending on how fast the global sytem will update your changes, and if you head to [http://hostname]() you should see the same content as [http://ip_address](). Currently, though, the only content you can check is the *Webmin* service, but we'll soon add lots of bells and whistles!
 
 
 <a name="first-snapshot"/>
@@ -507,18 +567,24 @@ Now you should simply wait from a few seconds to a few hours, depending on how f
 At this point in time, it'd be useful to save the current state of the machine, called **snapshot**, so that if something happens in the future it's always possible to revert back to the current situation in a few minutes with a click from the droplet dashboard. Moreover, we could also build other similar droplets but slighlty different, and use this snapshot as a starting point, instead of going back to the entire droplet creation.
 
 To snapshot a droplet:
-  - shut down the droplet: `sudo shutdown now`
-  - login into your DO account, head for the droplet dashboard, and from the left menu click  **Snapshots**, enter a memorable name in the textbox, then click **Take Snapshot**
-  - Once finished,  start the droplet again using the switch on the upper right
+  - shut down the droplet using the terminal:
+    ~~~
+    : `sudo shutdown now
+    ~~~`
+  - login into your DO account, head for the droplet dashboard, and from the left menu click  `**Snapshots`**, enter a memorable name in the textbox, then click `**Take Snapshot`**
+  - oOnce the process has finished, you can start the droplet again using the switch on the upper right
 
 To restore a snapshot on the droplet it was created from:
-  - 
+  - head for the snapshots page of the droplet from which the requested snapshot was created. You can also click `Manage` > `Snapshots` from the main menu on the left to see all the snapshots you've created
+  - from the list of droplet snapshots at the bottom, click the `More` dropdown menu on the far right of the desired snapshot box
+  - click `Restore Droplet`
+Notice that the restoring process will replace the current droplet content with the one available at the time you saved the chosen snapshot, so be very careful in performing this action.
 
-In case you want to create a new droplet from a snapshot:
+In case you want to create an entirely new droplet from a snapshot:
   - open the  [droplet **Create** page](https://cloud.digitalocean.com/droplets/new), 
-  - select the  **Snapshots** tab
+  - select the  `**Snapshots`** tab. Notice that you won't find this tab if you've never created any snapshots.
   - choose the snapshot you’d like to create the droplet from
-  - fill out the rest of the choices on the **Create** page as desired, then click  **Create**
+  - fill out the rest of the choices on the **Create** page as desired, then click  `**Create`**
 
 
 <br/>
@@ -532,14 +598,14 @@ In case you want to create a new droplet from a snapshot:
 
 ### Install core *R*
 
-  - add the CRAN address to the list of trusted packages repositories
+  - add the CRAN address to  trusted packages repositories
     ~~~
     echo -e "\n# CRAN REPOSITORY\ndeb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/\n" | sudo tee -a /etc/apt/sources.list
     ~~~
 
     Notice that the above command:
     - presumes that the installed OS version is **18.04 LST**. For previous versions of the *Ubuntu* distribution, change the word `bionic` with the correct adjective using [this list](https://en.wikipedia.org/wiki/Ubuntu_version_history) as a reference. In particular, the previous *16.04* LTS version is named `xenial`.
-    - connects to  `cran.rstudio.com`, which is the the generic redirection service from *RStudio*, but it's also possible to switch to a static closer location (according to the chosen VM region, not the user's location!) using [this list](https://cran.r-project.org/mirrors.html).
+    - connects to  `cran.rstudio.com`, which is the the generic redirection service provided by [RStudio](https://www.rstudio.com), but it's also possible to switch to a static closer location (according to the chosen VM region, not the user's location!) using [this list](https://cran.r-project.org/mirrors.html).
   - download and add the *public key* of the CRAN maintainer [Michael Rutter](https://launchpad.net/~marutter/+archive/ubuntu/rrutter) to the apt keyring:
     ~~~
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
@@ -553,12 +619,12 @@ In case you want to create a new droplet from a snapshot:
     sudo apt-get install -y r-base r-base-dev
     ~~~
  
-To add the *public* repository we define earlier to the *R* environment:
+To add to the *R* environment the path of the *public* repository we defined earlier to the *R* environment:
   - open the general *R* configuration file for editing:
     ~~~
     sudo nano $(R RHOME)/etc/Renviron
     ~~~    
-  - add the following line (or a similar one) at the end:
+  - add the following line at the end (or a similar one if you've defined a different folder)) at the end:
     ~~~
     PUB_PATH = '/usr/local/share/public'
     ~~~
@@ -566,7 +632,23 @@ To add the *public* repository we define earlier to the *R* environment:
     ~~~
     Sys.getenv('PUB_PATH')
     ~~~
- 
+
+In the same way as above, you can add two other important constants to the *R* environment file:
+  - one note of caution is how packages are installed, if you don't want to end up with lots of duplications, different versions and incompatibility. To overcome this situation, we define a common shared location for the packages to be stored. The line to add in the configuration file is the following:
+    ~~~
+    R_LIBS_USER = '/usr/local/share/public/R_library'
+    ~~~
+  - if you try to install lots of packages in the same session, you'll probably get the following message:
+    ~~~
+    maximal number of DLLs reached...
+    ~~~
+    In that case, you need to tell *R* that it can open more than the default 100 libraries in a single session. The line to add in the configuration file is the following:
+    ~~~
+    R_MAX_NUM_DLLS = 1000
+    ~~~
+    Notice that you can write down a smaller number, but 1,000 is the biggest number that you can set the variable to without *R* complaining.
+
+
   <a name="install-rstudio-server"/>
 
 ### Install RStudio Server
@@ -582,7 +664,7 @@ To add the *public* repository we define earlier to the *R* environment:
     ~~~
   - download the package:
     ~~~
-    wget -O rstudio https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-1.2.1268-amd64.deb
+    wget -O rstudio https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-1.2.1511-amd64.deb
     ~~~
     Please note that the above command presumes Ubuntu *Xenial* 18.04 LTS, and the *preview* 64bit version at the time of writing. It's worth verifying the newest version visiting [this page](http://www.rstudio.com/products/rstudio/download/preview/), and in case substitute where needed. 
     Moreover, if you prefer to stay on the safer side and want to install the *stable* release, check instead [this page](https://www.rstudio.com/products/rstudio/download-server/) for the correct link of the newest version. 
@@ -594,21 +676,32 @@ To add the *public* repository we define earlier to the *R* environment:
     ~~~
     sudo ufw allow 8787
     ~~~
-  - head for [http://ip_address:8787/]() to check the software is up and running 
-  - Change the default port **8787** to some random integer number `XXXX`:
+  - head for [http://ip_address:8787/](), or [http://hostname:8787/]() if you've added a domanin name, to check the software is up and running 
+  - Change the default port `8787` to some random integer number `xxxx` different from the choicesas above:
     - open the configuration file for editing:
-    `sudo nano /etc/rstudio/rserver.conf`
+    ~~~
+    sudo nano /etc/rstudio/rserver.conf
+    ~~~
     - add an entry corresponding to the port you want RStudio to listen on:
-      `www-port=XXXX`
+    ~~~
+    www-port=xxxx
+    ~~~
     - restart the server:
-      `sudo service rstudio-server restart`
+    ~~~
+    sudo service rstudio-server restart
+    ~~~
     - add a rule to the firewall:
-      `sudo ufw allow XXXX`
-    - head for [http://ip_address:XXXX/]() to check the software is up and running.
-    - delete the previous rule for the default **8787** port:
-      `sudo ufw delete allow 8787`
+    ~~~
+    sudo ufw allow xxxx
+    ~~~
+    - head for [http://ip_address:xxxx/]() to check the software is up and running.
+    - delete the previous rule for the default `8787` port:
+    ~~~
+    sudo ufw delete allow 8787
+    ~~~
 
-You should now give yourself some time to play around the configurations, that you can find under the menu: `Tools > Global Options`. In particular, the first four options:
+You should now give yourself some time to play around the configurations, that you can find under the menu: `Tools > Global Options`. You can find a file `rstudio.conf` in the repository of this workshop that lists most of the changes I usually apply as soon as I install the software. You should also take some time to build your personal snippets library, clicking the button  `Edit snippets...` at the bottom of the `Code > Editing` window. You can read more about it at the dedicated [RStudio documentation]([https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets](https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets)) page.
+In particular, the first four options:
    - `General`: 
    - `Code`: 
    - `Appearance`: 
@@ -639,26 +732,26 @@ To add an existing repository to *RStudio*:
     - [Bitbucket](https://bitbucket.org/): on the BB website, go to the main source of the repository, click `Clone` on the upper right, then copy the address in the textbox (drop the initial `git clone` text)
   - in *Rstudio Server*, click the Project dropdown list in the upper right (if this is the first time that RSudio runs, it probably reads as `Project: (None)`), then `New Project`, `Version Control`, and finally `Git`  (this is going to work for both GitHub and BitBucket)
   - copy the address in the textbox called  *Repository URL*, and fill as desired the other two text boxes
-  - click `Create Project`. Notice that if the repository is private, you have to insert your username and  password to start cloning the repo. If you're using *GitHub*, it's a smart choice not to use the access password when dealing with RStudio projects, but create a [GitHub token](https://github.com/settings/tokens) to use instead of the password. You should limit the token scope only to *Access public repositories* or *Full control of private repositories*, depending on your needs. You could also generate a specific *RSA key* from the `Git/SVN` section of the `Tools` > `Global Options` menu, and add it to your GitHub account using the `New SSH key` button under the `SSH and GPG keys` section of the `Settings` menu.
+  - click `Create Project`. Notice that if the repository is private, you have to insert your username and  password to start cloning the repo. If you're using *GitHub*, it's a smart choice not to use the access password when dealing with RStudio projects, but create instead a [GitHub token](https://github.com/settings/tokens) to replaceuse instead of the password. You should limit the token scope only to *Access public repositories* or *Full control of private repositories*, depending on your needs. You could also generate a specific *RSA key* from the `Git/SVN` section of the `Tools` > `Global Options` menu, and add it to your GitHub account using the `New SSH key` button under the `SSH and GPG keys` section of the `Settings` menu.
 
 
   <a name="install-shiny-server"/>
 
 ### Install Shiny Server
-  - install first the *shiny* package from inside *R*, using admin privileges. While we are at it, let's also install the *rmarkdown* package just to ensure that the *Shiny Server* landing page loads completely correct:
-    - *Linux* terminal:
-      `sudo su`
-      `R`
-    - *R* console:
-      `install.packages(c('rmarkdown', 'shiny'))`
-      `q()`
-    - *Linux* terminal:
-      `exit`
-      
-    Please, don't run *R* as `sudo R`, because in that case packages would be installed in the user local directory, and couldn't be loaded by the `shiny` user. 
-    If you decided to use instead a subfolder into the *public* repository, remember to specify the optional argument as  in:
-    `install.packages(c('rmarkdown', 'shiny'), lib.loc = file.path(Sys.getenv('PUB_PATH'), 'R-library'))`
-    Hereafter, I'll drop the reference to the initial `sudo su / R` and final `q() / exit` commands, and will only warn to *enter $R$ as sudo*  
+  - install first the `shiny` and `rmarkdown` packages. This is actually not necessary for the correct functioning of the *Shiny Server*, but it's just to ensure that its landing page loads completely correct, showing the *shiny* app and the *rmarkdown* document on the right of the screen.
+    - enter the *R* software from the *Linux* terminal:
+    ~~~
+      R
+    ~~~
+    - install the packages from the *R* console:
+    ~~~
+      install.packages(c('rmarkdown', 'shiny'))
+    ~~~
+    - quit the *R* software:
+    ~~~
+      q()
+    ~~~
+    You can hit `n` when prompted to avoid saving this session.
   - move into the software repository we created in the previous RStudio installation step:
     `cd ~/software`
   - download the package (check [here](https://www.rstudio.com/products/shiny/download-server/) for latest version):
@@ -667,18 +760,18 @@ To add an existing repository to *RStudio*:
     `sudo gdebi shiny`
   - add a rule to the firewall to allow the default port *Shiny Server* is listening to:
     `sudo ufw allow 3838`
-  - head for [http://ip_address:3838/]() to check the software is up and running. Notice that the error in the second app is normal, as it needs the *RMarkdown* package to work, which is  not be installed yet.
-  - Change the default **3838** port to the standard **80**, so that the user can access the server without an explicit port in the URL (but be sure that there are no other web servers listening to that port):
+  - head for [http://ip_address:3838/]() to check the software is up and running.
+  - change the default port `3838` to some random integer number `xxxx`:
     - open the *Shiny Server* configuration file for editing:
     `sudo nano /etc/shiny-server/shiny-server.conf`
-    - change the port from **3838** to **80**:
-      `listen 80`
+    - change the port from `3838` to `xxxx`:
+      `listen xxxx`
     - restart the server:
       `sudo service shiny-server restart`
     - add a rule to the firewall:
-      `sudo ufw allow 80`
-    - head for [http://ip_address/]() to check the software is up and running.
-    - delete the previous rule for the default **3838** port:
+      `sudo ufw allow xxxx`
+    - head for [http://ip_address:xxxx/]() to check the software is up and running.
+    - delete the previous rule for the default `3838` port:
       `sudo ufw delete allow 3838`
   - add the *shiny* user to the *public* group, so that it can share the *public* repository as well:
     ~~~
@@ -691,6 +784,7 @@ To add an existing repository to *RStudio*:
     sudo chmod g+w .
     sudo chmod g+s .
     ~~~
+    Please notice that the dots in the above statements are *not* a typo
   - to copy apps from any location in any *public* user's home folder to the appropriate shiny server subfolder directory:
     ~~~
     mkdir /srv/shiny-server/<APP-NAME>
@@ -701,8 +795,6 @@ To add an existing repository to *RStudio*:
    <a name="testing-the-r-stack"/>
 
 ### Testing the R stack
-If you're eager to watch some beauty about what you can do with $Shiny$ in a few lines of code, spend the next hour ... Otherwise, jump to the next section and finish installing all the R goodies.
-
 There is a repository on the [WeR GiHub](https://github.com/WeR-stats) website called [shinyapps](https://github.com/WeR-stats/shinyapps). At the time of writing these notes, there's at least one app (subfolder) called [uk_petitions](https://github.com/WeR-stats/shinyapps/tree/master/uk_petitions) that lets you easily download all data regarding any of  the [petitions](https://petition.parliament.uk/petitions) created under the current UK government, and then draw a [choropleth map](https://gisgeography.com/choropleth-maps-data-classification/) of the provenance of the corresponding subscribers using the [leaflet](http://rstudio.github.io/leaflet/) package. 
 
 If you still haven't installed any package, besides *shiny* and *rmarkdown*, let's install the ones needed for the app to run correctly. We first need to install some system dependencies though.
@@ -712,7 +804,7 @@ sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 sudo apt-get update 
 sudo apt-get install gdal-bin libgdal-dev libgeos++-dev libudunits2-dev libv8-dev libjq-dev libcairo2-dev libxt-dev
 ~~~
-You can now enter $R$ as *sudo*, and actually install the required packages:
+You can now enter *R*, then install the required packages:
 ~~~
 install.packages('devtools')
 library(devtools)
@@ -722,14 +814,14 @@ pkgs <- c(
 )
 install.packages(pkgs, dep = TRUE)
 ~~~
-The above is going to take some time, possibly half an hour, so go and grab a cup of cofee to keep you happy. 
+The above process is going to take some time, possibly half an hour, so go and grab a cup of cofee to keep you happy. 
 
 When finished, let's create a directory for the app in the *Shiny Server* repository:
 ~~~
 mkdir /srv/shiny-server/uk_petitions
 ~~~
 
-To copy the app code into the above folder, we first create a new project in *RStudio Server*, cloning the repository directly in the user *home* folder. 
+To copy the app code into the above folder, we first need to create a new project in *RStudio Server*, cloning the repository directly in the user *home* folder. 
 
 Once the repo has been pulled on the server, run the following simple command to actually copy the code:
 ~~~
@@ -740,7 +832,7 @@ You can now open a browser and head to [http://ip_address/uk_petitions]() to see
 
   <a name="install-linux-dependencies-for-r-packages"/>
 
-### Install Linux dependencies for R packages
+### Install *Ubuntu* dependencies for R packages
 
   - **devtools**:
     ~~~
@@ -768,7 +860,7 @@ You can now open a browser and head to [http://ip_address/uk_petitions]() to see
 	sudo apt-get update 
 	sudo apt-get install -y gdal-bin libgdal-dev
     ~~~
-    But check [here](https://launchpad.net/~ubuntugis/+archive/ubuntu/ppa)  for the availability of the *stable*  release of the *UbuntuGIS* suite of spatial packages  for Ubuntu *Bionic* **18.04**, then substitute the first line in the above group with the following:
+    But check [here](https://launchpad.net/~ubuntugis/+archive/ubuntu/ppa)  for the availability of the *stable*  release of the *UbuntuGIS* suite of spatial packages  for Ubuntu *Bionic* **18.04**, then replacsubstitute the first line in the above group with the following:
     ~~~
     sudo add-apt-repository ppa:ubuntugis/ppa
     ~~~
@@ -831,116 +923,13 @@ You can now open a browser and head to [http://ip_address/uk_petitions]() to see
   <a name="install-r-packages"/>
 
 ### Install R packages
-One note of caution is how packages are installed, if you don't want to end up with lots of duplications, different versions and incompatibility
-To overcome this situation, choose one of the following alternatives:
-  - packages should be installed as **root**, (`sudo su` / `R`) so that they always end up in the system library that can be read by any user by default
-  - define a common shared location for the packages to be stored, then include it explicitly in *any* call to the installation command:
-    `install.packages('pkgname', lib.loc = '/path/to/library')`
+When dealing with many packages, the manual approach is tedious, and most important very prone to errors. A more efficient and safer way to install multiple packages is to store the list of packages in a simple text file, check and drop from the list the ones that are already installed, then install only the remaining. 
 
-Having said that, to install a single package as *root* there are two main ways:
-  - a single linux line:
-    `sudo su - -c "R -e \"install.packages('pkgname', repos='http://cran.rstudio.com/')\""`
-  - a *normal* *R* installation, after having started *R* as *root*:
-    - *Linux* terminal:
-      `sudo su`
-      `R`
-    - *R* console:
-      `install.packages('pkgname', repos='http://cran.rstudio.com/')`
-      `q()`
-    - *Linux* terminal:
-      `exit`
-    
-When dealing with many packages, though, both the above approaches are tedious, and most important very prone to errors. A more efficient and safer way to install multiple packages as *super user* in the system library, is the following:
-  - first save a plain text file as `r_packages.lst` in some directory with the list of packages to be installed, each on its own line
-  - have your password as the only entry in a plain text file called as `pwd` and saved in the root of your home folder
-  - save the following commands as text file named `install_r_packages.sh` in the same directory as the previous list `r_packages.lst`:
-    ```
-    #!/bin/sh
-    while read PKG
-    do
-      cat $PWD/pwd | sudo -S su - -c "R -e \"install.packages('$PKG'')\""
-    done < `dirname $0`/r_packages.lst
-    ```
-  - change executable
-    `sudo chmod +x ~/path/to/install_r_packages.sh`
+You should now clone from the [WeR GitHub](https://github.com/WeR-stats) website you can find some list of suggested packages:
+  - `r_packages_min.lst` relates to packages found directly on the *CRAN* website
+  - `r_packages_gh.lst` lists packages that are found ony on *GitHub*, and still to be released on *CRAN*, and possibly never be, and have therefore to be installed using the functionalities provided by the *devtools* package. Feel free to delete any package from any of the above lists, or add anyone else you need for your job. 
 
-You can obviously rename the above files `r_packages.lst` and `install_r_packages.sh` in any other way, changing accordingly the stated commands, but the extension `.sh` must be preserved because that's the way Linux recognize executable files
-
-While efficient, the above linux script lacks of a *general* summary output at the end of the script. Because it processes one package at a time, it gives back only a partial log for each package, that gets easily lost in the plethora of *R* output that can be generated. Moreover, you can't avoid to install packages that are already installed. A most sensible way would be the following: 
-  - enter *R* as *super user* as usual:
-    ~~~
-    sudo su
-    R
-    ~~~
-  - run the below commands one by one:
-    ~~~
-    pkgs <- readLines(file('/home/usrname/scripts/r_packages/r_packages.lst'))
-    pkgs <- pkgs[!sapply(pkgs, require, char = TRUE)]
-    install.packages(pkgs)
-    ~~~
-    or save them in a text file `install_r_packages.R`, and run it using the `source` command:
-    ~~~
-    source('/home/usrname/path/to/install_r_packages.R')
-    ~~~
-    In the above calls to external files, do not use the standard $UNIX$ *tilde* character `~` to denote the user *home* directory, because $R$ does not expand it and will therefore throw an error. Alternatively, you can `cd` into the `path` before the $R$ call, and then call the script file directly without adding any path.
-  - when the installation comes to an end, read carefully if there are any warnings about packages having *non-zero exit status*. If that's the case, scroll back until you find the errors in the log, usually in red bold ink, and act accordingly. It is often a lack of Linux libraries that needs to be installed in the *Ubuntu* system, before installing the packages. 
-If you can't get over the error(s), just *google* the entire feedback. Often, limiting the timespan of the search in the previous year only is a good move, as the same error could be related to different past situations.
-  - at the end, exit $R$:
-      `q()`
-  - and then exit *sudo*:
-    `exit`
-
-If you try to install lots of packages in the same session, you'll probably get the following message:
-`maximal number of DLLs reached...`
-In that case, you need to tell $R$ that it can open more than the default 100 libraries in a single session:
-  - open the general $R$ configuration file for editing:
-    `sudo nano $(R RHOME)/etc/Renviron`
-  - add the following string at the end:
-    `R_MAX_NUM_DLLS = 1000`
-    Notice that 1,000 is the biggest number that you can set the variable to without $R$ complaining.
-    
-Some packages (**iheatmapr**) need also dependencies from the [Bioconductor]('https://bioconductor.org/) repository, that have to be installed with their own package manager:
-~~~
-install.packages('BiocManager')
-BiocManager::install('S4Vectors')
-BiocManager::install('graph')
-~~~
-Notice that like any other $R$ package, the above should be installed as `sudo` as well.
-
-Finally, take also note also that starting with version 3.5 some $R$ internals have changed so much that all packages need to be rebuilt to work properly, and some of them have even been removed from $CRAN$ because of issues that have to be fixed to pass all due checks. 
-
-On the [WeR GitHub](https://github.com/WeR-stats) website you can find two lists of suggested packages, classified hereafter by their possible application in Data Science:
-  - `r_packages.lst` relates to packages found directly on the *CRAN* website
-  - `r_packages_gh.lst` lists packages that are still to be released on *CRAN*, and possibly never be, and have therefore to be installed using the functionalities provided by the *devtools* package
-Feel free to delete any package from the list, or add anyone else you need for your job  
-
-To install the packages in the lists: 
-  - cd into `~/scripts/r_packages/`
-  - download from the GitHub repository the lists of packages, and the R source files:
-    ~~~
-    wget -O r_packages.R https://raw.githubusercontent.com/WeR-stats/workshops/master/setup_cloud_machine_data_science/r_packages.R
-    wget -O r_packages.lst https://raw.githubusercontent.com/WeR-stats/workshops/master/setup_cloud_machine_data_science/r_packages.lst
-    wget -O r_packages_gh.R https://raw.githubusercontent.com/WeR-stats/workshops/master/setup_cloud_machine_data_science/r_packages_gh.R
-    wget -O r_packages_gh.lst https://raw.githubusercontent.com/WeR-stats/workshops/master/setup_cloud_machine_data_science/r_packages_gh.lst
-    ~~~
-  - enter $R$ as *root*, then `source('r_packages.R')`. It'll take probably 3 hours to end. Don't look at the warnings (for now), but instead exit $R$ *without saving the  session*, re-enter and run again `source('r_packages.R')`. At the end, that's the right time to look at all the warnings that $R$ has probably thrown out.
-
-You should try to keep the SSH connection open during the whole installation, to avoid the scripts to break. If anything happens and the script stops suddenly, before running the script again you should look into the library repository and delete, if present, any folder that starts with `00LOCK-`, together with the folders recalled by them. For example, if the script breaks while installing the `xxx` package, there will exist a (temporary) folder called `00-LOCK-xxx` and the actual package folder called `xxx`. Notice that you have to be admin to succeed in deleting the folders.
-  - check first what to delete:
-    ~~~
-    sudo su
-    cd /usr/local/lib/R/site-library/
-    ls 00* -l
-    ~~~
-  - delete the folders:
-    ~~~
-    rm -rf 00LOCK-*
-    rm -rf xxx
-    ~~~
-  - exit sudo:
-    ~~~
-    exit
-    ~~~
+In the repository there is also a [markdown file](r_packages.md) that contains a brief description of most of the packages contained in the above lists, divided by their (main) application in the [Data Science Workflow](http://). A star after the name indicates that the package is (still) not available on CRAN, and must be installed from its *GitHub* repository using the `devtools` package. When possible, some links to available resources have also been included.
 
 It's important to note that if you want to install ALL the packages in the above CRAN list, you do need to up the RAM of your machine to a minimum of 4GB, at least for the time necessary to install all the packages and their dependencies (you actually need even 8GB if you want to install also the [prophet](https://github.com/facebook/prophet) package, that requires the [RStan](https://mc-stan.org/users/interfaces/rstan) probabilistic language).
 To accomplish the resizing:
@@ -951,8 +940,39 @@ To accomplish the resizing:
   - turn the machine back on acting on the switch on the upper right
   - when you're done with the installation, you can resize down the machine to your desired specs using the same procedure
 
-The [included file](r_packages.md) contains a brief description of most of the packages contained in the above lists, divided by their ... in the Data Science Workflow. A star after the name indicates that the package is (still) not available on CRAN, and must be installed from its GitHub repository using the *devtools* package. When possible, some links to available resources have also been included.
-  
+To install the packages in the above lists, enter first the *R* software from the *Linux* terminal, then *source* the *R* script with the same name of the list you're interested in. For example, to install the minimal set of CRAN packages in the `r_packages_min.lst` list, run:
+~~~
+source('r_packages_min.R')
+~~~
+while to install the *GitHub* only packages contained in the `r_packages_gh.lst` list, run:
+~~~
+source('r_packages_gh.R')
+~~~
+
+You should try to keep the SSH connection open during the whole installation, to avoid the scripts to break. If anything happens and the script stops suddenly, before running the script again you should look into the library repository and delete, if present, any folder that starts with `00LOCK-`, together with the folders recalled by them. For example, if the script breaks while installing the `xxx` package, there will exist a (temporary) folder called `00-LOCK-xxx` and the actual package folder called `xxx`.
+  - check first what to delete:
+    ~~~
+    cd /usr/local/share/public/R_library
+    ls 00* -l
+    ~~~
+  - delete the folders:
+    ~~~
+    rm -rf 00LOCK-*
+    rm -rf xxx
+    ~~~
+
+Once the script has finished, don't be scared by all the warnings (for now!), but instead exit *R* *without saving the session*, then re-enter *R* and run the same script again. At the end of this second run, that's the right time to look at all the warnings that *R* has probably thrown out (most of them have probably disappeared). Read carefully if there are any warnings about packages having *non-zero exit status*, those are the packages that have not been installed. If that's the case, scroll back until you find the errors in the log, usually in red bold ink, and act accordingly. It is often a lack of one or more Linux libraries that needs to be installed in the *Ubuntu* system, before installing the packages (you should only look at the libraries meant for the *Debian* systems). If you can't get over the error(s), just *google* the entire feedback. Often, limiting the timespan of the search in the previous year only is a good move, as the same error could be related to different past situations. There's also a dedicated [WeR Slack](https://we-r-stats.slack.com/messages/CER9296DP/) channel that you can join and ask for help. 
+
+Some packages, like `iheatmapr`, need also *R* dependencies from the [Bioconductor]('https://bioconductor.org/) repository, that have to be installed with their own package manager:
+~~~
+install.packages('BiocManager')
+BiocManager::install('S4Vectors')
+BiocManager::install('graph')
+~~~
+
+Finally, take also note also that starting with version 3.5 some *R* internals have changed so much that all packages need to be rebuilt to work properly, and some of them have even been removed from *CRAN* because of issues that have to be fixed to pass all due checks. 
+
+
 <br/>
 
 :point_up_2:[Back to Index](#index)
@@ -964,22 +984,22 @@ The [included file](r_packages.md) contains a brief description of most of the p
 <a name="nginx-install"/>
 
 ### Install Nginx
-  - Just in case Apache is already installed, stop the server and remove the package:
+  - If you've just started with a new machine, it's highly improbable you have Apache installed and running on your system. In any other case, stop the server and uninstall the package:
     `sudo systemctl stop apache2`
     `sudo apt-get remove -y apache*`
- - if you changed the *Shiny Server* listening port to **80**, edit its configuration file again to change the port to whatever else, as **80** has to be dedicated to the web server. 
- - if you haven't done it before, open port **80** for unencrypted traffic:
+ - if you've changed the *Shiny Server* listening port to `80`, edit its configuration file again to change the port to whatever else, as `80` has to be dedicated to the web server. 
+ - if you haven't done it before, open port `80` for unencrypted traffic:
     `sudo ufw allow 80`
   - now we're ready to install the *nginx* server:
     `sudo apt-get install -y nginx`
   - after the completion of the installation process, the Nginx web server should start and run automatically. To ensure that the service is actually up and running, run the following command:
     `sudo systemctl status nginx`
 
-To test that the service is actually working, enter the **server_ip** or **hostname** directly into the browser's address bar, and you should see the default Nginx landing page.
+To test that the service is actually working, enter the [server_ip]() or [hostname]() directly into the browser's address bar, and you should see the default Nginx landing page.
     
-  <a name="pretty-url"/>
+  <a name="nginx-php"/>
   
-### Install script language
+### Install php preprocessor
 We're going to install [PHP-FPM](https://php-fpm.org/), a FastCGI implementation alternative to the more common [PHP](http://php.net/) usually installed besides the Apache Web Server
 
   - install php, *plus* its mysql extensions (we're going to need the latter later):
@@ -1018,7 +1038,11 @@ We're going to install [PHP-FPM](https://php-fpm.org/), a FastCGI implementation
     ~~~
   - restart the web server:
     ~~~
-    sudo systemctl nginx reload
+    sudo systemctl reload nginx
+    ~~~
+  - check the web server is running:
+    ~~~
+    sudo systemctl reload nginx
     ~~~
   - to test if the *php* interpreter  is actually working, create a new file in the webroot directory:
     ~~~
@@ -1028,51 +1052,60 @@ We're going to install [PHP-FPM](https://php-fpm.org/), a FastCGI implementation
     ~~~
     <?php phpinfo();
     ~~~
-    After opening the page you should be greeting with a horrible php welcome page listing lots of stuff, and on top the *php* and *Ubuntu* versions running on the system:
+    After opening the page [http://hostname/info.php](http://we-r.london/info.php) you should be greeting with a horrible php welcome page listing lots of stuff, and on top the *php* and *Ubuntu* versions running on the system:
 
 
-
+  <a name="nginx-url"/>
+  
 ### Dedicated URLs for RStudio Server and Shiny Server
   - open the *Nginx* configuration file for editing
     ~~~
     sudo nano /etc/nginx/sites-enabled/default
     ~~~
-  - add the following lines for *Shiny Server*, substituting `XXXX` with the correct port:
+  - *before* the `server` directive, add the following lines:
     ~~~
-    location /shiny/ {
-        proxy_pass http://127.0.0.1:XXXX/;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        rewrite ^(/shiny/[^/]+)$ $1/ permanent;
+    map $http_upgrade $connection_upgrade {
+        default upgrade;
+        '' close;
     }
     ~~~
-  - add the following lines for *RStudio Server*, substituting `XXXX` with the correct port:
-    ~~~
-    location /rstudio/ {
-        proxy_pass http://127.0.0.1:XXXX/;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-    }
-    ~~~
-  - find the existing line:
-    `server_name _;`
-    and replace the underscore **_** with the domain name	of your choice
+  - *inside* the `server` directive:
+    - add the following lines for *RStudio Server*, substituting `yyyy` with the correct port:
+      ~~~
+      location /rstudio/ {
+          proxy_pass http://127.0.0.1:yyyy/;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection $connection_upgrade;
+      }
+      ~~~
+    - add the following lines for *Shiny Server*, substituting `xxxx` with the correct port:
+      ~~~
+      location /shiny/ {
+          proxy_pass http://127.0.0.1:xxxx/;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection $connection_upgrade;
+          rewrite ^(/shiny/[^/]+)$ $1/ permanent;
+      }
+      ~~~
+    - find the line:
+      `server_name _;`
+      and replace the underscore `_` with the domain name	of your choice
   - quit the editor, saving the file
   - verify that the syntax of the above configuration editings is actually correct:
     `sudo nginx -t`
 	If you get any errors, reopen the file and check for typos, then test it again, until you get a succesful feedback.
   - once the configuration's syntax is correct, reload *Nginx* to load the new configuration:
     `sudo systemctl reload nginx`
-  - you should now see the same results from the url http://hostname/shiny as from http://hostname:XXXX, http://hostname/rstudio as from http://hostname:XXXX. 
-  - once you're happy with the changes, you can delete the rules from the firewall related to Shiny and RStudio.
+  - you should now see the same results from the urls [http://hostname/shiny/](http://we-r.london/shiny/) and [http://hostname/rstudio/](http://we-r.london/rstudio/) as if you were using the port `xxxx`and respectively `yyyy`
+  - once you're happy with the changes, you can delete the rules from the firewall related to the Shiny Server port `xxxx` and the RStudio Server port `yyyy`.
 
-  <a name="ssl-certificate"/>
+  <a name="nginx-ssl"/>
 
 ### Add SSL Certificate for encrypted *https* connection
 We will use [Let's Encrypt](https://letsencrypt.org/) to obtain a free SSL certificate.
-  - open port **443** to allow SSL/TSL encrypted traffic through the firewall:
+  - open port `443` to allow SSL/TSL encrypted traffic through the firewall:
     ~~~
     sudo ufw allow 443
     ~~~
@@ -1086,26 +1119,57 @@ We will use [Let's Encrypt](https://letsencrypt.org/) to obtain a free SSL certi
     ~~~
 	sudo certbot --nginx -d hostname.tld -d www.hostname.tld
     ~~~
+    where `hostname.tld` has to be substituted with the true hostname of your choice
   - answer the few questions and wait for the *challenge* to be positively completed. I suggest you ask for redirection (answer number 2)
-  - check finally that http://hostname/shiny and http://hostname/rstudio redirect correctly to https://hostname/shiny and respectively https://hostname/rstudio
+  - when the *cert* process comes to an end, check that https://hostname/shiny and https://hostname/rstudio are working correctly as their unsecure `http` siblings
+  - if you asked for *http* redicrection, check finally that http://hostname/shiny and http://hostname/rstudio redirect correctly to https://hostname/shiny and respectively https://hostname/rstudio
 
 Note that every certificate has an expiry date:
   - to obtain a new or tweaked version of any certificate in the future, simply run the above command again adding the `--certonly` option
-  - to non-interactively renew *all* of your certificates, run `certbot renew`.
-
-
-  <a name="shiny-auth"/>
-
-### Add Authentication to Shiny Server apps
-As we've seen before, from the server's point of view a shiny app is nothing more than a subfolder in the server base folder, which by default is `/srv/shiny-server`. Using *Nginx* capabilities, it's easy to add a *basic* form of authentication to any shiny app.
-  -  we need a password file where users that should be able to log in are listed along with their passwords in encrypted form. To accomplish that, we'll use the Apache's `htpasswd` command from the `utils` library, that we need to install:
+  - to non-interactively renew *all* of your certificates, run:
     ~~~
+    sudo certbot renew
+    ~~~
+
+
+  <a name="nginx-auth"/>
+
+### Add Basic Authentication to Shiny Apps
+As we've seen before, from the server's point of view a shiny app is nothing more than a subfolder in the server base folder, which by default is `/srv/shiny-server`. Using *Nginx* capabilities, it's easy to add a *basic* form of authentication to any shiny app.
+  -  first, we need a user/password map file, where users that should be able to log in are listed along with their passwords in encrypted form. To accomplish that, we'll use the Apache's `htpasswd` command from the `utils` library, that we need to install:
+    ~~~
+    sudo apt-get update && sudo apt-get upgrade
     sudo apt-get install -y apache2-utils
     ~~~
- 
- **_TBD_**
+  - we are now in a position to create user and passwords, we are going to save a file for each app in a dedicated subfolder of our public repo `PUB_PATH`:
+    ~~~
+    htpasswd -c $PUB_PATH/shiny_server/pwds/appname.pwds username
+    ~~~
+    Once the above command has been issued, you'll be ask to provide the associated password twice.
+    Notice that the above is just a suggestion, and you are free to change any folder and file names.
+  - next, open for editing the Nginx default configuration file:
+    ~~~
+    sudo nano /etc/nginx/sites-available/default
+    ~~~
+    and add the following code anywhere inside the `server` directive:
+    ~~~
+    location /shiny/appname/ {
+      auth_basic "Username and Password are required"; 
+      auth_basic_user_file /usr/local/share/public/shiny_server/pwds/appname_pwds;
+    }
+    ~~~
+    Notice that you should have one and only of the above for each `appname`, although the reference file `appname_pwds` could be the same for more than one app
+  - check the configuration is correct:
+    ~~~
+    sudo nginx -t
+    ~~~
+  - restart Nginx:
+    ~~~
+    sudo systemctl nginx reload
+    ~~~
 
-  <a name="nginx-configuration"/>
+
+  <a name="nginx-conf"/>
 
 ### Nginx Configuration Structure
 The following are the location and names of the configuration and log files:
@@ -1166,11 +1230,11 @@ It is possible to add as many blocks as desired as follows:
 <br/>
 
 :point_up_2:[Back to Index](#index)
-<a name="the-python-data-science-stack"/>
+<a name="python"/>
 ## The Python Data Science Stack
 
 
-  <a name="install-python"/>
+  <a name="python-install"/>
 
 ### Install Python 
 Although Python is often automatically installed on Ubuntu, take a moment to confirm that version **3.4+** is already installed on the system, by issuing the following command: 
@@ -1187,51 +1251,47 @@ sudo apt-get install -y python3 python3-dev python3-pip
 sudo -H pip3 install --upgrade pip
 ~~~
 
-  <a name="install-the-data-science-stack"/>
+  <a name="python-stack"/>
 
 ### Install the Data Science Stack
 We are now in a position to install all the top packages needed for a decent data science stack:
   - [Pandas](http://pandas.pydata.org/) for data manipulation and wrangling
-  - [NumPy](http://www.numpy.org/), [SciPy](http://www.scipy.org/scipylib/index.html), and [SymPy](http://www.sympy.org/) for numerical computation
-  - [matplotlib](http://matplotlib.org/), [seaborn](http://seaborn.pydata.org/), [Bokeh](https://bokeh.pydata.org/), [plotly](https://plot.ly/python/), and [folium](http://python-visualization.github.io/folium/) for data visualization
-  - [NetworkX](https://github.com/networkx/networkx), [pydot](https://github.com/pydot/pydot) 
+  - [Beautiful Soup](https://launchpad.net/beautifulsoup), [scrapy](https://scrapy.org/), and [pattern](https://github.com/clips/pattern) for web scraping and mining
+  - [NumPy](http://www.numpy.org/), [SciPy](http://www.scipy.org/scipylib/), [xarray](http://xarray.pydata.org/), and [SymPy](http://www.sympy.org/) for numerical computation
+  - [matplotlib](http://matplotlib.org/), [seaborn](http://seaborn.pydata.org/), [Bokeh](https://bokeh.pydata.org/), [HoloViews](http://holoviews.org/), [plotly](https://plot.ly/python/), [hvPlot](https://hvplot.pyviz.org/), [plotnine](https://plotnine.readthedocs.io/),  and [chartify](https://github.com/spotify/chartify) for generic data visualization
+  - [NetworkX](https://github.com/networkx/networkx) and [pydot](https://github.com/pydot/pydot) for graph and network analysis
+  - [Shapely](https://github.com/Toblerity/Shapely) and [GeoPandas](http://geopandas.org/) for manipulating spatial objects, [pyshp](https://pypi.org/project/pyshp/) to read/write [ESRI Shapefiles](https://en.wikipedia.org/wiki/Shapefile), [folium](http://python-visualization.github.io/folium/) for interactive spatial visualization using the [leaflet.js](https://leafletjs.com) library, and [GEoViews](http://geoviews.org/) for flexible visualizations of multidimensional geographical data
   - [Statsmodels](http://statsmodels.sourceforge.net/) for statistical inference and modeling
   - [scikit-learn](http://scikit-learn.org/) for generic machine learning
-  - [XGBoost](http://xgboost.readthedocs.io/en/latest/),  [LightGBM](http://lightgbm.readthedocs.io/en/latest/Python-Intro.html) and [CatBoost](https://github.com/catboost/catboost) provide highly optimized, scalable and fast implementations of [gradient boosting](https://en.wikipedia.org/wiki/Gradient_boosting)
-  - [Eli5](https://eli5.readthedocs.io/en/latest/) 
-  - [Keras](https://github.com/keras-team/keras), [TensorFlow](https://github.com/tensorflow/tensorflow), [Theano](https://github.com/Theano/Theano), and [Chainer](https://chainer.org/) for Deep Learning
-  - [NLTK](http://www.nltk.org/), [Gensim](https://radimrehurek.com/gensim/) and [spaCy](https://spacy.io/) for Natural Language Processing and Topic Modeling
+  - [XGBoost](http://xgboost.readthedocs.io/),  [LightGBM](http://lightgbm.readthedocs.io/), and [CatBoost](https://github.com/catboost/catboost) provide highly optimized, scalable and fast implementations of gradient boosting
+  - [shogun](http://www.shogun-toolbox.org/) is a machine learning toolbox with a focus on large-scale kernel methods
+  - [Keras](https://github.com/keras-team/keras), [Theano](https://github.com/Theano/Theano), [TensorFlow](https://github.com/tensorflow/tensorflow), [TFLearn](http://tflearn.org/), [adanet](https://github.com/tensorflow/adanet), [pytorch](https://pytorch.org/), and [Chainer](https://chainer.org/) for Deep Learning and Neural Network implementations
+  - [TPOT](https://epistasislab.github.io/tpot/) is a toolbox that tries to optimize machine learning pipelines using genetic programming
+  - [Eli5](https://eli5.readthedocs.io/) for modeling debugging and back-tracing
+  - [Optimus](https://github.com/ironmussa/Optimus) is a framework for distributed  machine learning using [Apache Spark](https://spark.apache.org/)
+  - [NLTK](http://www.nltk.org/), [Gensim](https://radimrehurek.com/gensim/), and [spaCy](https://spacy.io/) for Natural Language Processing and Topic Modeling
   - [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/) 
-  - [pytorch]()
-  - [Apache MXNet](https://github.com/apache/incubator-mxnet)
-  - [shogun](http://www.shogun-toolbox.org/) a machine learning toolbox with a focus on Support Vector Machines (SVM)
-  - [Caffe]() 
-  - [Beautiful Soup](https://launchpad.net/beautifulsoup), [scrapy](https://scrapy.org/) and [pattern](https://github.com/clips/pattern) for data wrangling, web scraping and mining
-  - [Cython](http://cython.org/), [Dask](https://dask.pydata.org/) and [Numba](https://numba.pydata.org/) for high performace and distributed computiing
+  - [Caffe](http://caffe.berkeleyvision.org) is a library for machine learning in vision applications
+  - [Cython](http://cython.org/), [Dask](https://dask.pydata.org/), and [Numba](https://numba.pydata.org/) for high performance and distributed computiing
   - [pytest](https://pytest.org/) for quality assurance
-  - [IPython](https://ipython.org/) and [Jupyter](jupyter.org/) Notebook, for interactive computing in multiple programming languages.
+  - [JupyterLab](https://jupyterlab.readthedocs.io/)  for interactive computing in multiple programming languages.
 
-Notice that some libraries *seaborn* requires the following additional library to be installed beforehand: 
-  - aaa
-    ~~~
-    ~~~
-sudo apt-get install -y python3-tk
-    ~~~
+Some of the above packages requires the following libraries to be installed beforehand on the system:
   - the Microsoft Cognitive Framework *CNTK* requires the *OpenMPI* library:
     ~~~
     sudo apt-get install -y openmpi-bin
     ~~~
+  - pytorch:
+    ~~~
+    pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl  
+    ~~~
+    If any error shows up, you should first ensure your version of Python is 3.7.x, as indicated in the above filename. If your version of Python is different, try first to adjust the filename according to the version number. 
   - if using *Theano* or *Keras* it's better to also install the *OpenBLAS* libraries to improve performance:
     ~~~
     sudo apt-get install -y libopenblas-dev
     ~~~
-  - ,,,
-    ~~~
-    pip3 install --user https://download.pytorch.org/whl/cpu/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
-    ~~~
-    If any error shows up, you should first ensure your version of Python is 3.6.x, as indicated in the filename. If your version of Python is different, try first to adjust the filename according to the version number. 
 
-It's possible to install the above packages one by one when needed, but you can also install all of themat once, as follows:
+It's possible to install the above packages one by one when needed, but you can also install all of them at once, as follows:
   - move into the *scripts* folder, and download from the [WeR GitHub repository](https://github.com/WeR-stats/workshops/tree/master/setup_cloud_machine_data_science) the lists of packages:
     ~~~
     cd ~/scripts
@@ -1242,7 +1302,7 @@ It's possible to install the above packages one by one when needed, but you can 
     python3 -m pip install --user -r python_libraries.lst
     ~~~
 
-Some packages needs to be installed separately:
+Finally, some libraries are already packaged in Ubuntu 18.04 and can be installed directly from the terminal:
   - **shogun**:
     ~~~
     sudo add-apt-repository ppa:shogun-toolbox/stable
@@ -1250,20 +1310,42 @@ Some packages needs to be installed separately:
     sudo apt-get install libshogun18
     sudo apt-get install python-shogun
     ~~~
-  - the installation of the **Caffe** framework is a bit more involved as it requires to be built from source.
+  - the **Caffe** framework:
     ~~~
+    sudo apt install caffe-cpu
     ~~~
 
-  <a name="install-jupyter-notebook"/>
+  <a name="jupyterlab"/>
 
-### Install Jupyter Notebook
+### Install JupyterLab
 [IPython](https://ipython.org/) is an interactive command-line interface to Python. [Jupyter](https://jupyter.org/) offers an interactive web interface to many languages, including IPython and R.
-First, install Ipython:
-`sudo apt-get -y install ipython ipython-notebook`
-Next, move on to installing Jupyter Notebook:
-`sudo -H pip3 install jupyter`
+[JupyterLab](https://jupyterlab.readthedocs.io/) is the next-generation web-based user interface for Project Jupyter. JupyterLab is served from the same server and uses the same [notebook document format](http://nbformat.readthedocs.io/en/latest/) as the classic [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/), but it will eventually replace it.
 
-Once installed correctly, to run it, execute the following command:
+Once installed using the previous process, execute the following commands:
+  - setup a password:
+    ~~~
+    
+    ~~~
+  - setup SSL for encrypted communication:
+    ~~~
+    
+    ~~~
+  - run a public notebook remote server:
+    ~~~
+    
+    ~~~
+  - run Jupyter Lab:
+    ~~~
+    
+    ~~~
+  - open Jupyter Lab on a local machine:
+    ~~~
+    
+    ~~~
+
+Notice that the above process refers to a single user setup. For multi-users servers, look at [JupyterHub](https://github.com/jupyterhub/jupyterhub), which is outside of the scope of the current tutorial.
+
+
 `jupyter notebook --no-browser --port XXXX`
 By default, a notebook server runs locally at `127.0.0.1:8888`, and is accessible only from *localhost*. Hence to connect to the Jupyter Notebook we need to use **SSH tunneling**.
 
@@ -1606,34 +1688,12 @@ We need to install *Redis* as non-root user, and to accomplish that task we must
     ~~~
 
 
-  <a name="postgresql"/>
+  <a name="monetdb"/>
 
-### PostgreSQL (relational database)
-
-TBD
-
-
-
-  <a name="mssqlserver"/>
-
-### MS SQL Server (relational database)
+### MonetDB Lite
 
 TBD
 
-
-
-  <a name="monetdblite"/>
-
-### MonetDBLite (columnar database)
-
-TBD
-
-
-  <a name="hive-hbase"/>
-
-### Hive/Hbase (hadoop store)
-
-TBD
 
 
   <a name="influxdb"/>
@@ -1648,45 +1708,102 @@ TBD
 :point_up_2:[Back to Index](#index)
 <a name="docker"/>
 ## Docker
+[Docker](https://www.docker.com) is a platform 
+
+Containers are:
+  - *lightweight*
+  - *efficient*
+  - *portable* because share most of the resources from the host OS
+ 
+Container vs Virtual Machine
+
+
+
+
+
+*docker hub* and *images*
 
   <a name="docker-install"/>
 
 ### Install Docker
   - install the dependencies:
-    `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
+    ~~~
+    sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+    ~~~
   - add the docker repository in the *apt* source list:
-    `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
-    `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
+    ~~~
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    ~~~
   - update the package management source:
-    `sudo apt-get update `
+    ~~~
+    sudo apt-get update
+    ~~~
   - let's make sure, you're going to install docker from Docker repo,
-    `apt-cache policy docker-ce`
+    ~~~
+    apt-cache policy docker-ce
+    ~~~
   - install Docker:
-    `sudo apt-get install docker-ce`
+    ~~~
+    sudo apt-get install docker-ce
+    ~~~
   - check the status:
-    `sudo systemctl status docker`
+    ~~~
+    sudo systemctl status docker
+    ~~~
   - check the version of both client and server:
-    `sudo docker version`
+    ~~~
+    sudo docker version
+    ~~~
   - verify the installation with a basic image:
-    `sudo docker run hello-world`
+    ~~~
+    sudo docker run hello-world
+    ~~~
   - returns a bunch of info about the Docker daemon:
-    `sudo system info`
+    ~~~
+    sudo system info
+    ~~~
 
   <a name="docker-commands"/>
 
 ### Basic Commands
-  - download the image **imgname** from the cloud repository:
-    `sudo docker pull imgname`
-  - run a container with the image **imgname**:
-    `sudo docker run imgname`
+  - download the image *imgname* from the cloud repository [docker hub](https://hub.docker.com/):
+    ~~~
+    sudo docker pull imgname
+    ~~~
+  - run a container with the image *imgname*:
+    ~~~
+    sudo docker run imgname
+    ~~~
+    It's possible to add any of the following options:
+    - `--rm`
+    - `--name`
+    - `-it` to use *interactive* mode
+    - `-p int-port:ext-port` to map the internal port *int-port* of the Docker container to the external port *ext-port* of the host OS
+    - `-v int-path:ext-path` to map the internal folder *int-path* of the Docker container to the external folder *ext-path* of the host OS
+    - `-d`
+    - `-f label`
   - see running containers
-    `sudo docker ps` 
-  - stop a container (look up cont_name running previous command)
-    `sudo docker stop cont_name`
+    ~~~
+    sudo docker ps
+    ~~~
+  - stop a container (look up first the name of the container running the previous command if you haven't given it one)
+    ~~~
+    sudo docker stop contname
+    ~~~
   - stop every running container
-    `sudo docker stop $(sudo docker ps -q)`
+    ~~~
+    sudo docker stop $(sudo docker ps -q)
+    ~~~
   - stop container with a specified label
-    `sudo docker stop $(sudo docker ps -q -f )`
+    ~~~
+    sudo docker stop $(sudo docker ps -q -f )
+    ~~~
+  - to get the IP Address of a named container :
+    ~~~
+    docker inspect -f "{{.NetworkSettings.Networks.nat.IPAddress }}" contname
+    ~~~
+
 
   <a name="dockerfile"/>
 
@@ -1705,10 +1822,10 @@ Below are some of the most used dockerfile instructions:
   - **USER** Set the user or UID for the container created with the image.
   - **VOLUME** Enable access/linked directory between the container and the host machine.
 
-The following is an example of Dockerfile that creates an image similar to the server we're currently building on Digital Ocean: 
-```
-# Download base image ubuntu 16.04
-FROM ubuntu:16.04
+The following is an example of Dockerfile that creates an image similar to the server we're currently building: 
+~~~
+# Download base image ubuntu 18.04
+FROM ubuntu:18.04
  
 RUN \
     # Update software repository
@@ -1782,7 +1899,8 @@ VOLUME ["/usr/local/share/public"]
 # Add the "public" path to the R configuration file 
 # RUN 
  
-```
+~~~
+
   <a name="docker-selenium"/>
 
 ### Example: Selenium for Web Driving
@@ -1796,7 +1914,7 @@ VOLUME ["/usr/local/share/public"]
     `docker run -d -p 4445:4444 -v /home/usrname/some/path:/home/seluser/Downloads selenium/standalone-firefox`   
     - to ensure the above actually works, you have to correctly configure the browser: 
 
-  <a name="docker+resources"/>
+  <a name="docker-resources"/>
 
 ### Resources
 
@@ -2052,3 +2170,7 @@ I’m not a *devOps* or *sysAdmin*, and most of this document has been built ove
 If anyone has any comments on anything in this document, [I’d love to hear about it!]()
 
 ---
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTIyMTY3ODIyMywxNzE5Nzk1NTgxXX0=
+-->
