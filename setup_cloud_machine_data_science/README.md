@@ -78,7 +78,7 @@
 ## Motivations 
 If you’ve always wanted to have:
   - an *RStudio Server* of your own so that you can access your *R* projects from anywhere (albeit with an internet connection)
-  - your own *Shiny Server* to host your awesome data visualizations, the results of statisical modeling, monitor your machine learning algorithms, or simply deploy some *Rmarkdown* documents
+  - your own *Shiny Server* to host your awesome data visualizations, the results of statistical modeling, monitor your machine learning algorithms, or simply deploy some *Rmarkdown* documents
   - a *jupyterlab* server to share your knowledge with your team colleagues
   - one or more database server to store any kind of data, small or/and big, relational and/or schema-less
   - your own cloud storage to acces your file from everyhere without paying another company to do so
