@@ -181,5 +181,5 @@ get_ridges <- function(
 }
 get_ridges('section', min_mtc = -10, max_mtc = 20)
 get_ridges('RGN', min_mtc = -10, max_mtc = 20)
-get_ridges('LAD', sub_type = 'RGN', sub_code = 'E12000001', min_mtc = -10, max_mtc = 20)
+get_ridges('LAD', sub_type = 'RGN', sub_code = 'E12000008', min_mtc = -10, max_mtc = 20)
 get_ridges('WPZ', sub_type = 'LAD', sub_code = 'E09000028', min_mtc = -10, max_mtc = 20)

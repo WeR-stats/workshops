@@ -27,17 +27,21 @@ get_legend <- function(Y, brks_lim, n_brks) {
             )
     )
 }
-build_poly_label <- function(x, y){
-    out <- paste0(
-        '<hr>',
-            '<b>', area_code, '</b>: ', y$name[x], '<br>',
-            '<b>Region</b>: ', y$region[x], '<br>', 
-            '<b>Pay Gap</b>: ', round(y$paygap[x], 2), '%<br>',
-            '<b>Total Companies</b>: ', format(y$n_companies[x], big.mark = ','), '<br>',
-            '<b>Population</b>: ', format(y$population[x], big.mark = ','), '<br>',
-            '<b>Households</b>: ', format(y$households[x], big.mark = ','), '<br>',
-        '<hr>'
-    )
+build_poly_label <- function(x, y, has_values = TRUE){
+    if(has_values){
+        out <- paste0(
+            '<hr>',
+                '<b>', area_code, '</b>: ', y$name[x], '<br>',
+                '<b>Region</b>: ', y$region[x], '<br>', 
+                '<b>Pay Gap</b>: ', round(y$paygap[x], 2), '%<br>',
+                '<b>Total Companies</b>: ', format(y$n_companies[x], big.mark = ','), '<br>',
+                '<b>Population</b>: ', format(y$population[x], big.mark = ','), '<br>',
+                '<b>Households</b>: ', format(y$households[x], big.mark = ','), '<br>',
+            '<hr>'
+        )
+    } else {
+        
+    }
     HTML(out)
 }
 build_poly_popup <- function(x){
@@ -60,11 +64,11 @@ build_poly_popup <- function(x){
 
 # set parameters
 dte <- 2018
-area_code <- 'LAD'
-has_parent <- FALSE
-# area_code <- 'MSOA'
-# has_parent <- TRUE
-# parent_code <- 'E12000007'
+# area_code <- 'LAD'
+# has_parent <- FALSE
+area_code <- 'MSOA'
+has_parent <- TRUE
+parent_code <- 'E12000008'
 mtc_num <- 'n_companies'
 mtc_den <- 'population'
 mtc_name <- 'Density (%)'
@@ -76,7 +80,7 @@ hsz <- 8         # HIGHLIGHT BORDER Width (pixels)
 ftp <- 7         # FILL Transparency (1-10)
 smt <- 1         # smoothFactor
 n_brks <- 9
-class.method <- 'quantile'
+class.method <- 'pretty'
 ## - 'Fixed' = 'fixed',                  need an additional argument fixedBreaks that lists the n+1 values to be used
 ## - 'Equal Intervals' = 'equal',        the range of the variable is divided into n part of equal space
 ## - 'Quantiles' = 'quantile',           each class contains (more or less) the same amount of values
@@ -86,7 +90,7 @@ class.method <- 'quantile'
 ## - 'K-means Cluster' = 'kmeans'        Cluster with low variance and similar size
 fixed_brks <- seq(0, 5, 0.5)
 use_palette <- FALSE
-# pal_pkg <- 
+# pal_pkg <- '
 pal_name <- 'BrBG'
 rev_pal <- TRUE
 map_colours <- c('#0AC75F', '#ECFF59', '#CC9710')
@@ -129,7 +133,7 @@ bnd <- merge(bnd, y, by.x = 'id', by.y = 'X')
 
 # in case LSOA, MSOA or WPZ, please select a parent region to subset
 if(has_parent)
-    bnd <- subset(bnd, bnd@data$id %in% unique(oas[RGN == 'E12000007', get(area_code)]))
+    bnd <- subset(bnd, bnd@data$id %in% unique(oas[RGN == parent_code, get(area_code)]))
 
 # build palette for polygons
 brks_poly <- 
@@ -225,7 +229,7 @@ message('Adding Title...')
 mp <- mp %>%
 	addControl(
 		tags$div(HTML(paste0('<p style="font-size:20px;padding:10px 5px 10px 10px;margin:0px;background-color:#F7E816;">', 
-		paste('Distribution of Pay Gap by', area_code),
+		paste('Distribution of Pay Gap by', area_code, if(has_parent){paste('for', lcn[location_id == parent_code, name])}),
 		'</p>'))), 
 		position = 'bottomleft'
 	)
