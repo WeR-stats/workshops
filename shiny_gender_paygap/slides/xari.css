@@ -1,0 +1,83 @@
+.title-slide {
+    background-image: url('WeR.png');
+    background-position: 7% 90%;
+    background-size: 15%;
+}
+.title-slide .remark-slide-number {
+    display: none;
+}
+
+.title-slide > h1 {
+    font-size: 40px;
+    padding-top: 0px;
+}
+.title-slide > h2 {
+    font-size: 35px;
+}
+.title-slide > h3 {
+    font-size: 25px;
+}
+
+.remark-slide-content > h1 {
+    font-size: 48px;
+    margin-top: -105px;
+}
+.remark-slide-content > h2 {
+    font-size: 42px;
+}
+.remark-slide-content > h3 {
+    font-size: 36px;
+}
+.remark-slide-content{
+    font-size: 30px;
+}
+
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+
+
+
+.pull-left-dswf {
+  float: left;
+  width: 47%;
+}
+.pull-right-dswf {
+  float: right;
+  width: 40%;
+}
+
+.logo {
+  float: right;
+  padding: -15px 20px 5px 20px;
+  height: 80px;
+}
+div.wer-header {
+  color: #fff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+}
+div.wer-footer {
+  background-color: #23373B;
+  color: white;
+  font-size: 10pt;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 45px;
+  width: 100%;
+}
+div.wer-footer span {
+  font-size: 10pt;
+  position: absolute;
+  left: 15px;
+  bottom: 5px;
+}
+.remark-slide-number {
+  color: #FFF;
+}
+
