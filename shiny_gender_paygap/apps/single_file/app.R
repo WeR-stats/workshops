@@ -1,6 +1,10 @@
+###########################################
+# SHINYAPP TEMPLATE * SINGLE FILE * app.R #
+###########################################
+
 ### Calls for packages and objects common to both ui and server -----------------------------------------------------------------
 
-# load packages ------
+# load packages
 pkgs <- c(
     # DATA WRANGLING, UTILITIES
     'classInt', 'data.table', 'fst', 'htmltools', 'scales',
@@ -19,8 +23,7 @@ pkgs <- c(
 )
 lapply(pkgs, require, char = TRUE)
 
-
-# load data ------
+# load data 
 data_path <- '../../data'
 dts <- read_fst(file.path(data_path, 'dataset'), as.data.table = TRUE)
 mtcs <- fread(file.path(data_path, 'metrics.csv'))
@@ -36,17 +39,17 @@ ui <- fluidPage(
     # Sidebar layout with input and output definitions ----
     sidebarLayout(
     
-      # Sidebar panel to be filled with input controls ----
+      # Sidebar panel to be filled with input controls
       sidebarPanel(
       
-          # Input: Slider for the number of bins ----
+          # Input: Slider for the number of bins
 
       ),
     
-      # Main panel for displaying outputs ----
+      # Main panel for displaying outputs
       mainPanel(
       
-          # Output: Placeholder that will be filled with the object built in the SERVER side ----------------
+          # Output: Placeholder that will be filled with the object built in the SERVER side
           plotOutput(outputId = 'my_plot')
           
       )
@@ -72,5 +75,5 @@ server <- function(input, output) {
 
 }
 
-# Launch the app
+### Launch the app --------------------------------------------------------------------------------------------------------------
 shinyApp(ui = ui, server = server)
