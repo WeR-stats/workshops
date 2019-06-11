@@ -14,7 +14,7 @@ pkgs <- c(
     'classInt', 'data.table', 'fst', 'htmltools', 'scales',
     'bcrypt', 'crosstalk', 'htmltools', 'htmlwidgets',
     # DATA DISPLAY
-    'DT', 'extrafont', 'formattable', 'kableExtra', 'rhandsontable', 'rpivotTable',
+    'basictabler', 'DT', 'extrafont', 'formattable', 'kableExtra', 'rhandsontable', 'rpivotTable',
     # DATA VIZ
     'ggplot2', 'geofacet', 'GGally', 'ggiraph', 'ggmosaic', 'ggparallel', 'ggrepel', 'ggridges', 'ggthemes',
     'bpexploder', 'dygraphs', 'echarts4r', 'plotly', 'rbokeh', 'scatterD3', 'trelliscopejs', 'wordcloud2',
