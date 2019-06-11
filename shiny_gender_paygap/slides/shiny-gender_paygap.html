@@ -8,6 +8,7 @@
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="xari.css" type="text/css" />
   </head>
   <body>
@@ -132,8 +133,6 @@ Notice that:
 ---
 # How to Deploy. For Free
 
---
-
  - [Shiny Server OS](https://www.rstudio.com/products/shiny/download-server/)
 
 --
@@ -201,7 +200,7 @@ Notice that:
 
 --
 
-   - any *R* code embedded in any *reactive* or *observe* functions
+   - any *R* code embedded in any *reactive* expression
 
 --
 
@@ -211,9 +210,13 @@ Notice that:
 ---
 # Building Blocks. GLOBAL
 
+--
 
  - `GLOBAL` (optional) load and prepare code and data needed by both UI and SERVER
 
+--
+
+ - Notice that the call to load the *shiny* package should always be put before any other code
 
 ---
 # How to Build
@@ -242,6 +245,8 @@ Notice that:
 ---
 # Reactivity
 
+--
+
  - allows to control which, when and how outputs should update
 
 --
@@ -262,20 +267,29 @@ Notice that:
 
 --
 
- - `render*`
+ - `render*` couples with the corrispondent `*Output` `UI` function to fill the placeholder in the *HTML* interface with an *R* object
 
 --
 
- - `reactive`, `reactiveValues`, and  `eventReactive`
+ - `reactive`, `reactiveValues`, and  `eventReactive` build functions using automatic updates from input changes or specified events
 
 --
 
- - `observe` and `observeEvent`
-
+ - `observe` and `observeEvent` react to specific event, but do not create any side functions 
 
 
 ---
 # Resources
+
+--
+
+ - [Cheat Sheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
+ 
+--
+
+ - [Reference](https://shiny.rstudio.com/reference/shiny/1.3.1/)
+ 
+--
 
  - [RStudio Tutorials](http://shiny.rstudio.com/tutorial/)
 
@@ -290,6 +304,16 @@ Notice that:
 --
 
  - [Shiny Developer Series](https://shinydevseries.com/)
+
+
+---
+# Thank You!
+
+ - [<i class="fab  fa-twitter "></i> @datamaps](https://twitter.com/datamaps)
+
+ - [<i class="fab  fa-github "></i> lvalnegri](https://github.com/lvalnegri)
+ 
+ - [<i class="fab  fa-linkedin "></i> Luca Valnegri](https://www.linkedin.com/in/lucavalnegri)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -123,8 +123,6 @@ Notice that:
 ---
 # How to Deploy. For Free
 
---
-
  - [Shiny Server OS](https://www.rstudio.com/products/shiny/download-server/)
 
 --
@@ -202,9 +200,13 @@ Notice that:
 ---
 # Building Blocks. GLOBAL
 
+--
 
  - `GLOBAL` (optional) load and prepare code and data needed by both UI and SERVER
 
+--
+
+ - Notice that the call to load the *shiny* package should always be put before any other code
 
 ---
 # How to Build
@@ -233,6 +235,8 @@ Notice that:
 ---
 # Reactivity
 
+--
+
  - allows to control which, when and how outputs should update
 
 --
@@ -253,20 +257,29 @@ Notice that:
 
 --
 
- - `render*`
+ - `render*` couples with the corrispondent `*Output` `UI` function to fill the placeholder in the *HTML* interface with an *R* object
 
 --
 
- - `reactive`, `reactiveValues`, and  `eventReactive`
+ - `reactive`, `reactiveValues`, and  `eventReactive` build functions using automatic updates from input changes or specified events
 
 --
 
- - `observe` and `observeEvent`
-
+ - `observe` and `observeEvent` react to specific event, but do not create any side functions 
 
 
 ---
 # Resources
+
+--
+
+ - [Cheat Sheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
+ 
+--
+
+ - [Reference](https://shiny.rstudio.com/reference/shiny/1.3.1/)
+ 
+--
 
  - [RStudio Tutorials](http://shiny.rstudio.com/tutorial/)
 
@@ -283,4 +296,14 @@ Notice that:
  - [Shiny Developer Series](https://shinydevseries.com/)
 
 
+---
+# Thank You!
 
+ - [`r icon::fa("twitter")` @datamaps](https://twitter.com/datamaps)
+
+ - [`r icon::fa("github")` lvalnegri](https://github.com/lvalnegri)
+ 
+ - [`r icon::fa("linkedin")` Luca Valnegri](https://www.linkedin.com/in/lucavalnegri)
+ 
+
+ 
