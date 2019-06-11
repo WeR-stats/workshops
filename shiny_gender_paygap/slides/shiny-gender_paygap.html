@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>💻 R Workshop 💻</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Luca Valnegri" />
+    <meta name="date" content="2019-06-11" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xari.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 💻 <i>R</i> Workshop 💻
+## Data Presentation With <i>R/Shiny</i><br>The UK Gender Pay Gap
+### Luca Valnegri
+### 11 June 2019
+
+---
+
+layout: true
+&lt;div class="wer-header"&gt; &lt;img class="logo" src="logo_white.png"/&gt; &lt;/div&gt;
+&lt;div class="wer-footer"&gt; &lt;span&gt; &amp;copy;2019 WeR meetup &lt;br&gt; https://github.com/WeR-stats/shinyapps/gender_paygap &lt;/span&gt; &lt;/div&gt;
+
+---
+# Why Shiny ?
+
+--
+
+ - Makes it easy to build interactive web applications straight from *R*
+
+--
+
+ - Do not require any knowledge of *HTML*, *CSS*, or *Javascript*
+
+--
+
+ - But with that knowledge apps can become more interesting
+
+--
+
+ - While really quick in building very simple app, problems arise as soon as trying to build more complicated layouts
+
+
+---
+# How to Start
+
+--
+
+ - [Install *R*](https://cran.r-project.org/)
+
+--
+
+ - [Install *RStudio*](https://www.rstudio.com/products/rstudio/download/)
+
+--
+
+ - Install the *shiny* package:
+   ```
+   install.packages('shiny')
+   ```
+
+--
+
+ - Launch some example:
+   ```
+   shiny::runExample('01_hello')
+   ```
+
+--
+
+ - There are 11 examples already included with the *shiny* package 
+
+
+---
+# How to Start
+
+ - There are much more on the [Github Shiny repository](https://github.com/rstudio/shiny-examples)
+
+--
+
+ - You can run any of them from inside *RStudio*:
+   ```
+   shiny::runGitHub(
+      'shiny-examples', 
+      'rstudio', 
+      subdir = 'example-name'
+   )
+```
+
+--
+  
+ - Or you can see them in action live:
+   http://gallery.shinyapps.io/example-name
+
+
+---
+# How to Deploy. For Free
+
+--
+
+ - as a file or a set of files
+
+--
+
+ - zip file: `runUrl('link_to_the_file')`
+
+--
+
+ - [Gist](http://gist.github.com/): `runGist('gist_number')`
+
+--
+
+ - [GitHub](http://www.github.com/) repo: `runGitHub('repo_name', 'owner_name')`
+
+--
+
+Notice that:
+
+--
+
+ - users must have *R* and *RStudio* installed
+ 
+--
+
+ - plus all required packages, data, helpers code, ...
+ 
+
+---
+# How to Deploy. For Free
+
+--
+
+ - [Shiny Server OS](https://www.rstudio.com/products/shiny/download-server/)
+
+--
+
+   - build your own machine on premises or in the cloud (see the [instructions](http://bit.ly/wer-setup) on our GitHub repo)
+ 
+--
+
+   - anyone can access anywhere
+
+--
+   
+   - but you can build your own login system, or simply using a Web Server like [nginx](https://www.nginx.com/)
+ 
+--
+
+   - needs some knowledge of Linux command line
+ 
+
+---
+# How to Deploy. For a Fee
+
+--
+
+ - [shinyapps.io](https://www.shinyapps.io/)
+
+--
+
+ - [RStudio Connect](https://www.rstudio.com/products/connect/)
+ 
+
+---
+# Building Blocks. UI
+
+--
+
+ - `UI` build the *HTML* interface, or the layout and appearance of the app
+
+--
+
+   - user *input* controls (see the [gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) of *standard* controls)
+   
+--
+
+      meaning "things" on the screen that the user can toggle and change
+   
+--
+
+   - *output* placeholders, using `*Output` functions
+
+---
+# Building Blocks. SERVER
+
+--
+
+ - `SERVER` build matching *output* objects to fill the UI placeholder
+
+--
+
+   - mostly based on the input controls current values
+
+--
+
+   - `render*` functions that matches the `*output` functions in `UI`
+
+--
+
+   - any *R* code embedded in any *reactive* or *observe* functions
+
+--
+
+   - any other *R* code 
+
+
+---
+# Building Blocks. GLOBAL
+
+
+ - `GLOBAL` (optional) load and prepare code and data needed by both UI and SERVER
+
+
+---
+# How to Build
+
+--
+
+ - single file `app.R`, needs a call to the `shinyApp` function
+
+--
+
+ - multiple files: `ui.R` and `server.R`, plus an optional `global.R` 
+
+--
+
+ - multiple files in multiple directories
+
+--
+
+ - *RMarkdown* using `runtime: shiny` in the *YAML* header
+
+--
+
+ - package
+
+
+---
+# Reactivity
+
+ - allows to control which, when and how outputs should update
+
+--
+
+ - a *reactive* function is an *R* expression that can use inputs from the UI controls, and returns a value. 
+
+--
+
+ - a reactive function will update its output whenever *any* of the UI controls upon which it is built changes its value
+
+--
+
+ - the update will happen also if the reactive expression contains other reactive functions that have an updated status
+
+ 
+---
+# Reactive Functions
+
+--
+
+ - `render*`
+
+--
+
+ - `reactive`, `reactiveValues`, and  `eventReactive`
+
+--
+
+ - `observe` and `observeEvent`
+
+
+
+---
+# Resources
+
+ - [RStudio Tutorials](http://shiny.rstudio.com/tutorial/)
+
+--
+
+ - [Datacamp Skill Track](https://www.datacamp.com/tracks/shiny-fundamentals-with-r)
+
+--
+
+ - [Shiny Developer Conference](https://resources.rstudio.com/shiny-developer-conference)
+
+--
+
+ - [Shiny Developer Series](https://shinydevseries.com/)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

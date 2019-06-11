@@ -1,0 +1,286 @@
+---
+title: "💻 <i>R</i> Workshop 💻"
+subtitle: "Data Presentation With <i>R/Shiny</i><br>The UK Gender Pay Gap"
+author: "Luca Valnegri"
+date: "11 June 2019"
+output:
+  xaringan::moon_reader:
+    css: ["default", "metropolis", "metropolis-fonts", "xari.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+layout: true
+<div class="wer-header"> <img class="logo" src="logo_white.png"/> </div>
+<div class="wer-footer"> <span> &copy;2019 WeR meetup <br> https://github.com/WeR-stats/shinyapps/gender_paygap </span> </div>
+
+---
+# Why Shiny ?
+
+--
+
+ - Makes it easy to build interactive web applications straight from *R*
+
+--
+
+ - Do not require any knowledge of *HTML*, *CSS*, or *Javascript*
+
+--
+
+ - But with that knowledge apps can become more interesting
+
+--
+
+ - While really quick in building very simple app, problems arise as soon as trying to build more complicated layouts
+
+
+---
+# How to Start
+
+--
+
+ - [Install *R*](https://cran.r-project.org/)
+
+--
+
+ - [Install *RStudio*](https://www.rstudio.com/products/rstudio/download/)
+
+--
+
+ - Install the *shiny* package:
+   ```
+   install.packages('shiny')
+   ```
+
+--
+
+ - Launch some example:
+   ```
+   shiny::runExample('01_hello')
+   ```
+
+--
+
+ - There are 11 examples already included with the *shiny* package 
+
+
+---
+# How to Start
+
+ - There are much more on the [Github Shiny repository](https://github.com/rstudio/shiny-examples)
+
+--
+
+ - You can run any of them from inside *RStudio*:
+   ```
+   shiny::runGitHub(
+      'shiny-examples', 
+      'rstudio', 
+      subdir = 'example-name'
+   )
+```
+
+--
+  
+ - Or you can see them in action live:
+   http://gallery.shinyapps.io/example-name
+
+
+---
+# How to Deploy. For Free
+
+--
+
+ - as a file or a set of files
+
+--
+
+ - zip file: `runUrl('link_to_the_file')`
+
+--
+
+ - [Gist](http://gist.github.com/): `runGist('gist_number')`
+
+--
+
+ - [GitHub](http://www.github.com/) repo: `runGitHub('repo_name', 'owner_name')`
+
+--
+
+Notice that:
+
+--
+
+ - users must have *R* and *RStudio* installed
+ 
+--
+
+ - plus all required packages, data, helpers code, ...
+ 
+
+---
+# How to Deploy. For Free
+
+--
+
+ - [Shiny Server OS](https://www.rstudio.com/products/shiny/download-server/)
+
+--
+
+   - build your own machine on premises or in the cloud (see the [instructions](http://bit.ly/wer-setup) on our GitHub repo)
+ 
+--
+
+   - anyone can access anywhere
+
+--
+   
+   - but you can build your own login system, or simply using a Web Server like [nginx](https://www.nginx.com/)
+ 
+--
+
+   - needs some knowledge of Linux command line
+ 
+
+---
+# How to Deploy. For a Fee
+
+--
+
+ - [shinyapps.io](https://www.shinyapps.io/)
+
+--
+
+ - [RStudio Connect](https://www.rstudio.com/products/connect/)
+ 
+
+---
+# Building Blocks. UI
+
+--
+
+ - `UI` build the *HTML* interface, or the layout and appearance of the app
+
+--
+
+   - user *input* controls (see the [gallery](http://shiny.rstudio.com/gallery/widget-gallery.html) of *standard* controls)
+   
+--
+
+      meaning "things" on the screen that the user can toggle and change
+   
+--
+
+   - *output* placeholders, using `*Output` functions
+
+---
+# Building Blocks. SERVER
+
+--
+
+ - `SERVER` build matching *output* objects to fill the UI placeholder
+
+--
+
+   - mostly based on the input controls current values
+
+--
+
+   - `render*` functions that matches the `*output` functions in `UI`
+
+--
+
+   - any *R* code embedded in any *reactive* expression
+
+--
+
+   - any other *R* code 
+
+
+---
+# Building Blocks. GLOBAL
+
+
+ - `GLOBAL` (optional) load and prepare code and data needed by both UI and SERVER
+
+
+---
+# How to Build
+
+--
+
+ - single file `app.R`, needs a call to the `shinyApp` function
+
+--
+
+ - multiple files: `ui.R` and `server.R`, plus an optional `global.R` 
+
+--
+
+ - multiple files in multiple directories
+
+--
+
+ - *RMarkdown* using `runtime: shiny` in the *YAML* header
+
+--
+
+ - package
+
+
+---
+# Reactivity
+
+ - allows to control which, when and how outputs should update
+
+--
+
+ - a *reactive* function is an *R* expression that can use inputs from the UI controls, and returns a value. 
+
+--
+
+ - a reactive function will update its output whenever *any* of the UI controls upon which it is built changes its value
+
+--
+
+ - the update will happen also if the reactive expression contains other reactive functions that have an updated status
+
+ 
+---
+# Reactive Functions
+
+--
+
+ - `render*`
+
+--
+
+ - `reactive`, `reactiveValues`, and  `eventReactive`
+
+--
+
+ - `observe` and `observeEvent`
+
+
+
+---
+# Resources
+
+ - [RStudio Tutorials](http://shiny.rstudio.com/tutorial/)
+
+--
+
+ - [Datacamp Skill Track](https://www.datacamp.com/tracks/shiny-fundamentals-with-r)
+
+--
+
+ - [Shiny Developer Conference](https://resources.rstudio.com/shiny-developer-conference)
+
+--
+
+ - [Shiny Developer Series](https://shinydevseries.com/)
+
+
+

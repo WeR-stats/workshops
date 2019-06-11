@@ -1,0 +1,15 @@
+code,name,description
+DMH,DiffMeanHourlyPercent,Gender Hourly Pay Gap: Mean
+DMdH,DiffMedianHourlyPercent,Gender Hourly Pay Gap: Median
+DMB,DiffMeanBonusPercent,Gender Bonus Pay Gap: Mean
+DMdB,DiffMedianBonusPercent,Gender Bonus Pay Gap: Median
+BPM,MaleBonusPercent,Proportion Men receiving Bonus
+BPF,FemaleBonusPercent,Proportion Women receiving Bonus
+Q1M,MaleLowerQuartile,Proportion Men Lower Quartile: 0-25%
+Q1F,FemaleLowerQuartile,Proportion Women Lower Quartile: 0-25%
+Q2M,MaleLowerMiddleQuartile,Proportion Men Lower Middle Quartile: 25-50%
+Q2F,FemaleLowerMiddleQuartile,Proportion Women Lower Middle Quartile: 25-50%
+Q3M,MaleUpperMiddleQuartile,Proportion Men Upper Middle Quartile: 50-75%
+Q3F,FemaleUpperMiddleQuartile,Proportion Women Upper Middle Quartile: 50-75%
+Q4M,MaleTopQuartile,Proportion Men Top Quartile: 75-100%
+Q4F,FemaleTopQuartile,Proportion Women Top Quartile: 75-100%
