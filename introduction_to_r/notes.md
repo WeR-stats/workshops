@@ -203,7 +203,7 @@ When writing $R$ code , notice that:
   <a name="operators"/>
 
 ### Operators
-$R$ can be used at its basics as a normal calculator. It can perform the following operations:
+*R* can be used at its basics as a normal calculator. It can perform the following operations:
 
   <a name=""/>
 

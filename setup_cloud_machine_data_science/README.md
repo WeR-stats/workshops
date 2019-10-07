@@ -1256,6 +1256,7 @@ sudo -H pip3 install --upgrade pip
 
 ### Install the Data Science Stack
 We are now in a position to install all the top packages needed for a decent data science stack:
+  - [csvkit](https://github.com/wireservice/csvkit) a suite of command-line tools for converting to and working with CSV files.
   - [Pandas](http://pandas.pydata.org/) for data manipulation and wrangling
   - [Beautiful Soup](https://launchpad.net/beautifulsoup), [scrapy](https://scrapy.org/), and [pattern](https://github.com/clips/pattern) for web scraping and mining
   - [NumPy](http://www.numpy.org/), [SciPy](http://www.scipy.org/scipylib/), [xarray](http://xarray.pydata.org/), and [SymPy](http://www.sympy.org/) for numerical computation
