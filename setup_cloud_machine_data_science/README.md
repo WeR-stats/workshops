@@ -1258,6 +1258,7 @@ sudo -H pip3 install --upgrade pip
 We are now in a position to install all the top packages needed for a decent data science stack:
   - [csvkit](https://github.com/wireservice/csvkit) a suite of command-line tools for converting to and working with CSV files.
   - [Pandas](http://pandas.pydata.org/) for data manipulation and wrangling
+  - [datatable](https://github.com/h2oai/datatable) like *Pandas*, but with emphasis on speed and big data support
   - [Beautiful Soup](https://launchpad.net/beautifulsoup), [scrapy](https://scrapy.org/), and [pattern](https://github.com/clips/pattern) for web scraping and mining
   - [NumPy](http://www.numpy.org/), [SciPy](http://www.scipy.org/scipylib/), [xarray](http://xarray.pydata.org/), and [SymPy](http://www.sympy.org/) for numerical computation
   - [matplotlib](http://matplotlib.org/), [seaborn](http://seaborn.pydata.org/), [Bokeh](https://bokeh.pydata.org/), [HoloViews](http://holoviews.org/), [plotly](https://plot.ly/python/), [hvPlot](https://hvplot.pyviz.org/), [plotnine](https://plotnine.readthedocs.io/),  and [chartify](https://github.com/spotify/chartify) for generic data visualization
@@ -1266,8 +1267,7 @@ We are now in a position to install all the top packages needed for a decent dat
   - [Statsmodels](http://statsmodels.sourceforge.net/) for statistical inference and modeling
   - [scikit-learn](http://scikit-learn.org/) for generic machine learning
   - [XGBoost](http://xgboost.readthedocs.io/),  [LightGBM](http://lightgbm.readthedocs.io/), and [CatBoost](https://github.com/catboost/catboost) provide highly optimized, scalable and fast implementations of gradient boosting
-  - [shogun](http://www.shogun-toolbox.org/) is a machine learning toolbox with a focus on large-scale kernel methods
-  - [Keras](https://github.com/keras-team/keras), [Theano](https://github.com/Theano/Theano), [TensorFlow](https://github.com/tensorflow/tensorflow), [TFLearn](http://tflearn.org/), [adanet](https://github.com/tensorflow/adanet), [pytorch](https://pytorch.org/), and [Chainer](https://chainer.org/) for Deep Learning and Neural Network implementations
+  - [Keras](https://github.com/keras-team/keras), [Theano](https://github.com/Theano/Theano), [TensorFlow](https://github.com/tensorflow/tensorflow), [TFLearn](http://tflearn.org/), [adanet](https://github.com/tensorflow/adanet), [fastai](https://docs.fast.ai/), [pytorch](https://pytorch.org/), and [Chainer](https://chainer.org/) for Deep Learning and Neural Network implementations
   - [TPOT](https://epistasislab.github.io/tpot/) is a toolbox that tries to optimize machine learning pipelines using genetic programming
   - [Eli5](https://eli5.readthedocs.io/) for modeling debugging and back-tracing
   - [Optimus](https://github.com/ironmussa/Optimus) is a framework for distributed  machine learning using [Apache Spark](https://spark.apache.org/)
@@ -1285,12 +1285,16 @@ Some of the above packages requires the following libraries to be installed befo
     ~~~
   - pytorch:
     ~~~
-    pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl  
+    pip3 install --user https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl  
     ~~~
     If any error shows up, you should first ensure your version of Python is 3.7.x, as indicated in the above filename. If your version of Python is different, try first to adjust the filename according to the version number. 
   - if using *Theano* or *Keras* it's better to also install the *OpenBLAS* libraries to improve performance:
     ~~~
     sudo apt-get install -y libopenblas-dev
+    ~~~
+  - the **Caffe** framework:
+    ~~~
+    sudo apt install -y caffe-cpu
     ~~~
 
 It's possible to install the above packages one by one when needed, but you can also install all of them at once, as follows:
@@ -1302,19 +1306,6 @@ It's possible to install the above packages one by one when needed, but you can 
   - run the following command:
     ~~~
     python3 -m pip install --user -r python_libraries.lst
-    ~~~
-
-Finally, some libraries are already packaged in Ubuntu 18.04 and can be installed directly from the terminal:
-  - **shogun**:
-    ~~~
-    sudo add-apt-repository ppa:shogun-toolbox/stable
-    sudo apt-get update
-    sudo apt-get install libshogun18
-    sudo apt-get install python-shogun
-    ~~~
-  - the **Caffe** framework:
-    ~~~
-    sudo apt install caffe-cpu
     ~~~
 
   <a name="jupyterlab"/>
@@ -1344,6 +1335,16 @@ Once installed using the previous process, execute the following commands:
     ~~~
     
     ~~~
+  - to add the $R$ kernel, we need first to add some libraries to the system: 
+    ~~~
+    sudo apt-get install libzmq3-dev libcurl4-openssl-dev libssl-dev
+    ~~~
+    then open *R* from the terminal and run the following:
+    ~~~
+    install.packages(c('repr', 'IRdisplay', 'IRkernel'), type = 'source')
+    IRkernel::installspec()
+    ~~~
+
 
 Notice that the above process refers to a single user setup. For multi-users servers, look at [JupyterHub](https://github.com/jupyterhub/jupyterhub), which is outside of the scope of the current tutorial.
 
